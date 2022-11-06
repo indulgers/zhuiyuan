@@ -1,0 +1,55 @@
+<view class="good">
+    <view class="good_img">
+        <image mode="widthFix" src="{{good_image_url}}">
+        </image>
+    </view>
+    <view class="good_info_item">
+        <view class="good_name">{{good_name}}</view>
+        <view class="good_des">{{good_des}}</view>
+    </view>
+</view>
+<view>
+    <table tableThemes="{{themeArr}}" tableItems="{{itemArr}}"></table>
+</view>
+
+<view class="explain" style="margin-top: 15rpx;">
+    <view class="explain_img">
+        <image mode="widthFix" style="width: 50rpx;" src="../../../../images/index/safe.png">
+        </image>
+    </view>
+    <view class="explain_des">安全</view>
+</view>
+<view class="explain">
+    <view class="explain_img">
+        <image mode="widthFix" style="width: 50rpx;" src="../../../../images/index/risk.png">
+        </image>
+    </view>
+    <view class="explain_des">有风险：如过量食用有危害</view>
+</view>
+<view class="explain">
+    <view class="explain_img">
+        <image mode="widthFix" style="width: 50rpx;" src="../../../../images/index/add.png">
+        </image>
+    </view>
+    <view class="explain_des">添加剂</view>
+</view>
+<view class="divLine"></view>
+<view class="match">
+    <view class="match_suitability">此保健品与您的匹配度为:<span style="color: crimson;font-weight: bold;">{{match_suitability}}</span></view>
+    <view class="chart" wx:if="{{realTimeVoltage !== null}}">
+        <view class="container">
+            <ec-canvas class="ec-canvas" id="mychart-dom-lines" canvas-id="mychart-lines" ec="{{ ec }}"></ec-canvas>
+        </view>
+    </view>
+</view>
+<view class="divLine"></view>
+<view class="disease">
+    <view>您的基础疾病：<span class="your_disease">{{your_disease}}</span>
+    </view>
+    <view class="description">{{disease_describe}}</view>
+</view>
+<view class="divLine"></view>
+<view class="Health_products">
+    <view>您同时服用药品/保健品：<span class="your_products">{{your_products}}</span></view>
+    <view class="description">{{products_describe}}</view>
+</view>

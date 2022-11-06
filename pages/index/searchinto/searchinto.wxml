@@ -1,0 +1,53 @@
+<view class="search">
+  <!-- 搜索区 -->
+  <view class="header">
+    <view wx:if="{{!focus}}" class="searchInput">
+      <image class="searchIcon" src="/images/index/search.png"></image>
+      <input type="text" bindfocus="focusHandler" bindtap="toSearch" placeholder="搜索保健品" placeholder-class="placeholder"/>
+    </view>
+    <view wx:if="{{focus}}" class="searchInput">
+      <input type="text" value="{{inputValue}}" bindfocus="focusHandler" bindtap="toSearch" placeholder="搜索保健品" placeholder-class="placeholder"confirm-type='search' bindinput="query"/>
+      <image class="searchIcon" src="/images/index/cancel.jpeg" bindtap="cancelHandler"></image>
+      <text class="cancel" bindtap="toSearch">确认</text>
+    </view>
+   
+  </view>
+      <scroll-view wx:if="{{focus}}" class="scrollview" scroll-y="true">
+        <view wx:for="{{list}}" wx:key="name">
+          <view class="scollitem">
+            <text class="font1" space="nbsp">
+            {{item.name}}</text>
+            <text class="font2" space="nbsp">
+            {{item.num}}</text>
+          </view>
+        </view>
+      </scroll-view>
+</view>
+
+<!-- 历史搜索记录 -->
+<view class="history">
+  <view class="title">历史:</view>
+  <view class="historyItem">
+    维生素A</view>
+  <view class="historyItem">
+    维生素B</view>
+  <block class="image">
+    <image class="imageIcon" src="/images/index/bin.png"></image>
+  </block>
+</view>
+
+
+<!-- 动态热搜 -->
+<view class="hotsaerch">
+  <view class="hotTitle">大家都在搜</view>
+  <view class="hotList">
+    <view class="hotItem">
+      <view class="order">1</view>
+      <view class="hotword">维生素A</view>
+    </view>
+    <view class="hotItem">
+      <view class="order">2</view>
+      <view class="hotword">维生素B</view>
+    </view>
+  </view>
+</view>

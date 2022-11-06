@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "table": "../../../../components/Table/Table",
+    "ec-canvas": "../../../../components/ec-canvas/ec-canvas"
+
+  },
+  "navigationBarTitleText": "成分查询和大数据匹配",
+  "navigationBarTextStyle": "white"
+
+}

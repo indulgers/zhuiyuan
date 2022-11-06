@@ -1,0 +1,76 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/old_index/old_index",
+    "pages/index/image_cut/image_cut",
+    "pages/index/matchAndAnalysis/result/result",
+    "pages/index/matchAndAnalysis/matchAndAnalysis",
+    "pages/index/searchinto/searchinto",
+    "pages/index/community/community",
+    "pages/index/shortVideo/shortVideo",
+    "pages/index/askExpert/askExpert",
+    "pages/index/freeSamples/freeSamples",
+    "pages/index/article1/article1",
+    "pages/index/article2/article2",
+    
+
+    "pages/community/community",
+
+    "pages/mall/mall",
+
+    "pages/me/me",
+    "pages/me/personalInformation/personalInformation",
+    "pages/me/personalInformation/form_one/form_one",
+    "pages/me/personalInformation/form_two/form_two",
+    "pages/me/personalInformation/form_three/form_three",
+    "pages/me/personalInformation/form_four/form_four",
+    "pages/me/personalInformation/form_five/form_five",
+    "pages/me/personalInformation/form_six/form_six",
+   
+    "pages/me/help/help",
+    "pages/me/settings/settings",
+    "pages/me/community_friends/community_friends",
+    "pages/me/vip/vip",
+    "pages/me/pet/pet",
+    "pages/me/shopping cart/shopping cart",
+    "pages/me/discount/discount",
+    "pages/me/family/family",
+    "pages/me/customer_feedback/customer_feedback"
+
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#5CB888",
+    "navigationBarTitleText": "追原",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#1296db",
+    "list": [{
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "images/index/index.png",
+        "selectedIconPath": "images/index/index_selected.png"
+      },
+      {
+        "pagePath": "pages/community/community",
+        "text": "社区",
+        "iconPath": "images/community/community.png",
+        "selectedIconPath": "images/community/community_selected.png"
+      },
+      {
+        "pagePath": "pages/mall/mall",
+        "text": "亲情商城",
+        "iconPath": "images/shopping/shopping.png",
+        "selectedIconPath": "images/shopping/shopping_selected.png"
+      }, {
+        "pagePath": "pages/me/me",
+        "text": "我",
+        "iconPath": "images/me/me.png",
+        "selectedIconPath": "images/me/me_selected.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

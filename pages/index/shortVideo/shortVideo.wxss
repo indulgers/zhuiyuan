@@ -1,0 +1,165 @@
+/* pages/index/shortVideo/shortVideo.wxss */
+.header {
+  display: flex;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 10rpx;
+}
+
+.searchInput {
+  position: relative;
+  text-align: center;
+  flex: 1;
+  background: rgba(101, 160, 240, 0.3);
+  border-radius: 30rpx;
+}
+
+.searchIcon {
+  position: absolute;
+  padding-top: 10rpx;
+  left: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.searchInput input {
+  margin-left: 50rpx;
+  height: 60rpx;
+}
+
+.major {
+  padding-top: 5mm;
+}
+
+.majorcon {
+  display: flex;
+}
+
+.major .box {
+  margin: auto;
+  text-align: center;
+}
+
+.major .pic {
+  margin: auto;
+  width: 50px;
+  height: 50px;
+}
+
+.txt_top {
+  padding-top: 2mm;
+}
+
+.major .txt {
+  font-size: 35rpx;
+}
+
+.txt_down {
+  font-size: 30rpx;
+}
+
+.imgicon {
+  padding-left: 15px;
+  width: 40px;
+  height: 40px;
+  margin: 0px;
+}
+
+.index-link {
+  padding-top: 5mm;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.index-link .item-link {
+  margin: 10px;
+  padding: 12px 12px;
+  font-size: 15px;
+  background-color: #0077ffce;
+  color: rgb(255, 255, 255);
+  border-radius: 6px;
+  text-align: center;
+}
+.vedio {
+padding: 10rpx 20rpx;
+  margin-top: 20rpx;
+}
+
+.vedio .vedioItem {
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: -10rpx 10rpx 15rpx rgba(53, 178, 225, 0.26);
+  overflow: hidden;
+}
+
+.vedio .first1 {
+  width: 80%;
+  background-color: rgb(255, 255, 255);
+  color: rgb(33, 151, 206);
+  display: flex;
+}
+
+.vedio .attention {
+  width: 13%;
+  height: 5mm;
+  font-size: 12px;
+  border-radius: 20rpx;
+  background-color: red;
+  text-align: center;
+}
+
+.vedio .first2 {
+  display: flex;
+}
+
+.vedio .time {
+  margin-left: 110rpx;
+  width: 10%;
+  height: 4mm;
+  color: rgb(202, 202, 202);
+  font-size: 11px;
+}
+
+.vedio .pic {
+  width: 12%;
+  height: 70rpx;
+  border-radius: 30rpx;
+}
+
+.vedio .vedioItem {
+  padding-left: 20rpx;
+  padding-bottom: 2mm;
+  width: 88%;
+}
+
+.vedio .name {
+  padding-left: 3mm;
+  font-size: 15px;
+}
+
+.vedio .job {
+  padding-left: 2mm;
+  padding-top: 0.4mm;
+  font-size: 14px;
+}
+
+.vedio .title {
+  margin-left: 8mm;
+}
+
+.vedio .tip {
+  display: flex;
+  margin-left: 4mm;
+}
+
+.vedio .tipPic {
+  padding-left: 60rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+.vedio .amount{
+  padding-top: 1mm;
+  padding-left: 2mm;
+  font-size: 12px;
+}

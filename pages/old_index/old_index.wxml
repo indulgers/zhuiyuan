@@ -1,0 +1,74 @@
+<!--pages/old_index/old_index.wxml-->
+<!-- <text>pages/old_index/old_index.wxml</text> -->
+<!-- 搜索栏 -->
+<view class="header">
+    <view class="searchInput">
+        <view class="box" style="position: relative; left: 542rpx; top: 13rpx">
+            <image class="voiceIcon" src="/images/old_index/voice.png"
+                style="width: 86rpx; height: 92rpx; display: block; box-sizing: border-box; left: 6rpx; top: -8rpx; position: absolute">
+            </image>
+        </view>
+        <view bindtap="toSearch" class="placeholder"
+            style="width: 502rpx; height: 106rpx; display: block; box-sizing: border-box; left: 6rpx; top: -80rpx; position: relative">
+            输入商品名称/成分</view>
+    </view>
+</view>
+
+<!-- 任务栏 -->
+<!-- 快搜 -->
+<view class="index-link" style="width: 600rpx; height: 180rpx; display: block; box-sizing: border-box; left: 56rpx; top: 130rpx; position: absolute">
+        <image class="searchIcon" src="/images/old_index/search.png" style="position: relative; left: 44rpx; top: 20rpx; width: 108rpx; height: 96rpx; display: inline-block; box-sizing: border-box"></image>
+    <view bindtap="searchPic" class="item-link" style="position: relative; left: 44rpx; top: -89rpx; width: 544rpx; height: 96rpx; display: block; box-sizing: border-box">保健品快搜</view>
+</view>
+<!-- 分割线 -->
+<view class="line1"></view>
+<!-- 任务栏1 -->
+<scroll-view class="task" scroll-x>
+    <view class="task_item">
+        <navigator class="task_box1" url="/pages/index/shortVideo/shortVideo">
+            <image class="task_pic" src="/images/old_index/consultation.png" style="position: absolute; left: 97rpx; top: 45rpx; width: 182rpx; height: 178rpx; display: block; box-sizing: border-box"></image>
+            <view class="task_txt" style="position: relative; left: -1rpx; top: 114rpx">科普资讯</view>
+        </navigator>
+
+        <navigator class="task_box2" url="/pages/me/pet/pet">
+            <image class="task_pic" src="/images/old_index/sign in.png" style="position: absolute; left: 474rpx; top: 45rpx; width: 178rpx; height: 176rpx; display: block; box-sizing: border-box"></image>
+            <view class="task_txt" style="position: relative; left: 1rpx; top: 114rpx">签到精灵</view>
+        </navigator>
+
+    </view>
+</scroll-view>
+<!-- 分割线 -->
+<view class="line"></view>
+<scroll-view class="task" scroll-x>
+    <view class="task_item">
+        <navigator class="task_box3" url="/pages/me/community_friends/community_friends">
+            <image class="task_pic" src="/images/old_index/community.png" style="position: absolute; left: 103rpx; top: 38rpx; width: 182rpx; height: 186rpx; display: block; box-sizing: border-box"></image>
+            <view class="task_txt" style="position: relative; left: -1rpx; top: 116rpx">好友社区</view>
+        </navigator>
+
+        <navigator class="task_box4" url="/pages/me/personalInformation/personalInformation">
+            <image class="task_pic" src="/images/old_index/data.png" style="position: absolute; left: 486rpx; top: 48rpx; width: 148rpx; height: 170rpx; display: block; box-sizing: border-box"></image>
+            <view class="task_txt" style="position: relative; left: -3rpx; top: 116rpx">健康数据</view>
+        </navigator>
+
+    </view>
+</scroll-view>
+<!-- 分割线 -->
+<view class="line"></view>
+<scroll-view class="task" scroll-x>
+    <view class="task_item">
+        <navigator class="task_box5" url="/pages/mall/mall">
+            <image class="task_pic" src="/images/old_index/shop.png" style="position: absolute; left: 118rpx; top: 45rpx"></image>
+            <view class="task_txt" style="position: relative; left: 1rpx; top: 114rpx">亲情商城</view>
+        </navigator>
+
+        <navigator class="task_box6" url="/pages/index/askExpert/askExpert">
+            <image class="task_pic" src="/images/old_index/expert.png" style="position: absolute; left: 493rpx; top: 45rpx"></image>
+            <view class="task_txt" style="position: relative; left: -1rpx; top: 114rpx">专家帮助</view>
+        </navigator>
+
+    </view>
+</scroll-view>
+<view class="line"></view>
+
+<!-- else -->

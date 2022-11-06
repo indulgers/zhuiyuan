@@ -1,0 +1,152 @@
+.header{
+  display: flex;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 10rpx;
+}
+.searchInput{
+position: relative;
+text-align: center;
+flex: 1;
+background: rgba(101,160, 240, 0.3);
+border-radius: 30rpx;
+}
+
+.searchIcon{
+  position: absolute;
+  padding-top: 10rpx;
+  right: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.searchInput input{
+  margin-left: 50rpx;
+  height: 60rpx;
+}
+.placeholder{
+color: rgb(155, 155, 155);
+font-size: 28rpx;
+}
+.majorcon{display: flex;}
+.major .box{margin: auto;  text-align: center;}
+.major .pic{margin: auto; width: 50px;height: 50px;}
+.major .txt{font-size: 35rpx;}
+.imgicon{
+  padding-left: 15px;
+  width: 40px;
+  height: 40px;
+  margin: 0px;
+}
+
+
+.index-link{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.content{
+  text-align: center;
+  padding-top: 0.1cm;
+  padding-bottom: 0.05cm;
+  font-size: 14px; 
+  line-height: 1cm;
+  border-radius: 10px;
+}
+.item-link{
+  margin: 10px;
+  padding:12px 12px;
+  font-size: 18px; 
+  background-color: #0077ffce;
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  text-align: center;
+}
+.navScroll{
+  display: flex;
+  white-space: nowrap;
+  padding-top: 4mm;
+}
+.navItem{
+  padding: 0 30rpx;
+  font-size: 40rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+ .F_title{overflow: auto;} 
+.news{
+  display: flex;
+  margin: 5mm 2mm 0mm 2mm;
+  border-radius: 5px;
+  box-shadow: 5rpx 8rpx 10rpx rgba(173, 181, 184, 0.26);
+}
+
+.news_img{
+  position: absolute;
+  padding-top: 20rpx;
+  right: 50rpx;
+  display: flex;
+  width: 40%;
+}
+.news_info_item{
+  width: 100%;
+}
+.news_title{
+  font-size: 35rpx;
+  width: 50%;
+}
+.news_src{
+  padding-top: 5mm;
+  padding-bottom: 0mm;
+  font-size: 30rpx;
+  color:rgb(121, 121, 121);
+}
+.news_tip{
+  text-align: right;
+  padding-right: 7mm;  padding-bottom: 3mm;
+  font-size: 30rpx;
+  color:rgb(121, 121, 121);
+}
+.F_title{
+  margin-bottom: 2cm;
+  display:block；
+}
+.black{
+  height: 80rpx;
+}
+
+.old_en{
+  padding: 5rpx 20rpx;
+}
+
+.old_enter_txt{
+  margin: 10px;
+  padding:10px 10px;
+  font-size: 18px; 
+  background-color: rgb(116, 206, 22);
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  text-align: center;
+}
+.take_photo  {
+  width: 240rpx;
+  height: 96rpx;
+  background: white;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+  justify-items: center;
+  border-radius: 10rpx;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  position: fixed;
+  bottom: 8%;
+  left: 35%;
+  text-align: center;
+  font-size: 30rpx;
+}
+/* 拍照和图片裁剪按钮点击态 */
+.take_photo_hover{
+  transform: scale(0.9);
+}

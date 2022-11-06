@@ -1,0 +1,75 @@
+{
+  "setting": {
+    "compileHotReLoad": false,
+    "urlCheck": false
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/me/informationEntry/informationEntry",
+          "pathName": "pages/me/informationEntry/informationEntry",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/me/me",
+          "pathName": "pages/me/me",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/me/personalInformation/form_one/form_one",
+          "pathName": "pages/me/personalInformation/form_one/form_one",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/me/personalInformation/form_two/form_two",
+          "pathName": "pages/me/personalInformation/form_two/form_two",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/me/personalInformation/form_two/form_two",
+          "pathName": "pages/me/personalInformation/form_two/form_two",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/matchAndAnalysis/result/result",
+          "pathName": "pages/index/matchAndAnalysis/result/result",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/me/personalInformation/form_four/form_four",
+          "pathName": "pages/me/personalInformation/form_four/form_four",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/me/personalInformation/form_five/form_five",
+          "pathName": "pages/me/personalInformation/form_five/form_five",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/me/personalInformation/form_six/form_six",
+          "pathName": "pages/me/personalInformation/form_six/form_six",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/matchAndAnalysis/result/result",
+          "pathName": "pages/index/matchAndAnalysis/result/result",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "projectname": "zhuoyuan-front-end-master",
+  "libVersion": "2.25.4"
+}

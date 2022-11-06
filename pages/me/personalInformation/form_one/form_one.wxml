@@ -1,0 +1,42 @@
+<!--pages/me/personalInformation/form_one/form_one.wxml-->
+<text>\n</text>
+<text>\n</text>
+<text>\n</text>
+<view class="big_title">
+    <text class="title">请完善您的信息，\n以便为你提供个性化服务</text>
+</view>
+<view class="divLine"></view>
+<text>\n</text>
+<text>\n</text>
+<view class="your_sex">
+    <text>您的性别</text>
+</view>
+<text>\n</text>
+<radio-group bindchange="sexchange" class="sexchange">
+    <radio class="man" value='boy' checked>男</radio>
+    <radio class="woman" value='girl'  >女</radio>
+ </radio-group>
+    <text>\n</text>
+    <text>\n</text>
+ <view class="section">
+  <view class="your_bir"><text>您的生日</text></view>
+  <picker mode="date" value="{{date}}" start="1900-01-01" end="2021-11-21" bindchange="bindDateChange">
+    <view class="picker">
+      {{date}}
+    </view>
+  </picker>
+</view>
+<view class="your_wh">
+    <view class="your_bir"><text>您的身高体重</text></view>
+    <view class="your_height">
+        <input type="text" placeholder="身高:" placeholder-style="color:#888888;font-size:20px;margin-left:20rpx" class="input"/>
+    </view>
+    <view class="your_height">
+        <input type="text" placeholder="体重:" placeholder-style="color:#888888;font-size:20px;margin-left:20rpx" class="input"/>
+    </view>
+</view>
+<text>\n</text>
+<text>\n</text>
+<view class="sub">
+    <button class="sub_btn"  bindtap="go2" style="position: relative; left: 272rpx; top: -22rpx">确定</button> 
+</view>

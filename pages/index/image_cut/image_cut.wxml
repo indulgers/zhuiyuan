@@ -1,0 +1,18 @@
+<view wx:if="{{!cut_image}}">
+  <camera flash="off" style="width: 100%; height: 100vh;" wx:if="{{open_camera}}"></camera>
+  <!-- 裁剪按钮 -->
+  <cover-view class="take_photo" hover-class="take_photo_hover" bindtap="cut_image" wx:if="{{!open_camera}}">
+    <cover-view>裁剪</cover-view>
+  </cover-view>
+  <!-- 图片裁剪画布 -->
+  <canvas id="cut_image_canvas" style="width:{{cut_img_canvas_w}}px;height:{{cut_img_canvas_h}}px;" type="2d" wx:if="{{!open_camera}}" disable-scroll="true" bindtouchmove="cut_area_move_and_scale" bindtouchstart="get_cut_area_change_status" canvas-id="cut_image_canvas"></canvas>
+
+  <!-- 拍照按钮 -->
+  <cover-view class="take_photo" hover-class="take_photo_hover" wx:if="{{open_camera}}" bindtap="take_photo">
+    <cover-view>拍照</cover-view>
+  </cover-view>
+</view>
+<!-- 裁剪图片预览 -->
+<view class="preview" wx:if="{{cut_image}}">
+  <image mode="widthFix" src="{{cut_image}}"></image>
+</view>

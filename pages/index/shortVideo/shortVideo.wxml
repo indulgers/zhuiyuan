@@ -1,0 +1,56 @@
+<!--pages/index/shortVideo/shortVideo.wxml-->
+<!-- 搜索栏 -->
+<view class="header">
+  <view class="searchInput">
+    <!-- <text class="iconfont" src="/images/index/search.png" ></text> -->
+    <image class="searchIcon" src="/images/index/search.png"></image>
+    <input type="text" placeholder="搜索保健品" placeholder-class="placeholder" />
+  </view>
+  <!-- <text class="cancel">取消</text> -->
+</view>
+
+<!-- 小标题 -->
+<scroll-view class="major" scroll-x>
+  <view class="majorcon">
+    <navigator class="box" url="/pages/index/askExpert/askExpert">
+      <image class="pic" src="/images/index/askdoctor.png"></image>
+    </navigator>
+    <view class="txt_top">
+      <view class="txt">找专家——VIP服务</view>
+      <view class="txt_down">快速找对专家 对症咨询</view>
+    </view>
+    <navigator class="box" url="/pages/me/vip/vip">
+      <image class="pic" src="/images/index/vip-l.png"></image>
+    </navigator>
+  </view>
+</scroll-view>
+<view class="index-link">
+  <view class="item-link">优质短视频推荐</view>
+</view>
+
+<!-- 短视频列表 -->
+<scroll-view scroll-y class="vedio">
+  <view class="vedioItem">
+  <view class="first2">
+    <view class="first1">
+      <image class="pic" src="/images/index/askdoctor.png"></image>
+      <view class="name">张益达</view>
+      <view class="job">深圳优秀律师</view>
+    </view>
+    <view class="attention">+关注</view>
+  </view>
+  <view class="time">06:28</view>
+    <view class="title">【央视曝光】花大价钱买保健品 很多都是从领免费鸡蛋开始的</view>
+    <video class="vedioitem" controls show-mute-btn muted show-fullscreen-btn
+      src="http://cdns.cpoe.top/video1.mp4"
+      controls style="width: 578rpx; height: 415rpx; display: inline-block; box-sizing: border-box; left: 57rpx; top: 1rpx; position: relative"></video>
+    <view class="tip">
+    <image mode="aspectFit" class="tipPic" src="/images/shortvideo/good.png" ></image>
+    <view class="amount">0</view>
+    <image mode="aspectFit" class="tipPic" src="/images/shortvideo/message.png" ></image>
+    <view class="amount">0</view>
+    <image mode="aspectFit" class="tipPic" src="/images/shortvideo/share.png" ></image>
+    <view class="amount">0</view>
+    </view>
+  </view>
+</scroll-view>

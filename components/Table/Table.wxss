@@ -1,0 +1,48 @@
+/* components/Table.wxss */
+.table-outer-box {
+    display: flex;
+    flex-direction: column;
+    padding: 50rpx 50rpx 0;
+    flex: 1;
+}
+
+.table {
+    height: 80rpx;
+    color: black;
+    line-height: 80rpx;
+    border-top: 1rpx solid #5f677a;
+    border-bottom: 1rpx solid #5f677a;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-flex {
+    display: flex;
+}
+
+.table-theme {
+    font-size: 35rpx;
+    font-weight: bold;
+}
+
+.table-item {
+    height: auto;
+    font-size: 30rpx;
+}
+
+.item {
+    margin: 5rpx 10rpx;
+    flex: 1;
+    line-height: 40rpx;
+}
+
+.item_risk {
+    margin: 0 50rpx;
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.scroll-view {
+    flex: 1;
+}

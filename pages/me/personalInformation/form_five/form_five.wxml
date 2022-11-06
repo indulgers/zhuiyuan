@@ -1,0 +1,33 @@
+<!--pages/me/personalInformation/form_five/form_five.wxml-->
+<view class="title" style="position: relative; left: 0rpx; top: -2rpx; width: 750rpx; height: 121rpx; display: block; box-sizing: border-box">
+    <view class="your_label" style="width: 267rpx; height: 64rpx; display: block; box-sizing: border-box; position: relative; left: 228rpx; top: 76rpx">您的标签</view>
+</view>
+<view class="user" style="width: 750rpx; height: 1409rpx; display: block; box-sizing: border-box; left: 0rpx; top: 72rpx; position: relative">
+    <image class="user_icon" src="../../../../images/form_five/user.png" mode="widthFix" style="position: relative; left: 263rpx; top: 324rpx; width: 214rpx; height: 232rpx; display: inline-block; box-sizing: border-box"></image>
+    <view class="lable_blue" style="position: relative; left: 305rpx; top: 2rpx; width: 141rpx; height: 46rpx; display: block; box-sizing: border-box">骨质疏松</view>
+    <view class="lable_blue" style="width: 137rpx; height: 43rpx; display: block; box-sizing: border-box; left: 167rpx; top: 6rpx; position: relative">高血压</view>
+    <view class="lable_blue" style="position: relative; left: 130rpx; top: 32rpx; width: 134rpx; height: 43rpx; display: block; box-sizing: border-box">高血脂</view>
+    <view class="lable_blue" style="width: 137rpx; height: 43rpx; display: block; box-sizing: border-box; left: 100rpx; top: 64rpx; position: relative">高尿酸</view>
+    <view class="lable_green" style="width: 134rpx; height: 46rpx; display: block; box-sizing: border-box; position: relative; left: 451rpx; top: -120rpx">补钙</view>
+    <view class="lable_green" style="width: 130rpx; height: 46rpx; display: block; box-sizing: border-box; left: 497rpx; top: -99rpx; position: relative">减脂</view>
+    <view class="lable_green" style="width: 127rpx; height: 39rpx; display: block; box-sizing: border-box; left: 521rpx; top: -67rpx; position: relative">补气血</view>
+    <view class="lable_green" style="width: 170rpx; height: 43rpx; display: block; box-sizing: border-box; left: 477rpx; top: -33rpx; position: relative">乳糖不耐</view>
+    <view class="lable_orange" style="width: 272rpx; height: 46rpx; display: block; box-sizing: border-box; left: 32rpx; top: -53rpx; position: relative">苯磺酸氨氯地平</view>
+    <view class="lable_orange" style="position: relative; left: 188rpx; top: -22rpx; width: 309rpx; height: 43rpx; display: block; box-sizing: border-box">马来酸依那普利片</view>
+     
+    <view class="sub" style="position: relative; left: -1rpx; top: 330rpx; width: 750rpx; height: 176rpx; display: block; box-sizing: border-box">
+    <button class="sub_btn" bindtap="go2me" style="position: relative; left: -255rpx; top: 46rpx; width: 162rpx; height: 76rpx; display: block; box-sizing: border-box">确定</button>
+    <view bindtap="go2dau">
+        <view class="icon_dau" style="position: relative; left: 462rpx; top: -39rpx">
+        <text class="dau" >女儿</text>
+    </view>
+    <view class="icon_dau_two" style="position: relative; left: 537rpx; top: -133rpx">
+        <text class="dau_two" >儿媳</text>
+    </view>
+    <view class="icon_son" style="position: relative; left: 609rpx; top: -227rpx">
+        <text class="son" >儿子</text>
+    </view>
+    <view class="help" style="position: relative; left: 462rpx; top: -227rpx">一键子女帮忙补充</view>
+    </view>
+</view>
+</view>

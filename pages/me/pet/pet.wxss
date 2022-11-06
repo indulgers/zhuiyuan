@@ -1,0 +1,109 @@
+/* pages/me/pet/pet.wxss */
+.top_box {
+  text-align: center;
+  display: flex;
+  background-color: rgb(210, 239, 251);
+  height: 140rpx;
+  width: 100%;
+}
+
+/* 用户信息 */
+.user_pic {
+  padding: 22rpx 50rpx;
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.user_name {
+  padding: 38rpx 0rpx;
+  font-size: 38rpx;
+}
+
+/* 精灵 */
+.pet_box {
+  position: absolute;
+}
+
+.talk_pic {
+  position: relative;
+}
+
+.pet {
+  position: relative;
+}
+
+.line {
+  background-color: rgb(220, 220, 220);
+  height: 2mm;
+  margin-top: 450rpx;
+}
+
+/* 签到处 */
+.sign_box {
+  margin-top: 20rpx;
+  display: flex;
+  position: absolute;
+}
+
+.sign_txt {
+  z-index: 2;
+  padding-left: 35rpx;
+  border-radius: 20rpx;
+  height: 70rpx;
+  font-size: 38rpx;
+  color: seashell;
+  background-color: rgb(247, 189, 108);
+  position: relative;
+}
+
+.sign_pic {
+  z-index: 3;
+  position: relative;
+}
+
+/* 小样 */
+.demo_box {
+  background-color: bisque;
+  width: 100%;
+  display: flex;
+  margin-top: 200rpx;
+  padding-top: 50rpx;
+  position: absolute;
+}
+
+.demo_pic {
+  position: relative;
+  padding: 0rpx 50rpx;
+}
+.demo_txt{
+  padding-top: 15rpx;
+  text-align: center;
+}
+
+/* 奖品处 */
+.prsent {
+  margin-top: 680rpx;
+}
+
+.prsent_box {
+  text-align: right;
+  position: absolute;
+  display: flex;
+}
+.prsent_pic1{
+  border-radius: 50%;
+  position: relative;
+  background-color: rgb(253, 207, 53);
+}
+.prsent_pic2{
+  border-radius: 50%;
+  position: relative;
+  background-color:rgb(254, 104, 103);
+}
+.prsent_txt{
+  padding-top: 25rpx;
+  font-size: 38rpx;
+  padding-right: 20rpx;
+}

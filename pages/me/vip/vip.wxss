@@ -1,0 +1,11 @@
+/* pages/me/vip/vip.wxss */
+.start1{
+  display: flex;
+  background-color: aqua;
+  font-size: 14rpx;
+  font-weight: bold;
+  
+}
+.start2{
+  flex-direction: row;
+}

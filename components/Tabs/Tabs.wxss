@@ -1,0 +1,20 @@
+/* components/Tabs/Tabs.wxss */
+
+.tabs_title{
+    white-space: nowrap;
+    padding-top: 4mm;
+}
+.title_item{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30rpx;
+    font-size: 40rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+
+}
+.active{
+    color: #40c0ea;
+    border-bottom: 5rpx solid currentColor;
+}

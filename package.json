@@ -1,0 +1,17 @@
+{
+  "name": "zhenzhi",
+  "version": "1.0.0",
+  "description": "本项目是真知卓健项目小程序的前端仓库",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/weapp": "^1.10.5",
+    "axios": "^0.21.1",
+    "axios-miniprogram-adapter": "^0.3.2",
+    "miniprogram-api-promise": "^1.0.4"
+  }
+}

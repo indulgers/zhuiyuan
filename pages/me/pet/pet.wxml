@@ -1,0 +1,73 @@
+<!--pages/me/pet/pet.wxml-->
+<!-- <text>pages/me/pet/pet.wxml</text> -->
+
+<!-- 用户信息 -->
+<view class="top_box">
+  <image class="user_pic" src="/images/me/text_user.jpg"></image>
+  <view class="user_name">用户名：测试小白</view>
+</view>
+
+<!-- 精灵 -->
+<view class="pet_box"
+  style="width: 750rpx; height: 592rpx; display: block; box-sizing: border-box; left: 0rpx; top: 140rpx">
+  <image class="talk_pic" src="/images/sign in/talk.png"
+    style="position: relative; left: 116rpx; top: 2rpx; width: 258rpx; height: 198rpx; display: inline-block; box-sizing: border-box">
+  </image>
+  <image class="pet" src="/images/sign in/pet.png"
+    style="position: relative; left: -24rpx; top: -24rpx; width: 443rpx; height: 421rpx; display: inline-block; box-sizing: border-box">
+  </image>
+</view>
+
+<!-- 分割线 -->
+<view class="line"></view>
+
+<!-- 签到处 -->
+<view class="sign_box">
+  <image class="sign_pic" src="/images/sign in/sign.jpg"
+    style="width: 254rpx; height: 186rpx; display: block; box-sizing: border-box; left: 48rpx; top: -4rpx; position: relative">
+  </image>
+  <view class="sign_txt"
+    style="position: relative; left: 48rpx; top: 52rpx; width: 402rpx; height: 74rpx; display: block; box-sizing: border-box">
+    免费赢小样，VIP</view>
+</view>
+<!-- 小样 -->
+<view class="demo_box"
+  style="width: 750rpx; height: 368rpx; display: flex; box-sizing: border-box; left: 0rpx; top: 606rpx">
+  <view class="demoitem">
+    <image class="demo_pic"
+      src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimage3.cnpp.cn%2Fupload%2Fimages%2F20180129%2F17083593412_840x500.jpg&refer=http%3A%2F%2Fimage3.cnpp.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1637162346&t=39e7cb0df19dcce76c944f489cef74c4"
+      style="position: relative; left: 0rpx; top: 0rpx; width: 356rpx; height: 236rpx; display: block; box-sizing: border-box">
+    </image>
+    <view class="demo_txt">小样：钙尔奇</view>
+  </view>
+
+  <view class="demoitem">
+    <image class="demo_pic"
+      src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimage3.cnpp.cn%2Fupload%2Fimages%2F20180129%2F17083593412_840x500.jpg&refer=http%3A%2F%2Fimage3.cnpp.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1637162346&t=39e7cb0df19dcce76c944f489cef74c4"
+      style="position: relative; left: 0rpx; top: 0rpx; width: 356rpx; height: 236rpx; display: block; box-sizing: border-box">
+    </image>
+    <view class="demo_txt">小样：钙尔奇</view>
+  </view>
+</view>
+
+<!-- 奖品处 -->
+<view class="prsent">
+  <view class="prsent_box" style="position: absolute; left: 10rpx; top: 1194rpx">
+    <view class="prsent_txt"
+      style="width: 232rpx; height: 108rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx">金币兑换
+    </view>
+    <image class="prsent_pic1" src="/images/sign in/tap.png"
+      style="width: 124rpx; height: 108rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx; position: relative">
+    </image>
+  </view>
+  <view class="prsent_box"
+    style="position: absolute; left: 366rpx; top: 1194rpx; width: 672rpx; height: 108rpx; display: flex; box-sizing: border-box">
+    <view class="prsent_txt"
+      style="width: 212rpx; height: 108rpx; display: block; box-sizing: border-box; left: NaNrpx; top: NaNrpx">天天抽奖
+    </view>
+    <image class="prsent_pic2" src="/images/sign in/gift.png"
+      style="position: relative; left: 0rpx; top: 0rpx; width: 100rpx; height: 108rpx; display: block; box-sizing: border-box">
+    </image>
+  </view>
+
+</view>

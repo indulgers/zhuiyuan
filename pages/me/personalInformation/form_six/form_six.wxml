@@ -1,0 +1,42 @@
+<!--pages/me/personalInformation/form_six/form_six.wxml-->
+<view class="title" style="width: 100%; height: 329rpx; display: block; box-sizing: border-box; left: -2rpx; top: -6rpx; position: relative">
+    <text class="text_big">子女端</text>
+    <text>\n</text>
+    <text class="text_small">请帮老人完善信息以便更好匹配分析他服用药品保健品</text>
+</view>
+<view class="block" style="width: 670rpx; height: 1141rpx; display: block; box-sizing: border-box; position: relative; left: 39rpx; top: -135rpx">
+    <view class="block_one" style="width: 608rpx; height: 103rpx; display: flex; box-sizing: border-box; left: 11rpx; top: 9rpx; position: relative">
+    <view class="icon" style="position: relative; left: -29rpx; top: 18rpx; width: 88rpx; height: 88rpx; display: block; box-sizing: border-box">
+        <image src="../../../../images/form_six/icon_one.png" mode="widthFix" class="icon_one" style="width: 67rpx; height: 64rpx; display: inline-block; box-sizing: border-box; left: 13rpx; top: 9rpx; position: relative"></image>
+    </view>
+    <view class="desc" style="width: 511rpx; height: 54rpx; display: block; box-sizing: border-box">现有基础疾病</view>
+</view>
+<input type="text" class="input" placeholder="多行输入" style="position: relative; left: 120rpx; top: -15rpx; width: 489rpx; height: 153rpx; display: block; box-sizing: border-box"/> 
+<view class="block_one" style="width: 608rpx; height: 103rpx; display: flex; box-sizing: border-box; left: 11rpx; top: 9rpx; position: relative">
+    <view class="icon_two" style="position: relative; left: -29rpx; top: 18rpx; width: 88rpx; height: 88rpx; display: block; box-sizing: border-box">
+        <image src="../../../../images/form_six/icon_two.png" mode="widthFix" class="icon_one" style="width: 67rpx; height: 64rpx; display: inline-block; box-sizing: border-box; left: 13rpx; top: 9rpx; position: relative"></image>
+    </view>
+    <view class="desc" style="width: 511rpx; height: 54rpx; display: block; box-sizing: border-box">现用药</view>
+</view>
+<input type="text" class="input" placeholder="多行输入" style="position: relative; left: 120rpx; top: -15rpx; width: 489rpx; height: 153rpx; display: block; box-sizing: border-box"/> 
+<image src="../../../../images/form_six/scanf.png" mode="widthFix" class="scanf_icon" style="width: 53rpx; height: 48rpx; display: flex; box-sizing: border-box; left: 46rpx; top: 23rpx; position: relative"></image>
+<view class="scanf" style="position: relative; left: 121rpx; top: -24rpx">扫描药品包装进行添加</view>
+<view class="block_one" style="width: 608rpx; height: 103rpx; display: flex; box-sizing: border-box; left: 11rpx; top: 9rpx; position: relative">
+    <view class="icon_three" style="position: relative; left: -29rpx; top: 18rpx; width: 88rpx; height: 88rpx; display: block; box-sizing: border-box">
+        <image src="../../../../images/form_six/icon_three.png" mode="widthFix" class="icon_one" style="width: 67rpx; height: 64rpx; display: inline-block; box-sizing: border-box; left: 8rpx; top: 8rpx; position: relative"></image>
+    </view>
+    <view class="desc" style="width: 511rpx; height: 54rpx; display: block; box-sizing: border-box">营养需求</view>
+</view>
+<input type="text" class="input" placeholder="多行输入" style="position: relative; left: 120rpx; top: -15rpx; width: 489rpx; height: 153rpx; display: block; box-sizing: border-box"/> 
+<view class="block_one" style="width: 608rpx; height: 103rpx; display: flex; box-sizing: border-box; left: 11rpx; top: 9rpx; position: relative">
+    <view class="icon_four" style="position: relative; left: -29rpx; top: 18rpx; width: 88rpx; height: 88rpx; display: block; box-sizing: border-box">
+        <image src="../../../../images/form_six/bad.png" mode="widthFix" class="icon_one" style="width: 67rpx; height: 64rpx; display: inline-block; box-sizing: border-box; left: 8rpx; top: 9rpx; position: relative"></image>
+    </view>
+    <view class="desc" style="width: 511rpx; height: 54rpx; display: block; box-sizing: border-box">过敏史</view>
+</view>
+<input type="text" class="input" placeholder="多行输入" style="position: relative; left: 120rpx; top: -15rpx; width: 489rpx; height: 153rpx; display: block; box-sizing: border-box"/> 
+</view>
+<view class="sub" style="position: relative; left: -2rpx; top: 19rpx; width: 750rpx; height: 176rpx; display: block; box-sizing: border-box">
+    <button class="sub_btn" bindtap="go2tab" style="position: relative; left: 252rpx; top: 57rpx; width: 162rpx; height: 76rpx; display: block; box-sizing: border-box">确定</button> 
+   
+</view>

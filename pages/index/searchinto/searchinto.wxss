@@ -1,0 +1,84 @@
+.header{
+  display: flex;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 10rpx;
+}
+.searchInput{
+position: relative;
+text-align: center;
+flex: 1;
+background: rgba(101,160, 240, 0.3);
+border-radius: 30rpx;
+}
+
+.searchIcon{
+  position: absolute;
+  padding-top: 10rpx;
+  left: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.searchInput input{
+  margin-left: 50rpx;
+  height: 60rpx;
+}
+.placeholder{
+color: rgb(155, 155, 155);
+  font-size: 28rpx;
+}
+.cancel{
+  font-size: 30rpx;
+}
+/* 历史记录 */
+.history{
+  margin-top: 20rpx;
+  position: relative;
+  display: flex;
+  flex-flow: wrap;
+}
+.title{
+  width: 70rpx;
+  font-size: 30rpx;
+  margin: 20rpx 20rpx;
+}
+.historyItem{
+  background-color: #eee;
+  font-size: 26rpx;padding: 0 30rpx;
+  border-radius: 40rpx;
+  margin: 23rpx 10rpx;
+}
+.imageIcon{
+  position: absolute;
+  width: 70rpx;
+  height: 70rpx;
+  bottom: 10rpx;
+  right: 15rpx;
+}
+
+/* 动态热搜 */
+
+.hotTitle {
+  font-size: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #eee;
+}
+.hotList{
+  display: flex;
+  flex-wrap: wrap;
+}
+.hotItem{
+  width: 50%;
+  position: relative;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+}
+.order{
+  position: absolute;
+  font-size: 24rpx;
+}
+.hotword{
+  padding-left: 30rpx;
+}

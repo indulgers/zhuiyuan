@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "Community-Tabs":"../../components/Commuity-Tabs/Commuity-Tabs"
+  }
+}
