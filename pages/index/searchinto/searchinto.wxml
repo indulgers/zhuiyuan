@@ -1,27 +1,14 @@
 <view class="search">
   <!-- 搜索区 -->
   <view class="header">
-    <view wx:if="{{!focus}}" class="searchInput">
+    <view  class="searchInput">
       <image class="searchIcon" src="/images/index/search.png"></image>
-      <input type="text" bindfocus="focusHandler" bindtap="toSearch" placeholder="搜索保健品" placeholder-class="placeholder"/>
-    </view>
-    <view wx:if="{{focus}}" class="searchInput">
-      <input type="text" value="{{inputValue}}" bindfocus="focusHandler" bindtap="toSearch" placeholder="搜索保健品" placeholder-class="placeholder"confirm-type='search' bindinput="query"/>
-      <image class="searchIcon" src="/images/index/cancel.jpeg" bindtap="cancelHandler"></image>
-      <text class="cancel" bindtap="toSearch">确认</text>
+      <input type="text" value="{{inputValue}}" bindfocus="focusHandler" placeholder="搜索保健品" placeholder-class="placeholder" bindinput="bindinput"/>
+      
     </view>
    
   </view>
-      <scroll-view wx:if="{{focus}}" class="scrollview" scroll-y="true">
-        <view wx:for="{{list}}" wx:key="name">
-          <view class="scollitem">
-            <text class="font1" space="nbsp">
-            {{item.name}}</text>
-            <text class="font2" space="nbsp">
-            {{item.num}}</text>
-          </view>
-        </view>
-      </scroll-view>
+    
 </view>
 
 <!-- 历史搜索记录 -->
@@ -51,3 +38,5 @@
     </view>
   </view>
 </view>
+<image class="radioIcon"src="/images/index/radioIcon.jpeg" bindtouchstart="touchdown_plugin" bindtouchend="touchup_plugin"/>
+  

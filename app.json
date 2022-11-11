@@ -15,7 +15,7 @@
     
 
     "pages/community/community",
-
+    "pages/community/community-article1/community-article1",
     "pages/mall/mall",
 
     "pages/me/me",
@@ -39,6 +39,15 @@
 
     
   ],
+  "plugins": {
+    "WechatSI": {
+        "version": "0.3.5",
+
+        "provider": "wx069ba97219f66d99"
+
+    }
+
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#5CB888",

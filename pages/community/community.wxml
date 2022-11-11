@@ -36,9 +36,8 @@
                 <!-- 右侧 作者头像与支持 -->
                 <view class="content_right">
                 <view class="image-part">
-                    <image mode="widthFix"
-                        src="/images/community/head (2).png"
-                        class="imageself">
+                    <image  class="imageself" src="{{item.headscul}}">
+                  
                     </image> 
                     <view class="author">
                       {{item.zuozhe}}
@@ -48,10 +47,16 @@
                    <view class="author-part">
                     {{item.position}}
                    </view>
-                   <view class="give-likes">
+                   <view wx:if="{{beentouch==0}}" class="give-likes">
                      <image class="like" src="/images/community/give-like.png" mode="" bindtap="beentouched"/>
                      <view class="like-num">
-                       {{item.time}}
+                       {{item.likes}}
+                     </view>
+                   </view>
+                   <view wx:if="{{beentouch==1}}"class="give-likes" >
+                    <image class="like" src="/images/community/give-like.png" mode="" bindtap="beentouched"/>
+                     <view class="like-num">
+                       {{item.likes}}
                      </view>
                    </view>
                 </view>
@@ -59,5 +64,92 @@
             </navigator>
          </view>
         </view>
+    
+    </block>
+    <block wx:if="{{tabs[1].isActive}}">
+        <view class="Top_news">
+            <view wx:for="{{list1}}" wx:key="index">
+            <navigator class="content-news" url="/pages/community/community-article1/community-article1">
+                <!-- 左侧 内容大纲栏 -->
+                <view class="content_left">
+                    <text class="content_title">{{item.title}}</text>
+                    <view class="content_more" bindtap="community-turn-to">查看更多条回复</view>
+                    
+                </view>
+                <!-- 右侧 作者头像与支持 -->
+                <view class="content_right">
+                <view class="image-part">
+                    <image  class="imageself" src="{{item.headscul}}">
+                  
+                    </image> 
+                    <view class="author">
+                      {{item.zuozhe}}
+                    </view>
+                    
+                    </view>
+                   <view class="author-part">
+                    {{item.position}}
+                   </view>
+                   <view wx:if="{{beentouch==0}}" class="give-likes">
+                     <image class="like" src="/images/community/give-like.png" mode="" bindtap="beentouched"/>
+                     <view class="like-num">
+                       {{item.likes}}
+                     </view>
+                   </view>
+                   <view wx:if="{{beentouch==1}}"class="give-likes" >
+                    <image class="like" src="/images/community/give-like.png" mode="" bindtap="beentouched"/>
+                     <view class="like-num">
+                       {{item.likes}}
+                     </view>
+                   </view>
+                </view>
+                
+            </navigator>
+         </view>
+        </view>
+    
+    </block>
+    <block wx:if="{{tabs[2].isActive}}">
+        <view class="Top_news">
+            <view wx:for="{{list2}}" wx:key="index">
+            <navigator class="content-news" url="/pages/community/community-article1/community-article1">
+                <!-- 左侧 内容大纲栏 -->
+                <view class="content_left">
+                    <text class="content_title">{{item.title}}</text>
+                    <view class="content_more" bindtap="community-turn-to">查看更多条回复</view>
+                    
+                </view>
+                <!-- 右侧 作者头像与支持 -->
+                <view class="content_right">
+                <view class="image-part">
+                    <image  class="imageself" src="{{item.headscul}}">
+                  
+                    </image> 
+                    <view class="author">
+                      {{item.zuozhe}}
+                    </view>
+                    
+                    </view>
+                   <view class="author-part">
+                    {{item.position}}
+                   </view>
+                   <view wx:if="{{beentouch==0}}" class="give-likes">
+                     <image class="like" src="/images/community/give-like.png" mode="" bindtap="beentouched"/>
+                     <view class="like-num">
+                       {{item.likes}}
+                     </view>
+                   </view>
+                   <view wx:if="{{beentouch==1}}"class="give-likes" >
+                    <image class="like" src="/images/community/give-like.png" mode="" bindtap="beentouched"/>
+                     <view class="like-num">
+                       {{item.likes}}
+                     </view>
+                   </view>
+                </view>
+                
+            </navigator>
+         </view>
+        </view>
+    
     </block>
     </Community-Tabs>

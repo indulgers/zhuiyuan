@@ -1,3 +1,6 @@
+var plugin = requirePlugin("WechatSI")
+
+let manager = plugin.getRecordRecognitionManager()
 Page({
 
   /**
@@ -5,6 +8,7 @@ Page({
    */
   data: {
     medicineName:'',
+    
     placeholderContent: '',//placeholder内容
     hotList:[],//热搜榜数组
     searchContent: '',//表单项内容
@@ -14,6 +18,8 @@ Page({
     list2:[{'name':'连花清瘟胶囊','num':'1盒'},{'name':'感冒灵颗粒','num':'1盒'},{'name':'维生素C','num':'2瓶'},{'name':'蒲地蓝消炎片','num':'3盒'}],
     inputValue:"",
     focus:false,//控制是否显示带按钮的搜索框
+    
+    
   },
   focusHandler(e){
     this.setData({focus:true});
@@ -21,6 +27,7 @@ Page({
   cancelHandler(e){
     this.setData({focus:false});
   },
+ 
   query(e){
     this.setData({
       inputValue:e.detail.value//回显输入
@@ -49,6 +56,44 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+
+    manager.onRecognize = function (res) {
+           cons.log("current result", res.result)
+    
+        }
+    
+        manager.onStop = function (res) {
+          console.log('识别开始');
+    
+          var result = res.result;
+    
+          var s = result.indexOf('。') //找到第一次出现下划线的位置
+    
+          result = result.substring(0,s)  //取下划线前的字符
+    
+          var searchType = that.data.searchType;
+    
+          wx.showToast({
+            title: result,
+    
+          })
+    
+    }
+    
+        manager.onError = function (res) {
+          console.log('manager.onError')
+    
+          console.log(res) //报错信息打印
+    
+          wx.showToast({
+            title: res.msg,
+    
+          })
+    
+          // UTIL.log("error msg", res.msg)
+    
+        }
 
     //获取本地历史记录
     this.getSearchHistory();
@@ -147,6 +192,55 @@ Page({
   }
 })
   },
+  touchdown_plugin: function () {
+    var _this = this
+
+    // UTIL.stopTTS();
+
+    manager.start({
+      duration: 30000,
+
+      lang: "zh_CN"
+
+    })
+
+  },
+
+  //手指松开
+
+  touchup_plugin: function (e) {
+    var searchType = e.currentTarget.dataset.type;
+    let text=e.result
+    this.setData({
+      searchType: searchType,
+
+      background:  "#ED6C00",
+
+      yysb:"长按语音识别"
+
+    });
+
+    manager.stop();
+
+    wx.showToast({
+      title: '正在识别……',
+
+      icon: 'loading',
+
+      duration: 2000
+
+    })
+    if(text==''){
+      console.log('没有说话')
+      return
+    }
+    this.inputValue=text
+  },
+bindinput:function(e){
+  this.setData({
+    inputValue:e.detail.value
+  })
+},
  bindconfirm:function(e){
   wx.navigateTo({
     url: '/pages/index/matchAndAnalysis/result/result.wxml',

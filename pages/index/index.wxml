@@ -39,8 +39,6 @@
 <view class="index-link">
 <button class="content" bindtap="scan">一按扫一扫，长按输入语音</button>
 <view bindtap="searchPic" class="item-link"> 保健品快搜
-
-
     </view>
 </view>
 

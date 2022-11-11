@@ -10,6 +10,7 @@ text-align: center;
 flex: 1;
 background: rgba(101,160, 240, 0.3);
 border-radius: 30rpx;
+
 }
 
 .searchIcon{
@@ -18,6 +19,14 @@ border-radius: 30rpx;
   left: 20rpx;
   width: 40rpx;
   height: 40rpx;
+}
+.radioIcon{
+  position:absolute;
+  padding-top: 10px;
+  padding-left: 150px;
+  width: 90rpx;
+  height: 90rpx;
+  bottom: 50px;
 }
 .searchInput input{
   margin-left: 50rpx;
@@ -47,6 +56,10 @@ color: rgb(155, 155, 155);
   font-size: 26rpx;padding: 0 30rpx;
   border-radius: 40rpx;
   margin: 23rpx 10rpx;
+}
+.radioButton{
+  bottom: 20px;
+  background-color: aqua;
 }
 .imageIcon{
   position: absolute;

@@ -5,6 +5,8 @@ Page({
    */
   data: {
     list:[],
+    list1:[],
+    list2:[],
     tempFilePaths: null,
     Image: null,
     isChose: false,
@@ -26,17 +28,41 @@ Page({
       }
      
 
-    ]
+    ],
+    
   },
 
   
 
   onLoad: function (options) {
-    wx.cloud.database().collection('article').get().then(res=>{
+  
+    let db=wx.cloud.database().collection('article').get().then(res=>{
       console.log('请求到的数据',res)
       this.setData({
         list:res.data
       })
+    })
+    .catch(err=>{
+      console.log('信息请求失败',res);
+    })
+  
+    let db1=wx.cloud.database().collection('article').orderBy("heat",'desc').get().then(res=>{
+      console.log('请求到的数据',res)
+      this.setData({
+        list1:res.data
+      })
+    })
+    .catch(err=>{
+      console.log('信息请求失败',res);
+    })
+    let db2=wx.cloud.database().collection('article').orderBy("time",'desc').get().then(res=>{
+      console.log('请求到的数据',res)
+      this.setData({
+        list2:res.data
+      })
+    })
+    .catch(err=>{
+      console.log('信息请求失败',res);
     })
   },
   //标题点击事件
@@ -100,6 +126,10 @@ Page({
     wx.navigateTo({
       url: '',
     })
+  },
+  beentouched:function(){
+      
   }
-  
 })
+
+

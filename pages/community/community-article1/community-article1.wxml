@@ -1,0 +1,9 @@
+<view wx:for="{{list}}" wx:key="index">
+  <view class="title">
+    {{item.title}}
+  </view>
+  <view class="time">
+    {{item.time}}
+  </view>
+  <rich-text nodes="{{item.delivery_article}}"/>
+</view>

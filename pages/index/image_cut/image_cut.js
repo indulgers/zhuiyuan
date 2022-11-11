@@ -130,6 +130,8 @@ Component({
           that.create_cut_image_canvas(res.tempImagePath)
         }
       })
+      
+     
     },
     /**
      * 图片裁剪
