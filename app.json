@@ -1,10 +1,11 @@
+
 {
   "pages": [
     "pages/index/index",
     "pages/old_index/old_index",
-    "pages/index/image_cut/image_cut",
-    "pages/index/matchAndAnalysis/result/result",
-    "pages/index/matchAndAnalysis/matchAndAnalysis",
+    "pages/index/cropper/cropper",
+    "pages/index/result/result",
+    "pages/index/result/result_detail/result_detail",
     "pages/index/searchinto/searchinto",
     "pages/index/community/community",
     "pages/index/shortVideo/shortVideo",
@@ -16,6 +17,7 @@
 
     "pages/community/community",
     "pages/community/community-article1/community-article1",
+    "pages/community/one2one/one2one",
     "pages/mall/mall",
 
     "pages/me/me",
@@ -59,25 +61,25 @@
     "list": [{
         "pagePath": "pages/index/index",
         "text": "主页",
-        "iconPath": "images/index/index.png",
-        "selectedIconPath": "images/index/index_selected.png"
+        "iconPath": "/icon/index.png",
+        "selectedIconPath": "/icon/index_selected.png"
       },
       {
         "pagePath": "pages/community/community",
         "text": "社区",
-        "iconPath": "images/community/community.png",
-        "selectedIconPath": "images/community/community_selected.png"
+        "iconPath": "/icon/community.png",
+        "selectedIconPath": "/icon/community_selected.png"
       },
       {
         "pagePath": "pages/mall/mall",
         "text": "亲情商城",
-        "iconPath": "images/shopping/shopping.png",
-        "selectedIconPath": "images/shopping/shopping_selected.png"
+        "iconPath": "/icon/shopping.png",
+        "selectedIconPath": "/icon/shopping_selected.png"
       }, {
         "pagePath": "pages/me/me",
         "text": "我",
-        "iconPath": "images/me/me.png",
-        "selectedIconPath": "images/me/me_selected.png"
+        "iconPath": "/icon/me.png",
+        "selectedIconPath": "/icon/me_selected.png"
       }
     ]
   },

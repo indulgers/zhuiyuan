@@ -1,66 +1,77 @@
-// pages/index/matchAndAnalysis/matchAndAnalysis.js
+// pages/index/result/result.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list:{},
+    Id:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad(res) {
+    var tolist=JSON.parse(res.tolist)
+    this.setData({
+      list:tolist
+    })
+    console.log(tolist);
   },
-
+  toDetail:function(e){
+    var data=JSON.stringify(e.currentTarget.dataset.data) 
+     
+    wx.navigateTo({
+      url: '/pages/index/result/result_detail/result_detail?data='+data,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage() {
 
   }
 })

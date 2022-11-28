@@ -6,10 +6,12 @@ Page({
    */
   data: {
     tempFilePaths: null,
+    
     Image: null,
     isChose: false,
     files: null,
     message:'',
+    medicineName:'',
     tabs: [{
         id: 0,
         value: "热门",
@@ -71,7 +73,7 @@ Page({
  
   searchPic: function () {
    wx.navigateTo({
-     url: './image_cut/image_cut',
+     url: './cropper/cropper',
    })
   },
   uploadImage: function (url) {
@@ -88,7 +90,7 @@ Page({
         //demo区
 
         wx.navigateTo({
-          url: './matchAndAnalysis/result/result',
+          url: '/pages/index/result/result',
         })
 
         //demo区
@@ -107,7 +109,7 @@ Page({
         //demo区
 
         wx.navigateTo({
-          url: './matchAndAnalysis/result/result',
+          url: '/pages/index/result/result',
         })
 
         //demo区
@@ -116,28 +118,24 @@ Page({
     })
 
   },
-  scan:function(){
-    wx.scanCode({
-      success(res){
-        console.log(res)
-      }
-    })
-  },
-  getdata(){
-    const that=this
-    wx.request({
-      url: '',
-      data:{
 
-      },
-      method:'GET',
-      success(res){
-        console.log("请求状态："+res.statusCode)
-        console.log(res.data)
-        this.setData({
-            message:res.data
-        })
-      }
-    })
-  }
+    // fuck:function(){
+    //   wx.request({
+    //     url: 'http://43.139.5.93:8081/es/fuzzyQueryByMedicineName/总统',
+    //     method:'POST',
+    //      header: {
+    //     'Content-Type': 'application/json'
+    //  },
+    //     success:function(res){
+    //       console.log(res.data)
+    //       wx.navigateTo({
+    //         url: '/pages/index/matchAndAnalysis/result/result.wxml',
+            
+    //         success: (result) => {},
+    //         fail: (res) => {},
+    //         complete: (res) => {},
+    //       })
+    //   }
+    // })
+    // }
 })

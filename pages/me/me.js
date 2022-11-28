@@ -1,4 +1,6 @@
 //import api from "../../utils/api/api"
+import Dialog from '../../miniprogram_npm/@vant/weapp/dialog/dialog';
+import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
 
 // pages/me/me.js
 Page({
@@ -147,57 +149,6 @@ Page({
     }
     this.getid()
 },
-logout:function() {
+ //退出登录
  
-  wx.removeStorage({
-
-    key: 'userInfo',
-
-    success (res) {
-
-      wx.showModal({
-
-        title: '提示',
-
-        content: '真的要退出了吗',
-
-        cancelText:'我骗你的',
-
-        confirmText:'是的没错',
-
-        confirmColor:'#000000',
-
-        cancelColor:'#576b95',
-
-        success (res) {
-
-          if (res.confirm) {
-
-            wx.reLaunch({
-
-              url: '/pages/index/index',
-
-            })
-
-          } else if (res.cancel) {
-
-            console.log('用户点击取消')
-
-          }
-
-        }
-
-      })
-
-      
-
-    }
-
-  })
-
-
-
-}
-
-
 })

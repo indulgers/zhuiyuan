@@ -1,0 +1,13 @@
+<view class="table" wx:for="{{list}}" wx:key="index" >
+  <view  wx:for="{{item}}" wx:key="index" wx:for-item ="data" data-data="{{data}}" bindtap="toDetail">
+  <view class="preview">
+    <view>
+      {{data.medicineName}}
+    </view>
+    <view>
+      {{data.medicineAttention}}
+    </view>
+    {{data.medicineFunctionComponent}}
+  </view>
+  </view>
+</view>

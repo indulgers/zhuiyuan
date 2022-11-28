@@ -33,7 +33,7 @@ border-radius: 30rpx;
   height: 60rpx;
 }
 .placeholder{
-color: rgb(155, 155, 155);
+  color: rgb(155, 155, 155);
   font-size: 28rpx;
 }
 .cancel{

@@ -2,8 +2,8 @@
   <!-- 搜索区 -->
   <view class="header">
     <view  class="searchInput">
-      <image class="searchIcon" src="/images/index/search.png"></image>
-      <input type="text" value="{{inputValue}}" bindfocus="focusHandler" placeholder="搜索保健品" placeholder-class="placeholder" bindinput="bindinput"/>
+      <image class="searchIcon" src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/index/search.png"></image>
+      <input type="text" value="{{medicineName}}" bindconfirm="bindconfirm" placeholder="搜索保健品" placeholder-class="placeholder" bindinput="getmedicineName"/>
       
     </view>
    
@@ -19,7 +19,7 @@
   <view class="historyItem">
     维生素B</view>
   <block class="image">
-    <image class="imageIcon" src="/images/index/bin.png"></image>
+    <image class="imageIcon" src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/index/bin.png"></image>
   </block>
 </view>
 
@@ -38,5 +38,5 @@
     </view>
   </view>
 </view>
-<image class="radioIcon"src="/images/index/radioIcon.jpeg" bindtouchstart="touchdown_plugin" bindtouchend="touchup_plugin"/>
+<image class="radioIcon"src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/index/voice-icon.jpeg" bindtouchstart="touchdown_plugin" bindtouchend="touchup_plugin"/>
   

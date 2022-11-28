@@ -3,7 +3,7 @@
 <view class="mall_header">
     <view class="searchInput">
         <!-- <text class="iconfont" src="/images/index/search.png" ></text> -->
-        <image class="searchIcon" src="/images/index/search.png"></image>
+        <image class="searchIcon" src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/index/search.png"></image>
         <input type="text" placeholder="搜索商品" placeholder-class="placeholder" />
     </view>
 </view>

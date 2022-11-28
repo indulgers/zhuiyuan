@@ -1,0 +1,56 @@
+
+    <view class="textarea">
+    <view class="name">
+      {{list.medicineName}}
+    </view>
+    <view class="partial">
+    <view class="text">
+      注意事项
+    </view>
+    <view class="textdetail">
+      {{list.medicineAttention}}
+    </view>
+      
+    </view>
+    <view class="partial">
+    <view class="text">
+      适用人群
+    </view>
+    <view class="textdetail">
+       {{list.medicineSuitPerson}}
+    </view>
+    </view>
+    <view class="partial">
+    <view class="text">
+      主要原料
+    </view>
+    <view class="textdetail">
+       {{list.medicineFunctionComponent}}
+    </view>
+    </view>
+    <view class="partial">
+      <view class="text">
+        不适宜人群
+      </view>
+      <view class="textdetail">
+        {{list.medicineUnsuitPerson}}
+      </view>
+    </view>
+    <view class="partial">
+      <view class="text">
+        储存方式
+      </view>
+      <view class="textdetail">
+        {{list.medicineStorage}}
+      </view>
+    </view>
+    <view class="partial">
+      <view class="text">
+        用法用量
+      </view>
+      <view class="textdetail">
+        {{list.medicineUsageDosage}}
+      </view>
+    </view>
+      </view>
+  

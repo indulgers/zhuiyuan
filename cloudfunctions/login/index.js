@@ -7,7 +7,6 @@ exports.main=async(event,context)=>{
   return await cloud.database().collection('article').get()
 }
 
-const article = db.collection("article")
 
 // 云函数入口函数
 exports.main = async (event, context) => {

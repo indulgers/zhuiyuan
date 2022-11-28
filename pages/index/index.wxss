@@ -8,7 +8,6 @@
 position: relative;
 text-align: center;
 flex: 1;
-background: rgba(101,160, 240, 0.3);
 border-radius: 30rpx;
 }
 
@@ -27,7 +26,11 @@ border-radius: 30rpx;
 color: rgb(155, 155, 155);
 font-size: 28rpx;
 }
-.majorcon{display: flex;}
+.majorcon{
+  display: flex;
+  flex-direction: row;
+  transform: rotate(45deg);
+}
 .major .box{margin: auto;  text-align: center;}
 .major .pic{margin: auto; width: 50px;height: 50px;}
 .major .txt{font-size: 35rpx;}
@@ -121,7 +124,7 @@ font-size: 28rpx;
   margin: 10px;
   padding:10px 10px;
   font-size: 18px; 
-  background-color: rgb(116, 206, 22);
+  background-color:#5CB888;
   color: rgb(255, 255, 255);
   border-radius: 10px;
   text-align: center;
@@ -149,4 +152,8 @@ font-size: 28rpx;
 /* 拍照和图片裁剪按钮点击态 */
 .take_photo_hover{
   transform: scale(0.9);
+}
+.black{
+  background-color: #a0a0a0;
+  width: 200px;
 }

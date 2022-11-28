@@ -93,7 +93,7 @@ Page({
         //demo区
 
         wx.navigateTo({
-          url: './matchAndAnalysis/result/result',
+          url: '/pages/index/result/result.wxml',
         })
 
         //demo区
@@ -122,11 +122,7 @@ Page({
 
   },
   
-  toservice:function(){
-    wx.navigateTo({
-      url: '',
-    })
-  },
+ 
   beentouched:function(){
       
   }

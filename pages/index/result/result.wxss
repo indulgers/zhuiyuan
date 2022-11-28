@@ -1,0 +1,11 @@
+.preview{
+  display: flex;
+  flex-direction: row;
+  
+  border: 2px solid greenyellow;
+  
+}
+.table{
+  display: flex;
+ flex-direction: column;
+}
