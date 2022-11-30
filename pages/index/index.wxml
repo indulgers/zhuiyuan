@@ -7,49 +7,48 @@
         <!-- <input type="text" bindtap="toSearch" placeholder="搜索保健品" placeholder-class="placeholder" /> -->
     </view>
 </view>
+<image src="/images/index/back-round.png" class="back-round"/>
+<view class="index-link">
 
+<image bindtap="searchPic" src="/images/index/camera.png" class="camera"/>
+<view bindtap="searchPic" class="item-link"> 保健品快搜
+    </view>
+</view>
 <!-- 老年版入口 -->
 <view class="old_en">
         <navigator class="box" url="/pages/old_index/old_index">
             <view class="old_enter_txt">老年版入口</view>
         </navigator>
 </view>
-
-
-<view class="index-link">
-<view bindtap="searchPic" class="item-link"> 保健品快搜
-    </view>
-</view>
-
 <!-- 导航1  匹配分析 -->
-<view class="major"  >
+<view class="major"  > 
     <view class="majorcon">
     
-        <navigator class="box" url="/pages/index/matchAndAnalysis/matchAndAnalysis">
+         <navigator class="box1" url="/pages/index/matchAndAnalysis/matchAndAnalysis">
             <image class="pic" src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/index/matchAnalysis.png"></image>
-            <view class="txt">匹配分析</view>
+            <text class="txt">匹配分析</text>
         </navigator>
 
-        <navigator class="box" url="/pages/index/community/community">
+        <navigator class="box2" url="/pages/index/community/community">
             <image class="pic" src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/index/likeExtent.png"></image>
-            <view class="txt">好用程度</view>
+            <text class="txt">好用程度</text>
         </navigator>
 
-        <navigator class="box" url="/pages/index/shortVideo/shortVideo">
+        <navigator class="box3" url="/pages/index/shortVideo/shortVideo">
             <image class="pic" src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/index/shortVideo.png"></image>
-            <view class="txt">短视频科普</view>
-        </navigator>
-        <navigator url="">
+            <text class="txt"> 短视频科普</text>
+        </navigator> 
+        <navigator url="" class="box4">
         <image class="pic" src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/index/forExpert.png" />
-        <view class="txt">问专家</view>
+        <text class="txt">问专家</text>
         </navigator>
-        <navigator url="">
+        <navigator url="" class="box5">
         <image class="pic" src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/index/freeGif.png" />
-        <view class="txt">免费小样</view>
+        <text class="txt">免费小样</text>
         </navigator>
-        <navigator url="">
+        <navigator url="" class="box6">
         <image class="pic" src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/index/friend.png" />
-        <view class="txt">伙伴说</view>
+        <text class="txt">伙伴说</text>
         </navigator>
     </view>
 </view>
@@ -150,4 +149,3 @@
     <block wx:if="{{tabs[3].isActive}}">3</block>
     <block wx:if="{{tabs[4].isActive}}">4</block>
 </Tabs> --> 
-<!-- <view class="black" bindtap="fuck" >  {{message}} </view> -->

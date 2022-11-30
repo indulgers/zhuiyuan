@@ -119,23 +119,40 @@ Page({
 
   },
 
-    // fuck:function(){
-    //   wx.request({
-    //     url: 'http://43.139.5.93:8081/es/fuzzyQueryByMedicineName/总统',
+    fuck:function(){
+      wx.uploadFile({
+        url: 'http://zhuiyuan.origami.wang:8081/ocr/selectComponentsByMedicineRegisterNoWithOcr/',
+         filePath:'/images/index/askdoctor.png',
+         name: 'file',
+         header:{
+     'content-type':'Application/json'
+   },
+         formData: {
+        'user': 'test'
+   },
+   
+success: function (res) {
+  
+  console.log(res.data + "结果")
+  
+}
+})
+    //    wx.request({
+    //      url: 'http://43.139.5.93:8081/es/fuzzyQueryByMedicineName/总统',
     //     method:'POST',
     //      header: {
-    //     'Content-Type': 'application/json'
+    //      'Content-Type': 'application/json'
     //  },
     //     success:function(res){
-    //       console.log(res.data)
-    //       wx.navigateTo({
+    //      console.log(res.data)
+    //        wx.navigateTo({
     //         url: '/pages/index/matchAndAnalysis/result/result.wxml',
             
     //         success: (result) => {},
     //         fail: (res) => {},
-    //         complete: (res) => {},
-    //       })
+    //       complete: (res) => {},
+    //        })
     //   }
     // })
-    // }
+    }
 })

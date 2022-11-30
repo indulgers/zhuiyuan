@@ -1,8 +1,11 @@
 .preview{
   display: flex;
   flex-direction: row;
-  
-  border: 2px solid greenyellow;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid #5CB888;
   
 }
 .table{

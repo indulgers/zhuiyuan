@@ -1,13 +1,18 @@
 <view class="table" wx:for="{{list}}" wx:key="index" >
-  <view  wx:for="{{item}}" wx:key="index" wx:for-item ="data" data-data="{{data}}" bindtap="toDetail">
+
+  <view  wx:for="{{item}}" wx:key="index" wx:for-item ="data" data-data="{{data}}" bindtap="toDetail"><view wx:if="{{data.medicineName!=null}}">
   <view class="preview">
-    <view>
-      {{data.medicineName}}
+    <view >
+    <text decode='{{true}}'>
+{{data.medicineName}}&nbsp;&nbsp;
+    </text>
     </view>
     <view>
-      {{data.medicineAttention}}
+    </view >
+    <view >
+    <text decode='{{true}}'>
+{{data.medicineRegisterNo}}&nbsp;&nbsp;</text>
     </view>
-    {{data.medicineFunctionComponent}}
   </view>
-  </view>
+  </view></view>
 </view>

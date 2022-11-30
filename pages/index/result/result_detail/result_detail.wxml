@@ -20,12 +20,14 @@
        {{list.medicineSuitPerson}}
     </view>
     </view>
-    <view class="partial">
-    <view class="text">
+    <view class="partial" bindtap="toComponent">
+    
+    <view class="text" >
       主要原料
     </view>
-    <view class="textdetail">
-       {{list.medicineFunctionComponent}}
+    
+    <view class="textdetail" >
+        {{list.medicineRawMaterial}}
     </view>
     </view>
     <view class="partial">

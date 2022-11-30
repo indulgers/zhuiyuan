@@ -1,0 +1,7 @@
+<!--pages/index/result/result_detail/componentUsage/Usage.wxml.wxml-->
+<view class="table" wx:for="{{list}}" wx:key="index" >
+
+<view  wx:for="{{item}}" wx:key="index" wx:for-item ="data" data-data="{{data}}" bindtap="toDetail">
+{{data.medicineRawMaterial}}
+  </view>
+</view>

@@ -3,8 +3,6 @@ const app = getApp()
 Page({
     data: {
         src: '',
-        imgSrc:'',
-        list:{},
         width: 250, //宽度
         height: 250, //高度
         max_width: 300,
@@ -18,9 +16,93 @@ Page({
             this.setData({
                 src: options.imgSrc
             });
-            if(!options.imgSrc){
-                this.cropper.upload(); //上传图片
-            }
+            // if(!options.imgSrc){
+            //     this.cropper.upload(); //上传图片
+            // }
+            let that=this;
+            wx.chooseImage({
+              count: 1,
+              sizeType: ['original', 'compressed'],
+              sourceType: ['album', 'camera'],
+              success(res) {
+                  wx.showLoading({
+                      title: '加载中',
+                  })
+                  //重置图片角度、缩放、位置
+                  that.cropper.imgReset();   
+                  that.setData({
+                     src: res.tempFilePaths[0]
+                   });
+                   console.log(that.data.src)
+                  //  var tempFilePaths = res.tempFiles[0].tempFilePath that.data.src;
+                    // wx.request({
+                    //   url: 'http://zhuoyuan.origami.wang:8081/ocr/selectComponentsByMedicineRegisterNoWithOcr/?imageFile='+that.data.src,
+                    //   method:'POST',
+                    //   header: {
+                    //    "content-type":"application/x-www-form-urlencoded"
+                    //  },
+                    //   dataType: 'json',
+                    //   responseType: 'text',
+                    //   success:function(res){
+                    //     console.log(res.data)
+                    //     that.setData({
+                    //       list:res.data
+                    //     })
+                      
+                     
+                    //     let tolist = JSON.stringify(res.data)
+                    //  console.log(tolist)
+                    //     wx.navigateTo({
+                    //       url: '/pages/index/result/result?tolist='+tolist,
+                        
+                    //       success: (result) => {
+                          
+                    //       },
+                    //       fail: (res) => {},
+                    //       complete: (res) => {},
+                    //     })
+                      
+                    // }
+                    // })
+                  wx.uploadFile({
+                     url: 'http://zhuiyuan.origami.wang:8081/ocr/selectComponentsByMedicineRegisterNoWithOcr/?imageFile='+wx.getStorageSync('imageFile'),
+                      filePath:that.data.src,
+                       name: 'imageFile',
+                       method:'POST',
+                       header:{
+                 'content-type':'multipart/form-data',
+                   'Accept': 'application/json', 
+
+                 },
+                       formData: {
+                     'user': 'test'
+                 },
+               
+           
+              success:function(res){
+                console.log(res.data)
+                that.setData({
+                  list:res.data
+                })
+              
+             
+                let tolist = JSON.stringify(res.data)
+             
+                wx.navigateTo({
+                  url: '/pages/index/image-result/image-result?tolist='+tolist,
+                
+                  success: (result) => {
+                    
+                  },
+                  fail: (res) => {},
+                  complete: (res) => {},
+                })
+              
+      }
+    })
+
+              }
+          })
         },
         cropperload(e) {
             console.log('cropper加载完成');
@@ -38,8 +120,12 @@ Page({
                 urls: [e.detail.url] // 需要预览的图片http链接列表
             })
         },
-        upload(e) {
+        upload(options) {
             let that = this;
+            this.cropper = this.selectComponent("#image-cropper");
+            this.setData({
+                src: options.imgSrc
+            });
             wx.chooseImage({
                 count: 1,
                 sizeType: ['original', 'compressed'],
@@ -48,33 +134,52 @@ Page({
                     wx.showLoading({
                         title: '加载中',
                     })
-                    const tempFilePaths = res.tempFilePaths[0];
-                    //重置图片角度、缩放、位置
-                    that.cropper.imgReset();
-                    that.setData({
-                        src: tempFilePaths
-                    });
-                }
-            })
-
-            wx.request({
-              url: 'http://43.139.5.93:8081//ocr/selectComponentsByMedicineRegisterNoWithOcr/'+e.detail.url,
-              method:'POST',
-              success:function(res){
-                console.log(res.data)
-                list:res.data
-                wx.navigateTo({
-                  url: '/pages/index/result/result',
-                  
-                  success: (result) => {
                     
+                    //重置图片角度、缩放、位置
+                    that.cropper.imgReset();   
+                    that.setData({
+                       src: res.tempFilePaths[0]
+                     });
+                    
+                     var tempFilePaths = res.tempFiles[0].tempFilePath;
+                     wx.uploadFile({
+                      url: 'http://zhuiyuan.origami.wang:8081/ocr/selectComponentsByMedicineRegisterNoWithOcr/?imageFile='+wx.getStorageSync('imageFile'),
+                       filePath:that.data.src,
+                        name: 'imageFile',
+                        method:'POST',
+                        header:{
+                  'content-type':'multipart/form-data',
+                    'Accept': 'application/json', 
+ 
                   },
-                  fail: (res) => {},
-                  complete: (res) => {},
-                })
+                        formData: {
+                      'user': 'test'
+                  },
                 
-            }
-        
+            
+               success:function(res){
+                 console.log(res.data)
+                 that.setData({
+                   list:res.data
+                 })
+               
+              
+                 let tolist = JSON.stringify(res.data)
+              
+                 wx.navigateTo({
+                   url: '/pages/index/image-result/image-result?tolist='+tolist,
+                 
+                   success: (result) => {
+                     
+                   },
+                   fail: (res) => {},
+                   complete: (res) => {},
+                 })
+               
+       }
+     })
+
+                }
             })
         },
         setWidth(e) {

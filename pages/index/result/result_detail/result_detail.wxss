@@ -17,9 +17,12 @@
   width: 40%;
   color: #A0DFA0;
   font-size: 38rpx;
+  white-space: nowrap; text-overflow: ellipsis;
 }
 .textdetail{
+  text-align: center;
   width: 60%;
   color: #1A1A1A;
   font-size: 28rpx;
+  white-space: nowrap; text-overflow: ellipsis;
 }

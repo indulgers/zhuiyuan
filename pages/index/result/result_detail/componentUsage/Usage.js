@@ -1,32 +1,23 @@
-// pages/index/result/result.js
+// pages/index/result/result_detail/componentUsage/Usage.wxml.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list:{},
-    list1:{},
-    Id:''
+    list:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(res) {
-    var tolist=JSON.parse(res.tolist)
+    var data=JSON.parse(res.tolist) 
     this.setData({
-      list:tolist
-    })
-    console.log(tolist);
-  },
-  toDetail:function(e){
-    var data=JSON.stringify(e.currentTarget.dataset.data) 
-     
-    wx.navigateTo({
-      url: '/pages/index/result/result_detail/result_detail?data='+data,
+      list:data
     })
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

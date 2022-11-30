@@ -1,4 +1,3 @@
-
 {
   "pages": [
     "pages/index/index",
@@ -13,13 +12,11 @@
     "pages/index/freeSamples/freeSamples",
     "pages/index/article1/article1",
     "pages/index/article2/article2",
-    
-
+    "pages/index/image-result/image-result",
     "pages/community/community",
     "pages/community/community-article1/community-article1",
     "pages/community/one2one/one2one",
     "pages/mall/mall",
-
     "pages/me/me",
     "pages/me/personalInformation/personalInformation",
     "pages/me/personalInformation/form_one/form_one",
@@ -28,7 +25,6 @@
     "pages/me/personalInformation/form_four/form_four",
     "pages/me/personalInformation/form_five/form_five",
     "pages/me/personalInformation/form_six/form_six",
-   
     "pages/me/help/help",
     "pages/me/settings/settings",
     "pages/me/community_friends/community_friends",
@@ -37,18 +33,15 @@
     "pages/me/shopping cart/shopping cart",
     "pages/me/discount/discount",
     "pages/me/family/family",
-    "pages/me/customer_feedback/customer_feedback"
-
+    "pages/me/customer_feedback/customer_feedback",
+    "pages/index/result/result_detail/componentUsage/Usage"
     
   ],
   "plugins": {
     "WechatSI": {
-        "version": "0.3.5",
-
-        "provider": "wx069ba97219f66d99"
-
+      "version": "0.3.5",
+      "provider": "wx069ba97219f66d99"
     }
-
   },
   "window": {
     "backgroundTextStyle": "light",
@@ -58,7 +51,8 @@
   },
   "tabBar": {
     "selectedColor": "#1296db",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/index/index",
         "text": "主页",
         "iconPath": "/icon/index.png",
@@ -75,7 +69,8 @@
         "text": "亲情商城",
         "iconPath": "/icon/shopping.png",
         "selectedIconPath": "/icon/shopping_selected.png"
-      }, {
+      },
+      {
         "pagePath": "pages/me/me",
         "text": "我",
         "iconPath": "/icon/me.png",

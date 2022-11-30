@@ -6,7 +6,8 @@ Page({
    */
   data: {
     list:{},
-    Id:''
+    list1:{},
+    components:''
   },
 
   /**
@@ -20,8 +21,37 @@ Page({
     })
     console.log(data)
     console.log(data.medicineName)
+    var component=data.medicineRawMaterial
+    this.setData({
+      components:component
+    })
   },
-  
+  toComponent:function(e){
+    wx.request({
+      url: 'http://zhuiyuan.origami.wang:8081/medicine/selectMedicinesByComponentName/'+this.data.components+'?pageNum&pageSize',
+      method:'POST',
+       header: {
+      'Content-Type': 'application/json'
+    }, 
+      dataType: 'json',
+      responseType: 'text',
+      success:function(res){
+        console.log(res.data)
+        let tolist = JSON.stringify(res.data)
+        console.log(tolist)
+        wx.navigateTo({
+          url: '/pages/index/result/result_detail/componentUsage/Usage?tolist='+tolist,
+          
+          success: (result) => {
+            
+          },
+          fail: (res) => {},
+          complete: (res) => {},
+        })
+        
+    }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

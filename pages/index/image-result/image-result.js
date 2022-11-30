@@ -1,4 +1,4 @@
-// pages/index/result/result.js
+// pages/index/image-result/image-result.wxss.js
 Page({
 
   /**
@@ -6,27 +6,20 @@ Page({
    */
   data: {
     list:{},
-    list1:{},
-    Id:''
-  },
 
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(res) {
-    var tolist=JSON.parse(res.tolist)
+    let tolist=JSON.parse(decodeURIComponent(res.tolist))
     this.setData({
       list:tolist
     })
-    console.log(tolist);
+    console.log(tolist)
   },
-  toDetail:function(e){
-    var data=JSON.stringify(e.currentTarget.dataset.data) 
-     
-    wx.navigateTo({
-      url: '/pages/index/result/result_detail/result_detail?data='+data,
-    })
-  },
+  
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -14,9 +14,9 @@ Page({
     searchList: [],//匹配到的数据
     historyList: [],//历史搜索记录
     list:{},
+    list1:{},
     inputValue:"",
     focus:false,//控制是否显示带按钮的搜索框
-    
     
   },
  
@@ -219,34 +219,63 @@ bindinput:function(e){
  bindconfirm:function(e){
    var that=this;
   console.log(e.detail.value)
-  wx.request({
-    url: 'http://43.139.5.93:8081/es/fuzzyQueryByMedicineName/'+e.detail.value,
-    method:'POST',
-     header: {
-    'Content-Type': 'application/json'
- }, 
-    dataType: 'json',
-    responseType: 'text',
-    success:function(res){
-      console.log(res.data)
-      that.setData({
-        list:res.data
-      })
+//   wx.request({
+//     url: 'http://43.139.5.93:8081/medicine/selectMedicinesByComponentName/'+e.detail.value+'?pageNum&pageSize',
+//     method:'POST',
+//      header: {
+//     'Content-Type': 'application/json'
+//  }, 
+//     dataType: 'json',
+//     responseType: 'text',
+//     success:function(res){
+//       console.log(res.data)
+//       that.setData({
+//         list1:res.data
+//       })
       
      
-      let tolist = JSON.stringify(res.data)
-      console.log(tolist)
-      wx.navigateTo({
-        url: '/pages/index/result/result?tolist='+tolist,
+//       let tolist = JSON.stringify(res.data)
+//       console.log(tolist)
+//       wx.navigateTo({
+//         url: '/pages/index/result/result?tolist='+tolist,
         
-        success: (result) => {
+//         success: (result) => {
           
-        },
-        fail: (res) => {},
-        complete: (res) => {},
-      })
+//         },
+//         fail: (res) => {},
+//         complete: (res) => {},
+//       })
       
-  }
+//   }
+// })
+wx.request({
+  url: 'http://43.139.5.93:8081/es/fuzzyQueryByMedicineName/'+e.detail.value+'?pageNum&pageSize',
+  method:'POST',
+   header: {
+  'Content-Type': 'application/json'
+}, 
+  dataType: 'json',
+  responseType: 'text',
+  success:function(res){
+    console.log(res.data)
+    that.setData({
+      list:res.data
+    })
+    
+   
+    let tolist = JSON.stringify(res.data)
+    console.log(tolist)
+    wx.navigateTo({
+      url: '/pages/index/result/result?tolist='+tolist,
+      
+      success: (result) => {
+        
+      },
+      fail: (res) => {},
+      complete: (res) => {},
+    })
+    
+}
 })
 
  

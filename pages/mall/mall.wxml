@@ -1,14 +1,14 @@
-<!--pages/mall/mall.wxml-->
+<!-- pages/mall/mall.wxml
 <!-- 购物栏搜索框 -->
-<view class="mall_header">
+ <view class="mall_header">
     <view class="searchInput">
-        <!-- <text class="iconfont" src="/images/index/search.png" ></text> -->
-        <image class="searchIcon" src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/index/search.png"></image>
+         <text class="iconfont" src="/images/index/search.png" ></text> 
+         <image class="searchIcon" src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/index/search.png"></image>
         <input type="text" placeholder="搜索商品" placeholder-class="placeholder" />
     </view>
-</view>
+</view> 
 <!-- 商品轮播图 -->
-<view class="page-section page-section-spacing swiper">
+ <view class="page-section page-section-spacing swiper">
     <swiper
     indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
     interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
@@ -18,9 +18,9 @@
         </swiper-item>
     </block>
     </swiper>
-</view>
+</view>  
 <!-- 商品分类导航 -->
-<Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+  <Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
     <block wx:if="{{tabs[0].isActive}}">
         <view class='shop_Box'>
             <view class='shopBox' wx:for='{{con}}' wx:key='{{index}}' wx:for-index="index" wx:for-item="con">
@@ -40,7 +40,7 @@
     <block wx:if="{{tabs[1].isActive}}">科学补钙商品栏</block>
     <block wx:if="{{tabs[2].isActive}}">营养补剂商品栏</block>
     <block wx:if="{{tabs[3].isActive}}">免疫力提高商品栏</block>
-</Tabs>
+</Tabs>  
+ 
 
-
-
+ 
