@@ -85,8 +85,8 @@ Page({
                   list:res.data
                 })
               
-             
-                let tolist = JSON.stringify(res.data)
+             let tolist=res.data
+                // let tolist = JSON.stringify(res.data)
              
                 wx.navigateTo({
                   url: '/pages/index/image-result/image-result?tolist='+tolist,
@@ -98,7 +98,23 @@ Page({
                   complete: (res) => {},
                 })
               
-      }
+      },fail: (res) => {
+        console.log(res.data)
+        that.setData({
+          list:res.data
+        })
+      
+     let tolist=res.data
+        wx.navigateTo({
+          url: '/pages/index/image-result/image-result?tolist='+tolist,
+        
+          success: (result) => {
+            
+          },
+          fail: (res) => {},
+          complete: (res) => {},
+        })
+      },
     })
 
               }
@@ -148,7 +164,7 @@ Page({
                         name: 'imageFile',
                         method:'POST',
                         header:{
-                  'content-type':'multipart/form-data',
+                    'content-type':'multipart/form-data',
                     'Accept': 'application/json', 
  
                   },
@@ -253,12 +269,48 @@ Page({
             });
         },
         submit() {
-            this.cropper.getImg((obj) => {
-                app.globalData.imgSrc = obj.url;
-                wx.navigateBack({
-                    delta: -1
-                })
-            });
+
+              this.cropper.getImg((obj) => {
+                 app.globalData.imgSrc = obj.url;
+                
+           });
+          wx.uploadFile({
+            url: 'http://zhuiyuan.origami.wang:8081/ocr/selectComponentsByMedicineRegisterNoWithOcr/?imageFile='+wx.getStorageSync('imageFile'),
+             filePath:this.data.src,
+              name: 'imageFile',
+              method:'POST',
+              header:{
+          'content-type':'multipart/form-data',
+          'Accept': 'application/json', 
+
+        },
+              formData: {
+            'user': 'test'
+        },
+      
+  
+     success:(res)=>{
+       console.log(res.data)
+       this.setData({
+         list:res.data
+       })
+     
+    
+       let tolist = JSON.stringify(res.data)
+    
+       wx.navigateTo({
+         url: '/pages/index/image-result/image-result?tolist='+tolist,
+       
+         success: (result) => {
+           
+         },
+         fail: (res) => {},
+         complete: (res) => {},
+       })
+     
+}
+})
+           
         },
         rotate() {
             //在用户旋转的基础上旋转90°

@@ -1,20 +1,3 @@
 <!--pages/me/vip/vip.wxml-->
 <text>pages/me/vip/vip.wxml</text>
-<view class="start1">
-  <view class="start2">
-<view class="start3.0">
-  介绍
-</view>
-<view class="start3.1">
-  图片
-</view>
-<view class="start3.2">
-  短评
-</view>
-    <view>
-     <swiper>
-       
-     </swiper> 
-    </view>
-  </view>
-</view>
+

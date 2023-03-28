@@ -1,16 +1,15 @@
-<!--pages/index/shortVideo/shortVideo.wxml-->
-<!-- 搜索栏 -->
-<!-- <view class="header">
+<!--  
+ <view class="header">
   <view class="searchInput">
-    <!-- <text class="iconfont" src="/images/index/search.png" ></text> -->
-    <!-- <image class="searchIcon" src="/images/index/search.png"></image>
+     <text class="iconfont" src="/images/index/search.png" ></text> 
+     <image class="searchIcon" src="/images/index/search.png"></image>
     <input type="text" placeholder="搜索保健品" placeholder-class="placeholder" />
-  </view> -->
-  <!-- <text class="cancel">取消</text> -->
-<!-- </view> -->
+  </view> 
+   <text class="cancel">取消</text> 
+ </view> 
 
-<!-- 小标题 -->
-<!-- <scroll-view class="major" scroll-x>
+
+ <scroll-view class="major" scroll-x>
   <view class="majorcon">
     <navigator class="box" url="/pages/index/askExpert/askExpert">
       <image class="pic" src="/images/index/askdoctor.png"></image>
@@ -23,13 +22,13 @@
       <image class="pic" src="/images/index/vip-l.png"></image>
     </navigator>
   </view>
-</scroll-view> -->
-<!-- <view class="index-link">
+</scroll-view> 
+ <view class="index-link">
   <view class="item-link">优质短视频推荐</view>
-</view> --> -->
+</view> 
 
-<!-- 短视频列表 -->
-<!-- <scroll-view scroll-y class="vedio">
+
+ <scroll-view scroll-y class="vedio">
   <view class="vedioItem">
   <view class="first2">
     <view class="first1">
@@ -53,4 +52,5 @@
     <view class="amount">0</view>
     </view>
   </view>
-</scroll-view> -->
+</scroll-view>  -->
+s

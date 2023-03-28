@@ -1,6 +1,18 @@
+
+  <view class="header">
+    <view  class="searchInput">
+      <image class="searchIcon" src="/images/index/search.png"></image>
+      <input type="text" value="{{medicineName}}" bindconfirm="bindconfirm" placeholder="搜索保健品" placeholder-class="placeholder" bindinput="getmedicineName"/>
+      
+    </view>
+   
+  </view>
+    
+
 <view class="table" wx:for="{{list}}" wx:key="index" >
 
-  <view  wx:for="{{item}}" wx:key="index" wx:for-item ="data" data-data="{{data}}" bindtap="toDetail"><view wx:if="{{data.medicineName!=null}}">
+  <view  wx:for="{{item}}" wx:key="index" wx:for-item ="data" data-data="{{data}}" bindtap="toDetail">
+  <view wx:if="{{data.medicineName!=null}}">
   <view class="preview">
     <view >
     <text decode='{{true}}'>
@@ -16,3 +28,13 @@
   </view>
   </view></view>
 </view>
+<i-page current="{{ pageNum }}" total="10" bind:change="handleChange">
+    <view slot="prev" >
+        <i-icon type="return"></i-icon>
+        上一页
+    </view>
+    <view slot="next">
+        下一页
+        <i-icon type="enter"  ></i-icon>
+    </view>
+</i-page>

@@ -7,6 +7,7 @@ Page({
     list:[],
     list1:[],
     list2:[],
+    beentouched:0,
     tempFilePaths: null,
     Image: null,
     isChose: false,
@@ -35,7 +36,7 @@ Page({
   
 
   onLoad: function (options) {
-  
+   
     let db=wx.cloud.database().collection('article').get().then(res=>{
       console.log('请求到的数据',res)
       this.setData({
@@ -64,6 +65,7 @@ Page({
     .catch(err=>{
       console.log('信息请求失败',res);
     })
+    
   },
   //标题点击事件
   handleTabsItemChange(e) {

@@ -1,4 +1,4 @@
-<!--pages/me/me.wxml-->
+
 <view class='head head-height'>
   <!-- hasUserInfo为false表示没有获取到用户信息，就显示获取头像昵称的按钮 -->
   <button wx:if="{{!hasUserInfo}}" bindtap="getUserProfile" >点击微信授权</button>
@@ -28,7 +28,7 @@
   <button plain open-type="feedback" >
   <view class="back">
   <view class="back1">
-  <image src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/me/customer_feedback.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+  <image src="/images/me/customer_feedback.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
   </view>
   <view class="back2">用户反馈</view>
   <view class="arrow"></view>

@@ -19,9 +19,10 @@
           "scene": null
         },
         {
-          "name": "pages/me/personalInformation/form_one/form_one",
-          "pathName": "pages/me/personalInformation/form_one/form_one",
+          "name": "",
+          "pathName": "pages/index/searchinto/searchinto",
           "query": "",
+          "launchMode": "default",
           "scene": null
         },
         {
@@ -64,6 +65,20 @@
           "name": "pages/index/matchAndAnalysis/result/result",
           "pathName": "pages/index/matchAndAnalysis/result/result",
           "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/community/expert/expert_detail/expert_detail",
+          "query": "index=0",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/index/result/result_detail/result_detail",
+          "query": "",
+          "launchMode": "default",
           "scene": null
         }
       ]

@@ -1,6 +1,6 @@
-var plugin = requirePlugin("WechatSI")
 
-let manager = plugin.getRecordRecognitionManager()
+var app=getApp()
+
 Page({
 
   /**
@@ -17,9 +17,23 @@ Page({
     list1:{},
     inputValue:"",
     focus:false,//控制是否显示带按钮的搜索框
-    
+    active:0,
+    currentTab:0
   },
- 
+  switchNav: function (e) {
+    var page = this;
+    var id = e.target.id;
+    if (this.data.currentTab == id) {
+      return false;
+    } else {
+      page.setData({
+        currentTab: id
+      });
+    }
+    page.setData({
+      active: id
+    });
+  },
  
   query(e){
     this.setData({
@@ -51,42 +65,7 @@ Page({
   onLoad: function (options) {
     var that = this;
 
-    manager.onRecognize = function (res) {
-           cons.log("current result", res.result)
     
-        }
-    
-        manager.onStop = function (res) {
-          console.log('识别开始');
-    
-          var result = res.result;
-    
-          var s = result.indexOf('。') //找到第一次出现下划线的位置
-    
-          result = result.substring(0,s)  //取下划线前的字符
-    
-          var searchType = that.data.searchType;
-    
-          wx.showToast({
-            title: result,
-    
-          })
-    
-    }
-    
-        manager.onError = function (res) {
-          console.log('manager.onError')
-    
-          console.log(res) //报错信息打印
-    
-          wx.showToast({
-            title: res.msg,
-    
-          })
-    
-          // UTIL.log("error msg", res.msg)
-    
-        }
 
     //获取本地历史记录
     this.getSearchHistory();
@@ -167,58 +146,101 @@ Page({
     })
   },
  
-  touchdown_plugin: function () {
-    var _this = this
 
-    // UTIL.stopTTS();
 
-    manager.start({
-      duration: 30000,
-
-      lang: "zh_CN"
-
-    })
-
-  },
-
-  //手指松开
-
-  touchup_plugin: function (e) {
-    var searchType = e.currentTarget.dataset.type;
-    let text=e.result
-    this.setData({
-      searchType: searchType,
-
-      background:  "#ED6C00",
-
-      yysb:"长按语音识别"
-
-    });
-
-    manager.stop();
-
-    wx.showToast({
-      title: '正在识别……',
-
-      icon: 'loading',
-
-      duration: 2000
-
-    })
-    if(text==''){
-      console.log('没有说话')
-      return
-    }
-    this.inputValue=text
-  },
 bindinput:function(e){
   this.setData({
     inputValue:e.detail.value.medicineName
   })
 },
  bindconfirm:function(e){
+   
+  app.globalData.SearchName=e.detail.value
+  console.log(app.globalData.SearchName)
    var that=this;
   console.log(e.detail.value)
+  var flag=new RegExp ("[`~!@#$^&*()=|{}':;',\\[\\].<>《》/?~！@#¥……&*（）——|{}【】‘；：’“”。，、？]")
+  if(flag.test(e.detail.value)){
+   wx.showModal({
+     title: '您输入的内容中含有非法字符',
+     content: '请您重新输入',
+     complete: (res) => {
+       if (res.cancel) {
+        console.log('用户点击了取消')
+       }
+   
+       if (res.confirm) {
+        console.log('用户点击了确定')
+       }
+     }
+   })
+   
+  }
+  else{
+    
+    console.log(app.globalData.SearchName)
+    if(this.data.currentTab=="0"){
+    wx.request({
+      url: 'https://zhuiyuan.origami.wang/medicine/fuzzySelectMedicineByMedicineName/'+e.detail.value+'?pageNum&pageSize=5',
+      method:'GET',
+       header: {
+      'Content-Type': 'application/json'
+    }, 
+      dataType: 'json',
+      responseType: 'text',
+      success:function(res){
+        console.log(res.data)
+        that.setData({
+          list:res.data
+        })
+        
+       
+        let tolist = JSON.stringify(res.data)
+        console.log(tolist)
+        wx.navigateTo({
+          url: '/pages/index/result/result?tolist='+tolist,
+          
+          success: (result) => {
+            
+          },
+          fail: (res) => {},
+          complete: (res) => {},
+        })
+        
+    }
+    })}
+    else{
+      wx.request({
+        url: 'https://zhuiyuan.origami.wang/medicine/selectMedicinesByComponentName/'+e.detail.value+'?pageNum&pageSize=5',
+        method:'POST',
+         header: {
+        'Content-Type': 'application/json'
+      }, 
+        dataType: 'json',
+        responseType: 'text',
+        success:function(res){
+          console.log(res.data)
+          that.setData({
+            list:res.data
+          })
+          
+         
+          let tolist = JSON.stringify(res.data)
+          console.log(tolist)
+          wx.navigateTo({
+            url: '/pages/index/result/result?tolist='+tolist,
+            
+            success: (result) => {
+              
+            },
+            fail: (res) => {},
+            complete: (res) => {},
+          })
+          
+      }
+      })
+    }
+  }
 //   wx.request({
 //     url: 'http://43.139.5.93:8081/medicine/selectMedicinesByComponentName/'+e.detail.value+'?pageNum&pageSize',
 //     method:'POST',
@@ -248,35 +270,7 @@ bindinput:function(e){
       
 //   }
 // })
-wx.request({
-  url: 'http://43.139.5.93:8081/es/fuzzyQueryByMedicineName/'+e.detail.value+'?pageNum&pageSize',
-  method:'POST',
-   header: {
-  'Content-Type': 'application/json'
-}, 
-  dataType: 'json',
-  responseType: 'text',
-  success:function(res){
-    console.log(res.data)
-    that.setData({
-      list:res.data
-    })
-    
-   
-    let tolist = JSON.stringify(res.data)
-    console.log(tolist)
-    wx.navigateTo({
-      url: '/pages/index/result/result?tolist='+tolist,
-      
-      success: (result) => {
-        
-      },
-      fail: (res) => {},
-      complete: (res) => {},
-    })
-    
-}
-})
+
 
  
  },

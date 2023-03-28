@@ -1,69 +1,108 @@
-// pages/index/result/result_detail/componentUsage/Usage.wxml.js
 Page({
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-    list:{}
-  },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(res) {
-    var data=JSON.parse(res.tolist) 
-    this.setData({
-      list:data
+
+  
+  data:{
+    list:{},
+    medicineId:'',
+    medicineName:''
+  },
+  
+  
+  onLoad(res){
+    var that =this
+    that.setData({
+      medicineId: res.medicineId ,
+      medicineName:res.medicineName
+    })
+    wx.request({
+      url: 'https://zhuiyuan.origami.wang/medicine/getComponentListByMedicineId/'+that.data.medicineId,
+      method:'GET',
+      header: {
+        'Content-Type': 'application/json'}, 
+        dataType: 'json',
+        responseType: 'text',
+        success:function(res){
+          console.log(res.data)
+          that.setData({
+            list:res.data
+          })
+        }
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  }
-})
+    onReady() {
+  
+  
+  
+    },
+  
+  
+  
+    
+  
+    onShow() {
+  
+  
+  
+    },
+  
+  
+  
+    
+  
+    onHide() {
+  
+  
+  
+    },
+  
+  
+  
+    
+  
+    onUnload() {
+  
+  
+  
+    },
+  
+  
+  
+  
+  
+    onPullDownRefresh() {
+  
+  
+  
+    },
+  
+  
+  
+    /**
+  
+     \* 页面上拉触底事件的处理函数
+  
+     */
+  
+    onReachBottom() {
+  
+  
+  
+    },
+  
+  
+  
+    /**
+  
+     \* 用户点击右上角分享
+  
+     */
+  
+    onShareAppMessage() {
+  
+  
+  
+    }
+  
+  })

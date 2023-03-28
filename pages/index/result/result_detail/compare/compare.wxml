@@ -1,0 +1,38 @@
+<!--pages/compare/compare.wxml-->
+<view class="tr bg-w">
+ <view class="th"></view>
+ <view class="th ">
+    <image src="/images/medicine_img/1.jpg.jpg" class="t_img"></image>
+    <text class="t_text"> 东阿阿胶牌阿胶酸枣仁口服液</text>
+</view>
+</view>
+
+<view class="tr bg-w">
+  	<view class="td t_title">保健功能</view>
+  	<view class="td">改善睡眠</view>
+</view>
+
+   <view class="tr bg-e" >
+   	<view class="td t_title">用法用量</view>
+   	<view class="td">每日3次,每次10mL,采用吸管吸服,饭前或饭后服用皆可</view>
+   </view>
+
+   <view class="tr bg-g">
+  	<view class="td t_title">主要原料</view>
+  	<view class="td">大枣、酸枣仁、山楂、阿胶、茯苓、远志</view>
+</view>
+
+<view class="tr bg-w">
+  	<view class="td t_title">适宜人群</view>
+  	<view class="td">睡眠状况不佳者</view>
+</view>
+
+<view class="tr bg-e">
+  	<view class="td t_title">不适宜人群</view>
+  	<view class="td">少年儿童、孕妇、乳母</view>
+</view>
+
+<view class="tr bg-g">
+  	<view class="td t_title">注意事项</view>
+  	<view class="td">本品不能代替药物；适宜人群外的人群不推荐食用本产品</view>
+</view>

@@ -1,1 +1,19 @@
 /* pages/index/image-result/image-result.wxss.wxss */
+.components{
+display: inline;
+}
+.component{
+  border-top: 1px solid #A0DFA0 ;
+  padding: 10px;
+}
+.fault{
+  text-align: center;
+  font-weight: bold;
+  margin: 20px;
+}
+.Id{
+  width: 30%;
+}
+.Name{
+  width: 70%;
+}

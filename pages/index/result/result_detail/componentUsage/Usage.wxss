@@ -1,1 +1,44 @@
-/* pages/index/result/result_detail/componentUsage/Usage.wxml.wxss */
+.total{
+  display: flex;
+  flex-direction: column;
+}
+.each{
+  display: flex;
+  flex-direction: row;
+  border:2px solid #D8D8D8;
+  margin:0px 5px;
+  background: rgba(222, 243, 226, 0.281);
+}
+.mediImage{
+  width: 30%;
+  height: 80px;
+}
+.head{
+  display: flex;
+  flex-direction: row;
+}
+.headname{
+  text-align: center;
+  padding-top: 20px;
+  padding-left: 20px;
+  
+  font-size: 26px;
+  font-weight: bolder;
+}
+.name{
+  width: auto;
+  font-size: 18px;
+  font-family:HarmonyOS Sans SC ;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  margin-right: 10px;
+}
+.usage{
+  width: auto;
+  font-size: 17px;
+  font-family:HarmonyOS Sans SC ;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+}

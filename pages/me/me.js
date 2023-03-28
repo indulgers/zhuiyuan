@@ -1,6 +1,5 @@
 //import api from "../../utils/api/api"
-import Dialog from '../../miniprogram_npm/@vant/weapp/dialog/dialog';
-import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
+
 
 // pages/me/me.js
 Page({
@@ -30,12 +29,12 @@ Page({
         desc: "",
         url: "/pages/me/community_friends/community_friends"
       },
-      {
-        icon: "/images/me/shopping cart.png",
-        title: "我的购物车",
-        desc: "",
-        url: "/pages/me/shopping cart/shopping cart"
-      },
+       {
+         icon: "/images/me/shopping cart.png",
+         title: "我的购物车",
+         desc: "",
+         url: "/pages/me/shopping cart/shopping cart"
+       },
       {
         icon: "/images/me/discount.png",
         title: "我的优惠和小样",
@@ -60,23 +59,24 @@ Page({
         desc: "",
         url: "/pages/me/help/help"
       },
-      // {
-      //   icon: "/images/me/customer_feedback.png",
-      //   title: "用户反馈",
-      //   desc: "",
-      //   url: "/pages/me/customer_feedback/customer_feedback"
-      // }
+      //  {
+      //    icon: "/images/me/customer_feedback.png",
+      //    title: "用户反馈",
+      //    desc: "",
+      //    url: "/pages/me/customer_feedback/customer_feedback"
+      //  }
     ],
     user_openid : ""
   },
   getUserProfile(e) {
+  
     wx.cloud.callFunction({
-      name: 'login',
+      name: 'user-login',
       success(res){
         console.log("云函数返回的内容"+res);
         wx.setStorageSync('userId', res.result.wxInfo.OPENID)
-        userinfoList.where({
-          _openid: res.result.wxInfo.OPENID
+        wx.cloud.database().collection('user').where({
+          open_id: res.result.wxInfo.OPENID
         }).get({
           success: res => {
             console.log(res)
@@ -103,6 +103,20 @@ Page({
       }
 
     })
+    //调用云函数
+    // wx.cloud.callFunction({
+    // name: 'user-login',
+    // data: userInfo
+    // }).then(res => {
+    //   app.globalData.userInfo = res.result.data;
+    //   that.setData({
+    //   userInfo: res.result.data,
+    //   hasUserInfo: true
+    //   })
+    //   wx.hideLoading();
+    // }).catch(err => {
+    //   console.log(err);
+    // })
   },
   getid(){
     wx.cloud.callFunction({
@@ -127,7 +141,8 @@ Page({
     //这个是在已经完成过一次授权之后再次登录直接加载openid信息，避免多次调用授权操作
     if (isfirst) {
       //Do something with return value
-      userinfoList.where({
+      wx.cloud.database.c
+      wx.cloud.database().collection('user').where({
         //可以用这个获取openid，app.globalData.userInfo.openid，也可以用下面的方式
         _openid: isfirst
       }).get({
@@ -150,5 +165,12 @@ Page({
     this.getid()
 },
  //退出登录
- 
+ logout(){
+   
+  this.setData({ 
+    userInfo:''
+})
+// 清空缓存
+wx.setStorageSync('user',null)
+ }
 })

@@ -1,15 +1,46 @@
-<view class="search">
-  <!-- 搜索区 -->
+<view class='productNav' >
+  <!-- 左侧 -->
+  <view class='left'>
+    <view class="{{active==0?'selected':'normal'}}" id="0" bindtap='switchNav'>药品名查询</view>
+    <view class="{{active==1?'selected':'normal'}}" id="1" bindtap='switchNav'>根据成分查询</view>
+  </view>
+  <!-- 右侧 -->
+  <view class='right'>
+   
+      <!-- current:当前所在滑块的 index -->
+      <!-- vertical:滑动方向是否为纵向 -->
+      <swiper current='{{currentTab}}' vertical='{{true}}'>
+        <!-- catchtouchmove 阻止弹窗后滚动穿透 -->
+        <swiper-item id="0" catchtouchmove="false" >
+          <view  class="searchInput">
+      <image class="searchIcon" src="/images/index/search.png"></image>
+      <input type="text" value="{{medicineName}}" bindconfirm="bindconfirm" placeholder="搜索保健品" placeholder-class="placeholder" bindinput="getmedicineName" id="0"/>
+      
+    </view>
+        </swiper-item>
+        <swiper-item id="1" catchtouchmove="false">
+          <view  class="searchInput">
+      <image class="searchIcon" src="/images/index/search.png"></image>
+      <input type="text" value="{{medicineName}}" bindconfirm="bindconfirm" placeholder="根据保健品成分查询" placeholder-class="placeholder" bindinput="getmedicineName" id="1"/>
+    </view>
+        </swiper-item>
+      </swiper> 
+    </view>
+  </view>
+
+
+<!-- <view class="search">
+ 
   <view class="header">
     <view  class="searchInput">
-      <image class="searchIcon" src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/index/search.png"></image>
+      <image class="searchIcon" src="/images/index/search.png"></image>
       <input type="text" value="{{medicineName}}" bindconfirm="bindconfirm" placeholder="搜索保健品" placeholder-class="placeholder" bindinput="getmedicineName"/>
       
     </view>
    
   </view>
     
-</view>
+</view> 
 
 <!-- 历史搜索记录 -->
 <view class="history">
@@ -19,7 +50,7 @@
   <view class="historyItem">
     维生素B</view>
   <block class="image">
-    <image class="imageIcon" src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/index/bin.png"></image>
+    <image class="imageIcon" src="/images/index/bin.png"></image>
   </block>
 </view>
 
@@ -38,5 +69,5 @@
     </view>
   </view>
 </view>
-<image class="radioIcon"src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/index/voice-icon.jpeg" bindtouchstart="touchdown_plugin" bindtouchend="touchup_plugin"/>
+
   

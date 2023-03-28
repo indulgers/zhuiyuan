@@ -7,6 +7,7 @@ const wxp = {}
 // promisify all wx's api
 promisifyAll(wx, wxp)
 App({
+ 
   onLaunch() {
     // api.getDevice().then(res => {
     //   console.log(res);
@@ -16,7 +17,7 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
     wx.cloud.init({
-        env: 'cloud1-9g332csq515f3101',
+        env: 'cloud1-9g332csq515f3-1bga169cfab',
         traceUser: true,
     })
     // 登录
@@ -27,8 +28,17 @@ App({
      })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    SearchName:'',
+    areas:[],
+    IngredientName:[]
   },
   wxp: wxp
+  // {
+  //   "pagePath": "pages/mall/mall",
+  //   "text": "亲情商城",
+  //   "iconPath": "/icon/shopping.png",
+  //   "selectedIconPath": "/icon/shopping_selected.png"
+  // },
 })
    

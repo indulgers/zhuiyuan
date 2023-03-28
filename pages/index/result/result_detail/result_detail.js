@@ -1,56 +1,150 @@
 // pages/index/result_detail/result_detail.js
+var app=getApp()
+import * as echarts from '../../../../ec-canvas/echarts'
+var chart=null;
+function initCharts(canvas,width,height){
+   chart =echarts.init(canvas,null,{
+    width:width,
+    height:height
+    
+  });
+  canvas.setChart(chart);
+  var option = {
+    tittle:{
+      text:"成分对比",
+      textStyle:{
+        color:'#a0a0a0',
+        fontSize:26
+      },
+      left: 'center'
+    }
+    ,
+    tooltip: {},
+    legend:{
+      data:['A']
+    },
+    xAxis: {
+      type: 'category',
+      data: []
+    },
+    yAxis: {
+      type: 'value'
+    },
+    series: [
+      {
+        label:{
+          show:true,
+          position:'top',
+          textStyle:{
+            fontSize:'15px',
+            color:'#666'
+          },
+          formatter:'{c}'},
+        data: [],
+        type: 'bar',
+        showBackground: true,
+        backgroundStyle: {
+          color: 'rgba(180, 180, 180, 0.2)'
+        },
+        
+      }
+    ]
+  };
+ option.legend.data=app.globalData.IngredientName
+ option.xAxis.data=app.globalData.IngredientName
+ option.series[0].data=app.globalData.areas
+  chart.setOption(option);
+ console.log(chart)
+  return chart;
+
+}
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    ec:{
+      onInit:initCharts
+    },
     list:{},
     list1:{},
-    components:''
+    components:'',
+    tolist:'',
+    Ingredient:'',
+    IngredientName:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(res) {
-   
+   app.globalData.IngredientName=[]
+   app.globalData.areas=[]
     var data=JSON.parse(res.data) 
     this.setData({
-      list:data
+      list:data,
+      olistt:data.medicineId,
+      Ingredient:data.medicineEffectiveIngredient
     })
     console.log(data)
     console.log(data.medicineName)
-    var component=data.medicineRawMaterial
+    
     this.setData({
-      components:component
+      components:data.medicineId
+    })
+   var datamm=this.data.Ingredient.match(/(\d+\.\d)/g);
+   var datam=this.data.Ingredient.match(/[0-9\.\s]+(?:mg|kg|M|g|µg)/g).slice(1);
+   var dataz=this.data.Ingredient.match(/[\u4e00-\u9fa5]+/g).slice(2);
+   console.log(dataz)
+   console.log(datam)
+    this.setData({
+      Ingredient:datamm,
+      IngredientName:dataz
+    })
+    console.log(this.data.Ingredient)
+    for(var name in this.data.Ingredient){
+    app.globalData.areas.push(this.data.Ingredient[name])
+    app.globalData.IngredientName.push(this.data.IngredientName[name])}
+    console.log(app.globalData.IngredientName)
+    console.log(app.globalData.areas)
+  },
+  
+  toCompare(){
+    wx.navigateTo({
+      url: '/pages/index/result/result_detail/compare/compare',
     })
   },
   toComponent:function(e){
-    wx.request({
-      url: 'http://zhuiyuan.origami.wang:8081/medicine/selectMedicinesByComponentName/'+this.data.components+'?pageNum&pageSize',
-      method:'POST',
-       header: {
-      'Content-Type': 'application/json'
-    }, 
-      dataType: 'json',
-      responseType: 'text',
-      success:function(res){
-        console.log(res.data)
-        let tolist = JSON.stringify(res.data)
-        console.log(tolist)
-        wx.navigateTo({
-          url: '/pages/index/result/result_detail/componentUsage/Usage?tolist='+tolist,
-          
-          success: (result) => {
-            
-          },
-          fail: (res) => {},
-          complete: (res) => {},
-        })
-        
-    }
+    let tolist=this.data.components
+    console.log(tolist)
+    wx.navigateTo({
+      url: '/pages/index/result/result_detail/componentUsage/Usage.wxml?tolist='+tolist,
     })
+    // wx.request({
+    //   url: 'https://zhuiyuan.origami.wang/medicine/selectMedicinesByComponentName/'+this.data.components+'?pageNum&pageSize',
+    //   method:'POST',
+    //    header: {
+    //   'Content-Type': 'application/json'
+    // }, 
+    //   dataType: 'json',
+    //   responseType: 'text',
+    //   success:function(res){
+    //     console.log(res.data)
+    //     let tolist = JSON.stringify(res.data)
+    //     console.log(tolist)
+    //     wx.navigateTo({
+    //       url: '/pages/index/result/result_detail/componentUsage/Usage?tolist='+tolist,
+          
+    //       success: (result) => {
+            
+    //       },
+    //       fail: (res) => {},
+    //       complete: (res) => {},
+    //     })
+        
+    // }
+    // })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

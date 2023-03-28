@@ -1,4 +1,5 @@
 // pages/index/result/result.js
+var app=getApp()
 Page({
 
   /**
@@ -7,7 +8,10 @@ Page({
   data: {
     list:{},
     list1:{},
-    Id:''
+    Id:'',
+    pageNum:1,
+    pageSize:5,
+    Name:''
   },
 
   /**
@@ -16,7 +20,7 @@ Page({
   onLoad(res) {
     var tolist=JSON.parse(res.tolist)
     this.setData({
-      list:tolist
+      list:tolist,
     })
     console.log(tolist);
   },
@@ -25,6 +29,47 @@ Page({
      
     wx.navigateTo({
       url: '/pages/index/result/result_detail/result_detail?data='+data,
+    })
+  },
+  handleChange({detail}){
+    var that=this
+    const type=detail.type;
+    if(type=='next'){
+      that.setData({
+        pageNum:that.data.pageNum+1
+      });
+    }
+    else if(type=='prev'){
+      that.setData({
+        pageNum:that.data.pageNum-1
+      })
+    }
+    console.log(that.data.pageNum)
+    wx.request({
+      url: 'https://zhuiyuan.origami.wang/medicine/fuzzySelectMedicineByMedicineName/'+app.globalData.SearchName,
+      data:{
+        pageNum:that.data.pageNum,
+        pageSize:that.data.pageSize
+      },
+      method:'GET',
+       header: {
+      'Content-Type': 'application/json'
+    }, 
+      dataType: 'json',
+      responseType: 'text',
+      success:function(res){
+        console.log(app.globalData.SearchName)
+        console.log(res.data)
+        
+       that.setData({
+         list:res.data
+       })
+        
+       
+      
+      
+        
+    }
     })
   },
   /**

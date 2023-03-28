@@ -1,14 +1,3 @@
 {
-    "usingComponents": {"van-image": "@vant/weapp/image/index",
-      "van-button": "@vant/weapp/button/index",
-      "van-row": "@vant/weapp/row/index",
-      "van-col": "@vant/weapp/col/index",
-      "van-cell": "@vant/weapp/cell/index",
-      "van-cell-group": "@vant/weapp/cell-group/index",
-      "van-grid": "@vant/weapp/grid/index",
-      "van-grid-item": "@vant/weapp/grid-item/index",
-      "van-panel": "@vant/weapp/panel/index",
-      "van-icon": "@vant/weapp/icon/index",
-      "van-toast": "@vant/weapp/toast/index",
-      "van-dialog": "@vant/weapp/dialog/index"}
+    "usingComponents": {}
 }

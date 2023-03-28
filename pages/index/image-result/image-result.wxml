@@ -1,2 +1,17 @@
 <!--pages/index/image-result/image-result.wxss.wxml-->
-{{list}}
+<view wx:if="{{list!=null}}">
+<view wx:for="{{list.data}}" wx:key="index" class="components"> 
+  
+ <view class="component">
+  <view class="Id">
+     {{item.componentId}}
+  </view>
+   <view class="Name">
+     {{item.componentName}}
+   </view>
+  </view>
+</view></view>
+
+<view wx:if="{{list.data==null}}" class="fault">
+ 您的图片不够清晰，请在相册里裁剪好再上传
+</view>

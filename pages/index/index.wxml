@@ -1,19 +1,26 @@
 <!--pages/index/index.wxml-->
 <!-- 搜索栏 -->
+<view class="total">
+<view class="titles">
+追原
+</view>
 <view class="header">
     <view class="searchInput">
-        <image class="searchIcon" src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/index/search.png" ></image>
-        <view bindtap="toSearch" class="placeholder">搜索保健品</view>
-        <!-- <input type="text" bindtap="toSearch" placeholder="搜索保健品" placeholder-class="placeholder" /> -->
+        <image class="searchIcon" src="/images/index/search.png" ></image>
+        <view bindtap="toSearch" class="placeholder">点击跳转搜索保健品</view>
     </view>
 </view>
-<image src="/images/index/back-round.png" class="back-round"/>
+
 <view class="index-link">
 
-<image bindtap="searchPic" src="/images/index/camera.png" class="camera"/>
-<view bindtap="searchPic" class="item-link"> 保健品快搜
+<view class="cameraImage">
+    <image bindtap="searchPic" src="/images/index/camera.png" class="camera"/>
+</view>
+<view bindtap="searchPic" class="item-link">保健品快搜
     </view>
 </view>
+
+ 
 <!-- 老年版入口 -->
 <view class="old_en">
         <navigator class="box" url="/pages/old_index/old_index">
@@ -21,36 +28,42 @@
         </navigator>
 </view>
 <!-- 导航1  匹配分析 -->
-<view class="major"  > 
-    <view class="majorcon">
-    
-         <navigator class="box1" url="/pages/index/matchAndAnalysis/matchAndAnalysis">
-            <image class="pic" src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/index/matchAnalysis.png"></image>
+<view class="icons">
+<i-row>
+    <i-col span="8" i-class="col-class">  
+    <navigator url="/pages/me/personalInformation/form_one/form_one"class="box">
+            <image class="pic" src="/images/index/Analysis.png"></image>
             <text class="txt">匹配分析</text>
-        </navigator>
-
-        <navigator class="box2" url="/pages/index/community/community">
-            <image class="pic" src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/index/likeExtent.png"></image>
+        </navigator></i-col>
+    <i-col span="8" i-class="col-class"> 
+    <navigator url="/pages/index/good_likes/good_likes"class="box">
+            <image class="pic" src="/images/index/comments.jpg"></image>
             <text class="txt">好用程度</text>
-        </navigator>
-
-        <navigator class="box3" url="/pages/index/shortVideo/shortVideo">
-            <image class="pic" src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/index/shortVideo.png"></image>
+        </navigator></i-col>
+    <i-col span="8" i-class="col-class">
+    <navigator url="/pages/index/shortVideo/shortVideo" class="box">
+            <image class="pic" src="/images/index/videos.png"></image>
             <text class="txt"> 短视频科普</text>
-        </navigator> 
-        <navigator url="" class="box4">
-        <image class="pic" src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/index/forExpert.png" />
+        </navigator> </i-col>
+</i-row>
+<i-row>
+    <i-col span="8" i-class="col-class">
+    <navigator url="/pages/community/expert/expert" class="box">
+        <image class="pic" src="/images/index/expert.png" />
         <text class="txt">问专家</text>
-        </navigator>
-        <navigator url="" class="box5">
-        <image class="pic" src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/index/freeGif.png" />
+        </navigator></i-col>
+    <i-col span="8" i-class="col-class">
+    <navigator url="/pages/index/freeSamples/freeSamples" class="box">
+        <image class="pic" src="/images/index/freeSample.png" />
         <text class="txt">免费小样</text>
-        </navigator>
-        <navigator url="" class="box6">
-        <image class="pic" src="cloud://cloud1-9g332csq515f3101.636c-cloud1-9g332csq515f3101-1314617833/images/index/friend.png" />
+        </navigator></i-col>
+    <i-col span="8" i-class="col-class">
+      <navigator url="/pages/index/community/community" class="box">
+        <image class="pic" src="/images/index/community.png" />
         <text class="txt">伙伴说</text>
-        </navigator>
-    </view>
+        </navigator></i-col>
+</i-row>
+</view>
 </view>
 
 <!-- 拍照搜保健品 -->
@@ -149,3 +162,4 @@
     <block wx:if="{{tabs[3].isActive}}">3</block>
     <block wx:if="{{tabs[4].isActive}}">4</block>
 </Tabs> --> 
+<canvas type="2" id=""/>

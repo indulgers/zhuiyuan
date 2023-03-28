@@ -1,7 +1,8 @@
-{
+{  
   "usingComponents": {
     "Searchinto":"../../pages/index/searchinto/searchinto",
     "Tabs":"../../components/Tabs/Tabs"
+    
   },
-  "navigationBarTitleText":"真知卓健"
+  "navigationBarTitleText":"追原"
 }

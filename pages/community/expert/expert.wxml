@@ -1,0 +1,153 @@
+<view class="total">
+<view class="first_title">问专家</view>
+<view class="input-part">
+  <view class="inputcolumn">
+    <input type="text" placeholder="输入保健品,需求,功能,医生检索"/>
+    <button class="tapbtn0" plain="true" bindtap="tapName" >
+  <image  src="/images/expert/搜索.png" ></image> 
+ </button>
+  </view>	
+  
+</view>
+<view class="contain">
+<image class="ce" src="/images/expert/容器 26.png"></image>
+	<view class="line"></view>
+  <view class="right_ce">
+    <view class="kind">
+<view class="item">
+<button class="tapbtn1" plain="true" bindtap="tapName">
+	<image  src="/images/expert/骨骼养护.png"></image>
+  </button>
+  <text>骨骼养护</text></view>
+  <view class="item">
+<button class="tapbtn1" plain="true" bindtap="tapName">
+	<image  src="/images/expert/婴儿健康.png" ></image>
+  </button>
+  <text>婴儿健康</text>
+  </view>
+  <view class="item">
+<button class="tapbtn1" plain="true" bindtap="tapName">
+	<image  src="/images/expert/消化系统.png"></image>
+ </button>
+ <text>消化系统</text>
+ </view>
+ <view class="item">
+<button class="tapbtn1" plain="true" bindtap="tapName">
+	<image  src="/images/expert/运动增肌.png"></image>
+ </button>
+ <text>运动增肌</text>
+ </view>
+</view>
+<view class="kind">
+<view class="item">
+<button class="tapbtn1" plain="true" bindtap="tapName">
+	<image  src="/images/expert/美颜护理.png" ></image>
+  </button>
+  <text>美颜养护</text>
+  </view>
+  <view class="item">
+<button class="tapbtn1" plain="true" bindtap="tapName">
+	<image  src="/images/expert/护眼.png" ></image>
+  </button>
+  <text>清肝护目</text></view>
+  <view class="item">
+<button class="tapbtn1" plain="true" bindtap="tapName">
+	<image  src="/images/expert/孕期保健.png" ></image>
+  </button>
+  <text>孕期保健</text></view>
+  <view class="item">
+<button class="tapbtn1" plain="true" bindtap="tapName">
+	<image  src="/images/expert/补肾壮阳.png" ></image>
+  </button>
+  <text>补肾壮阳</text></view>
+</view>
+<view class="kind">
+<view class="item">
+<button class="tapbtn1" plain="true" bindtap="tapName">
+	<image  src="/images/expert/免疫提升.png" ></image>
+  </button>
+  <text>免疫提升</text></view>
+  <view class="item">
+<button class="tapbtn1" plain="true" bindtap="tapName">
+	<image  src="/images/expert/三高防治.png" ></image>
+  </button>
+  <text>三高防治</text></view>
+  <view class="item">
+<button class="tapbtn1" plain="true" bindtap="tapName">
+	<image  src="/images/expert/瘦身塑形.png" ></image>
+  </button>
+  <text>瘦身塑型</text>
+  </view>
+  <view class="item">
+<button class="tapbtn1" plain="true" bindtap="tapName">
+	<image  src="/images/expert/助眠.png" ></image>
+  </button>
+  <text>睡眠提升</text>
+  </view>
+</view>
+</view>
+</view>
+<view class="second_title">医师推荐</view>
+<view class="tocard" wx:for="{{list}}" wx:key="index" >
+<view class="card" >
+<view class="firscol">
+	<image class="touxiang" src="{{item.photo}}"></image>
+	<view class="name">{{item.Expert_Name}}</view>
+	<view class="position">{{item.position}}</view>
+	<view class="towards">{{item.Region}}</view></view>
+	<view class="imfor">{{item.strength}}</view>
+  <view class="seccol">
+	<image class="star" src="/images/expert/star.png"></image>
+	<view class="score">{{item.score}}</view>
+  <navigator url="/pages/community/expert/expert_detail/expert_detail?index={{index}}"  class="tapbtn2"  >
+	<view class="click_to_ask">点击咨询>> </view>
+  </navigator>
+
+	<view class="ask_num">咨询量 375</view></view>
+</view>
+</view>
+<!-- <view class="card" style="top: 550px;">
+	<image class="touxiang" src="/images/expert/圆形 1.png"></image>
+	<view class="name">彭皓天</view>
+	<view class="position">营养科副主任医师 深圳市第五人民医院</view>
+	<view class="towards">骨骼养护 运动增肌</view>
+	<view class="imfor">擅长：健身及对应营养补充方案制定</view>
+  <image class="star" src="/images/expert/star.png"></image>
+	<view class="score">4.5</view>
+
+  <button class="tapbtn2" plain="true" bindtap="tapName">
+	<view class="click_to_ask">点击咨询>> </view>
+  </button>
+
+	<view class="ask_num">咨询量 375</view>
+</view> -->
+
+
+
+<!-- <view class="box" wx:for="{{list}}" wx:key="index" >
+
+<i-card title="{{item.Expert_Name}}" extra="{{item.position}} " thumb="{{item.photo}}">
+    
+    <view  class="strength" slot="content">
+    擅长：{{item.strength}}
+    <view class="score">
+      
+    
+    <i-cell title="禁用点击和手势选择星">
+        <i-rate 
+            disabled="{{true}}"
+            value="{{item.score}}">
+            {{item.score}}星
+        </i-rate>
+    </i-cell><navigator class="detail" url="../expert/expert_detail/expert_detail">
+      点击咨询>>
+    </navigator> </view>
+    </view>
+  
+</i-card>
+
+
+  
+</view> -->
+
+</view>

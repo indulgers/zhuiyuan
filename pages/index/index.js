@@ -118,7 +118,7 @@ Page({
     })
 
   },
-
+  
     fuck:function(){
       wx.uploadFile({
         url: 'http://zhuiyuan.origami.wang:8081/ocr/selectComponentsByMedicineRegisterNoWithOcr/',

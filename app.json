@@ -1,5 +1,18 @@
 {
+  "usingComponents": {
+    "i-button": "/dist/button/index",
+    "i-page": "/dist/page/index",
+    "i-card": "/dist/card/index",
+    "i-avatar": "../../dist/avatar/index",
+    "i-row": "./dist/row/index",
+    "i-col": "./dist/col/index",
+    "i-modal": "./dist/modal/index",
+    
+    "i-cell-group":"./dist/cell-group/index",
+    "i-cell":"./dist/cell/index"
+  },
   "pages": [
+
     "pages/index/index",
     "pages/old_index/old_index",
     "pages/index/cropper/cropper",
@@ -13,9 +26,11 @@
     "pages/index/article1/article1",
     "pages/index/article2/article2",
     "pages/index/image-result/image-result",
+    "pages/index/MatchAndAnalysis/MatchAndAnalysis",
     "pages/community/community",
     "pages/community/community-article1/community-article1",
-    "pages/community/one2one/one2one",
+    "pages/community/expert/expert",
+    "pages/community/expert/expert_detail/expert_detail",
     "pages/mall/mall",
     "pages/me/me",
     "pages/me/personalInformation/personalInformation",
@@ -33,15 +48,12 @@
     "pages/me/shopping cart/shopping cart",
     "pages/me/discount/discount",
     "pages/me/family/family",
-    "pages/me/customer_feedback/customer_feedback",
-    "pages/index/result/result_detail/componentUsage/Usage"
-    
+    "pages/me/customer_feedback/customer_feedback"
+    ,"pages/index/result/result_detail/componentUsage/Usage",
+    "pages/index/result/result_detail/compare/compare"
   ],
   "plugins": {
-    "WechatSI": {
-      "version": "0.3.5",
-      "provider": "wx069ba97219f66d99"
-    }
+    
   },
   "window": {
     "backgroundTextStyle": "light",
@@ -64,12 +76,7 @@
         "iconPath": "/icon/community.png",
         "selectedIconPath": "/icon/community_selected.png"
       },
-      {
-        "pagePath": "pages/mall/mall",
-        "text": "亲情商城",
-        "iconPath": "/icon/shopping.png",
-        "selectedIconPath": "/icon/shopping_selected.png"
-      },
+    
       {
         "pagePath": "pages/me/me",
         "text": "我",

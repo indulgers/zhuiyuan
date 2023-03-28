@@ -1,0 +1,325 @@
+.strength{
+  font-size: 18px;
+  color: #1c2438;
+}
+.detail{
+  color: #5CB888;
+  font-size: 12px;
+}
+.total{
+  display: flex;
+  flex-direction: column;
+}
+.first_title{
+	/* font-size: 52rpx;
+	margin-top: 10px;
+	font-weight: bold;
+	margin-left: 35rpx; */
+	/* 问专家 */
+	
+	width: 147px;
+	height: 35px;
+  opacity: 1;
+  margin-left: 15px;
+	margin-bottom:20px ;
+	font-family: HarmonyOS Sans SC;
+	font-size: 36px;
+	font-weight: bold;
+	letter-spacing: 0px;
+		
+	color: #3D3D3D;
+	
+}
+
+.input-part {
+  /* 自动布局子元素 */
+  display: flex;
+  flex-direction: row;
+  width: 255px;
+  height: 35px;
+  border-radius: 8px;
+  opacity: 1;
+  padding: 8px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  gap: 10px;
+  align-self: stretch;	
+  /* 纯白 */
+  background: #FFFFFF;
+  box-sizing: border-box;
+  border: 1px solid #BFBFBF;
+}
+.inputcolumn{
+  display: flex;
+  flex-direction: row;
+}
+.inputcolumn input {
+  
+  /* 自动布局子元素 */
+  
+  padding-left: 5px;
+  width: 250px;
+  height: 23px;
+  opacity: 1;
+  	
+  /* 中文 /正文/正文文本 */
+  /* 样式描述：中文 */
+  font-family: Source Han Sans CN;
+  font-size: 16px;
+  font-weight: normal;
+  /* 正文色/正文辅助色 */
+  color: #767676;
+  z-index: 1;
+ 
+}
+.inputcolumn image{
+  padding-top: 3px;
+  width: 35px;
+  height: 35px;
+  opacity: 1;
+}
+
+
+.contain{
+  /* 矩形 13 */
+  display: flex;
+  flex-direction: row;
+	align-items: center;
+	height:250px;
+	border-radius: 5px;
+	opacity: 1;
+	border-radius: 15px ;
+	background: #F6F6F6;
+  
+}
+
+.ce{
+  /* 容器  */
+margin-top: 58px;
+margin-left: 16px;
+margin-right: 8px;
+padding: 50px 20px;
+width: 55px;
+height: 89px;
+opacity: 1;
+}
+
+
+.kind{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3px;
+  margin-left: 5px;
+}
+.kind text{
+display: flex;
+float: left;
+text-align: center;
+width: 50.5px;
+font-size: 11.5px;
+}
+.kind image{
+  /* 瘦身塑形 */
+/* display: flex; */
+width: 50.5px;
+height: 50px;
+opacity: 1;
+	
+}
+.line{
+  /* 直线 18 */
+width: 0px;
+height: 200px;
+opacity: 1;
+border: 3px solid #D8D8D8;
+margin:15px 15px 5px  5px;
+}
+.second_title{
+	/* 医师推荐 */
+	width: 98px;
+	height: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+	font-family: HarmonyOS Sans SC;
+	font-size: 24px;
+	font-weight: 550;
+	letter-spacing: 0px;
+	margin-left: 15px;
+	color: #3D3D3D;
+	
+}
+.tocard{
+  display: flex;
+  flex-direction: column;
+}
+.firscol{
+  display: flex;
+  flex-direction: row;
+}
+.seccol{
+  display: flex;
+  flex-direction: row;
+}
+.card{
+	/* 容器 18 */
+	width: 94%;
+	height: 116px;
+	border-radius: 5px;
+	opacity: 1;
+	margin: 10px;
+	box-sizing: border-box;
+	border: 0.1px solid #000000;
+	background-image: linear-gradient(to right bottom , #ecede0,#e8f5e5, #d2e3d9);
+}
+
+.touxiang{
+	/* 圆形 1 */
+	
+	width: 30px;
+	height: 37px;
+	opacity: 1;
+		
+}
+
+.name{
+	/* 姓名*/
+	width: 48px;
+	height: 19px;
+	opacity: 1;
+		
+	font-family: HarmonyOS Sans SC;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 0px;
+		
+	/* 主题色/深绿 */
+	color: #5CB888;
+}
+
+.position{
+	/* 职位 学校、医院 */
+	width: 105px;
+	height: 14px;
+	opacity: 1;
+	padding-left: 20px;
+	font-family: HarmonyOS Sans SC;
+	font-size: 12px;
+	font-weight: normal;
+	letter-spacing: 0px;
+		
+	/* 正文色/正文色 */
+	color: #1A1A1A;
+}
+
+.towards{
+	/* 方向 */
+  padding-left: 30px;
+	opacity: 1;
+	font-family: HarmonyOS Sans SC;
+	font-size: 12px;
+	font-weight: normal;
+	letter-spacing: 0px;
+	/* 正文色/正文辅助色 */
+	color: #767676;
+}
+
+.imfor{
+  /* 介绍 */
+  margin-left: 5px;
+	width: 84%;
+	height: 42px;
+	opacity: 1;
+	font-family: HarmonyOS Sans SC;
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 21px;
+	letter-spacing: 1px;
+  color: #3D3D3D;
+  padding: 5px ;
+}
+
+.star{
+	/* 评价——星星 */
+	width: 17px;
+  height: 19px;
+  padding-left: 15px;
+	opacity: 1;
+}
+
+.score{
+	/* 评分 */
+	width: 19px;
+	height: 14px;
+	opacity: 1;
+		
+	font-family: HarmonyOS Sans SC;
+	font-size: 10px;
+	font-weight: normal;
+	letter-spacing: 0px;
+	padding-left: 10px;
+	/* 正文色/正文色 */
+	color: #1A1A1A;
+}
+
+.click_to_ask{
+	/* 点击咨询>> */
+	/* left: 50px;
+	top: 112px; */
+	width: 70px;
+	height: 21px;
+	opacity: 1;
+		
+	font-family: HarmonyOS Sans SC;
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 21px;
+	letter-spacing: 1px;
+		
+	/* 主题色/深绿 */
+	color: #5CB888;
+}
+
+.ask_num{
+	/* 咨询量 +数字 */
+	width: 89px;
+	height: 14px;
+	opacity: 1;
+	text-align: center;
+	font-family: HarmonyOS Sans SC;
+	font-size: 10px;
+	font-weight: 300;
+	letter-spacing: 0px;
+	padding-right: 15px;
+	/* 正文色/正文辅助色 */
+	color: #767676;
+}
+
+.tapbtn0[plain]{
+  padding: 0;
+  border:none;   
+  width: 50.5px;
+  height: 50px;
+  opacity: 1;
+}
+.item{
+   display: flex;
+   flex-direction: column;
+   padding: 4px;
+ }
+.tapbtn1[plain]{
+padding: 0;
+border:none;   
+width: 50.5px;
+height: 50px;
+opacity: 1;
+}
+.tapbtn2[plain]{
+  padding: 0;
+  border:none;   
+	width: 70px;
+	height: 21px;
+	opacity: 1;
+  }
+

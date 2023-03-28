@@ -7,3 +7,10 @@
   </view>
   <rich-text nodes="{{item.delivery_article}}"/>
 </view>
+<view class="comments">
+  <view class="comment_area">
+  <view class="comment_text">评论</view>
+  <view class="comment_num">{{num}}</view>
+  </view>
+  
+</view>

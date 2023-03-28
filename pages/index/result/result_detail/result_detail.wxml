@@ -1,8 +1,14 @@
+<view class="total">
 
     <view class="textarea">
+    <view class="headline">
+    <image class="mediImage" src="/images/index/medicineImage.png" />
     <view class="name">
       {{list.medicineName}}
+    </view> 
+    
     </view>
+    <view class="compare" bindtap="toCompare">+对比</view>
     <view class="partial">
     <view class="text">
       注意事项
@@ -20,16 +26,15 @@
        {{list.medicineSuitPerson}}
     </view>
     </view>
-    <view class="partial" bindtap="toComponent">
-    
-    <view class="text" >
-      主要原料
+    <navigator class="partial"  url="/pages/index/result/result_detail/componentUsage/Usage?medicineId={{components}}&medicineName={{list.medicineName}}">
+    <view class="text">
+      主要原料 <view class="more">(点击查看原料功效)</view>
     </view>
-    
+   
     <view class="textdetail" >
         {{list.medicineRawMaterial}}
     </view>
-    </view>
+    </navigator>
     <view class="partial">
       <view class="text">
         不适宜人群
@@ -55,4 +60,7 @@
       </view>
     </view>
       </view>
-  
+      <view class="ec-container">
+     <ec-canvas canvas-id="echart-pie" ec="{{ec}}"  style="width: 100%;height: 300px;"></ec-canvas>
+</view>
+    </view>

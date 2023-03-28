@@ -1,0 +1,60 @@
+<view class="total"wx:for="{{list}}" wx:key="index">
+<view wx:if="{{item.num==number}}">
+ <view class="head"> 
+ <view class="left">
+  <view class="namepart"><view class="name">
+    {{item.Expert_Name}}
+  </view>
+<view class="region">{{item.Region}}</view></view>
+<view class="position">{{item.position}}</view>
+<view class="scorepart">
+<image class="star" src="/images/expert/star.png" mode="aspectFit"/>
+<view class="score" >{{item.score}}</view></view>
+<view class="strengthpart">
+<view class="stren">擅长：</view>
+<view class="strength">{{item.strength}}</view></view></view>
+<view class="right">
+<image class="photo" src="{{item.photo}}" mode="aspectFit"/></view>
+
+
+</view>
+<view class="secpart">
+<view class="butt">
+  <button class="consult">立即图文咨询>>>  15/次</button>
+  <view class="tousu">投诉</view></view>
+  <view class="qulipart">
+  <image class="quli"src="/images/expert/quli.png" />
+  <view>
+    医师资质已通过平台审核
+  </view></view>
+  <view class="backpart">
+  <image  class="reback"src="/images/expert/drawback.png" />
+  <view>
+    不满意可全额退款
+  </view></view>
+</view>
+
+<view class="introduc">
+<view class="docintro">
+<view class="doc">医师介绍</view>
+<view class="more" bindtap="handleOpen">查看更多></view></view>
+<i-modal title="{{item.Expert_Name}}" visible="{{ visible }}" bind:ok="handleClose1" bind:cancel="handleClose1">
+  <rich-text class="intro" nodes="{{item.introduction}}"/>
+   
+</i-modal>
+<rich-text class="intro" nodes="{{item.introduction}}"/>
+
+
+</view>
+<view class="comments">
+<view class="commenter"><view class="comentext">评价（120）</view></view>
+<view class="liner"><view class="line"></view></view>
+<view class="coment">
+  <i-card title="A杨康的小雷" extra="5/5分" thumb="/images/expert/圆形 13.png">
+    <view slot="content">饶医生太耐心了！！我真的一整个吹爆！！有想咨询增肌保健品和保健方案的速来啊啊啊啊！！</view>
+    <!-- <view slot="footer">尾部内容</view> -->
+</i-card>
+</view>
+</view>
+</view>
+</view>

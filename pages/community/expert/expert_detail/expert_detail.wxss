@@ -1,0 +1,196 @@
+.total{
+  display: flex;
+  flex-direction: column;
+}
+.head{
+  display: flex;
+  flex-direction: row;
+}
+.namepart{
+  display: flex;
+  flex-direction: row;
+  
+}
+.name{
+  padding-top: 15px;
+  font-size: 26px;
+  color: #5cbb88;
+  font-weight: bold;
+  width: auto;
+}
+.region{
+  font-family: HarmonyOS Sans SC;
+  color: #3D3D3D;
+  font-weight:bold;
+  padding-left:26px;
+  padding-top: 25px;
+  font-size: 18px;
+  width: auto;
+}
+.position{
+  font-family: HarmonyOS Sans SC;
+  color: #3D3D3D;
+  font-weight:lighter;
+  font-size: 24px;
+}
+.secpart{
+  display: flex;
+  flex-direction: column;
+}
+.butt{
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.consult{
+  margin-right: 120px;
+  text-align: center;
+  padding:5px;
+  margin-top: 15px;
+  width:70%;
+  height: 35px;
+  line-height: 24px;
+  font-size: 16px; 
+  background-color:#5CB888;
+  color: rgb(255, 255, 255);
+
+}
+.tousu{
+  font-size: 20px;
+  font-family: HarmonyOS Sans SC;
+  width: 24%;
+  font-weight: lighter;
+  text-decoration:underline;
+}
+.qulipart{
+  display: flex;
+  flex-direction: row;
+  color: #3D3D3D;
+  font-weight: normal;
+  font-size: 15px;
+  font-family: HarmonyOS Sans SC;
+}
+.quli{
+  width: 30px;
+  height: 30px;
+  color: #3D3D3D;
+  font-size: 20px;
+  padding: 5px;
+}
+.backpart{
+  display: flex;
+  flex-direction: row;
+  color: #3D3D3D;
+  font-weight: normal;
+  font-size: 15px;
+  font-family: HarmonyOS Sans SC;
+}
+.doc{
+  color: #3D3D3D;
+  font-weight: bold;
+  font-size: 22px;
+  font-family: HarmonyOS Sans SC;
+}
+.reback{
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+}
+.docintro{
+  display: flex;
+  flex-direction: row;
+}
+.more{
+  padding-left:180px ;
+  color: #3D3D3D;
+  font-weight: 100;
+  font-size: 16px;
+  font-family: HarmonyOS Sans SC;
+}
+.introduc{
+  display: flex;
+  flex-direction: column;
+  background-color:#F6F6F6;
+  border-radius:15px;
+  margin: 20px 5px;
+  padding: 10px;
+}
+.intro{
+  color: #3D3D3D;
+  font-weight: 200;
+  font-size: 15px;
+}
+.left{
+  width: 65%;
+  margin: 0px;
+}
+.right{
+  width: 35%;
+}
+.star{
+  width: 27px;
+	height: 29px;
+	opacity: 1;
+}
+.score{
+  padding-left: 10px;
+  font-size: 18px;
+  font-family: HarmonyOS Sans SC;
+
+}
+.scorepart{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.photo{
+ width: 160px;
+ height: 176px;
+}
+.comments{
+  display: flex;
+  flex-direction: column;
+}
+.comentext{
+  color: #5CB888;
+  font-weight: normal;
+  font-size: 20px;
+  font-family: HarmonyOS Sans SC;
+}
+.strengthpart{
+  display: flex;
+  flex-direction: row;
+  line-height: 20px;
+  
+}
+.stren{
+  font-size: 18px;
+  font-family: HarmonyOS Sans SC;
+  color: #5CB888;
+}
+.strength{
+  font-size: 15px;
+  font-family: HarmonyOS Sans SC;
+}
+.commenter{
+  display: flex;
+  flex-direction: column;
+   align-items: center;
+  justify-content: center;
+}
+.liner{
+  display: flex;
+  flex-direction: column;
+   align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.line{
+  
+width:80%;
+height: 0px;
+opacity: 1;
+border: 2px solid #D8D8D8;
+}

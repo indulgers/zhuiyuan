@@ -13,7 +13,10 @@
     "axios": "^0.21.1",
     "axios-miniprogram-adapter": "^0.3.2",
     "cos-wx-sdk-v5": "^1.4.7",
+    "echarts": "^5.4.1",
     "miniprogram-api-promise": "^1.0.4",
-    "tim-wx-sdk": "^2.24.1"
+    "tcb-router": "^1.1.2",
+    "tim-wx-sdk": "^2.24.1",
+    "weui-miniprogram": "^1.2.7"
   }
 }

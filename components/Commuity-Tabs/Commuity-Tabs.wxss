@@ -13,13 +13,14 @@
   height: 60rpx;
   width: 25%;
   line-height: 60rpx;
-  background-color: #D8D8D8;
   border-radius: 10px;
   margin: 5px;
+  color: #999999;
 }
 .active{
-  background-color:#A0DFA0 ;
+  border-bottom: 1px solid #9ee490;
   color:#3D3D3D ;
+  font-weight: bold;
   border-bottom: 5rpx solid currentColor;
 }
 
