@@ -7,12 +7,16 @@
     "i-row": "./dist/row/index",
     "i-col": "./dist/col/index",
     "i-modal": "./dist/modal/index",
-    
-    "i-cell-group":"./dist/cell-group/index",
-    "i-cell":"./dist/cell/index"
+    "i-cell-group": "./dist/cell-group/index",
+    "i-cell": "./dist/cell/index",
+    "i-tabs": "./dist/tabs/index",
+    "i-tab": "./dist/tab/index",
+    "i-panel": "./dist/panel/index",
+    "i-input": "./dist/input/index",
+    "i-tab-bar": "./dist/tab-bar/index",
+    "i-tab-bar-item": "./dist/tab-bar-item/index"
   },
   "pages": [
-
     "pages/index/index",
     "pages/old_index/old_index",
     "pages/index/cropper/cropper",
@@ -45,16 +49,15 @@
     "pages/me/community_friends/community_friends",
     "pages/me/vip/vip",
     "pages/me/pet/pet",
-    "pages/me/shopping cart/shopping cart",
     "pages/me/discount/discount",
     "pages/me/family/family",
-    "pages/me/customer_feedback/customer_feedback"
-    ,"pages/index/result/result_detail/componentUsage/Usage",
-    "pages/index/result/result_detail/compare/compare"
+    "pages/me/customer_feedback/customer_feedback",
+    "pages/index/result/result_detail/componentUsage/Usage",
+    "pages/index/result/result_detail/compare/compare",
+    "pages/index/MatchAndAnalysis/match_result/match_result",
+    "pages/index/result/result_detail/compare/compare_result/compare_result"
   ],
-  "plugins": {
-    
-  },
+  "plugins": {},
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#5CB888",
@@ -76,7 +79,12 @@
         "iconPath": "/icon/community.png",
         "selectedIconPath": "/icon/community_selected.png"
       },
-    
+      {
+        "pagePath": "pages/mall/mall",
+        "text": "亲情商城",
+        "iconPath": "/icon/shopping.png",
+        "selectedIconPath": "/icon/shopping_selected.png"
+      },
       {
         "pagePath": "pages/me/me",
         "text": "我",

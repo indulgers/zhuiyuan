@@ -1,13 +1,14 @@
 .total{
   display: flex;
   flex-direction: column;
+
 }
 .each{
   display: flex;
   flex-direction: row;
   border:2px solid #D8D8D8;
-  margin:0px 5px;
-  background: rgba(222, 243, 226, 0.281);
+  margin:10px 5px;
+  background: rgba(222, 226, 223, 0.281);
 }
 .mediImage{
   width: 30%;

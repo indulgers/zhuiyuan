@@ -1,4 +1,4 @@
-// pages/TCM/TCM.ts
+// pages/index/community/community.js
 Page({
 
   /**
@@ -6,73 +6,65 @@ Page({
    */
   data: {
 
-    value1: '',
-    value2:''
-
-},
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {
+  onLoad: function (options) {
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow() {
-    // if (typeof this.getTabBar === 'function' &&
-    //   this.getTabBar()) {
-    //   this.getTabBar().setData({
-    //     //唯一标识（其它设置不同的整数）  
-    //     selected: 0
-    //   })
-    // }
+  onShow: function () {
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage() {
+  onShareAppMessage: function () {
 
   },
-  handleclick(){
-     console.log(value1+value2);
+  tapName: function(event) {
+    console.log(event)
   }
+
 })

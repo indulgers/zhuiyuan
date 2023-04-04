@@ -1,0 +1,39 @@
+ <view class="product_card">
+<image src="/images/东阿阿胶.png"></image>
+<view class="text_intro">
+<text class="product_card_name">东阿阿胶牌阿胶酸枣仁口服液</text>
+<text class="product_card_intor">	产品规格：10mL/支
+                                  品牌：东阿阿胶</text>
+</view>
+</view>
+
+<view class="match_per">
+<view class="stone">此款产品与您的匹配度为</view>
+<view class="per">90%</view>
+</view>
+
+
+<view class="tcm_kind">
+<view class="tcm_kind_name">年龄</view>
+<view class="tcm_kind_major">【分析】：</view>
+<view class="tcm_kind_major_cont" style="padding-bottom: 9px;">您的年龄不属于（少年儿童、孕妇、乳母）等不适宜人群范围</view>
+
+</view>
+
+<view class="tcm_kind">
+<view class="tcm_kind_name">基础疾病</view>
+<view class="tcm_kind_major">【分析】：</view>
+<view class="tcm_kind_major_cont" style="padding-bottom: 9px;">您的基础疾病（高血压、糖尿病）与服用本款产品并不冲突</view>
+</view>
+
+<view class="tcm_kind">
+<view class="tcm_kind_name">药物过敏</view>
+<view class="tcm_kind_major">【分析】：</view>
+<view class="tcm_kind_major_cont" style="padding-bottom: 9px;">本产品的主要原料（大枣、酸枣仁、山楂、阿胶）不含有您曾过敏的药物成分</view>
+</view>
+
+<view class="tcm_kind">
+<view class="tcm_kind_name">保健需求</view>
+<view class="tcm_kind_major">【分析】：</view>
+<view class="tcm_kind_major_cont" style="padding-bottom: 9px;">本产品的功效为（改善睡眠），与您的需求（提升睡眠质量、保护骨骼）中的“提升睡眠质量”符合，“保护骨骼”不符合</view>
+</view>

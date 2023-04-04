@@ -1,165 +1,94 @@
-<!--pages/index/index.wxml-->
-<!-- 搜索栏 -->
-<view class="total">
-<view class="titles">
-追原
+<view class="head">
+<view class="zhuiyuan">追原</view>
+<view class="intro">智能保健品助手</view>
 </view>
-<view class="header">
-    <view class="searchInput">
-        <image class="searchIcon" src="/images/index/search.png" ></image>
-        <view bindtap="toSearch" class="placeholder">点击跳转搜索保健品</view>
+<view class="tab">
+<i-tabs current="{{ current }}" color="#5CB888"   bindchange="handleChange">
+    <view class="tab_item"><i-tab key="0" title="保健品名称"></i-tab></view>
+    <view class="tab_item"><i-tab key="1" title="中药成分"></i-tab></view>
+      <view class="tab_item"><i-tab key="2" title="保健品功效"></i-tab></view>
+</i-tabs></view>
+<swiper bindchange="pagechange" current="{{current}}" >
+  <swiper-item style="width: 750rpx; height: 97rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">
+    <view  class="searchInput" key='0'  style="width: 693rpx; height: 68rpx; display: flex; box-sizing: border-box">
+      <image class="searchIcon" src="/images/index/search.png"></image>
+      <input style="width: 289rpx; height: 72rpx; display: block; box-sizing: border-box" type="text" value="{{medicineName}}" bindconfirm="bindconfirm" placeholder="根据保健品名称搜索" placeholder-class="placeholder" bindinput="getmedicineName" />
+      <image src="/images/index/bin.png" class="bin" bindtap="clean"/>
     </view>
-</view>
-
-<view class="index-link">
-
-<view class="cameraImage">
-    <image bindtap="searchPic" src="/images/index/camera.png" class="camera"/>
-</view>
-<view bindtap="searchPic" class="item-link">保健品快搜
+  </swiper-item>
+  <swiper-item>
+    <view  class="searchInput" key='1'>
+      <image class="searchIcon" src="/images/index/search.png"></image>
+      <input type="text" value="{{medicineName}}" bindconfirm="bindconfirm" placeholder="根据保健品成分搜索" placeholder-class="placeholder" bindinput="getmedicineName" />
+      
     </view>
-</view>
+  </swiper-item>
+  <swiper-item>
+    <view  class="searchInput" key='2'>
+      <image class="searchIcon" src="/images/index/search.png"></image>
+      <input type="text" value="{{medicineName}}" bindconfirm="bindconfirm" placeholder="根据保健品功效搜索" placeholder-class="placeholder" bindinput="getmedicineName" />
+      
+    </view>
+  </swiper-item>
+</swiper >
 
+
+
+
+
+<view class='navs'>
+  
+  
+  <navigator url="/pages/community/expert/expert" class='nav-item'>
+    <image class="nav-image" src='/images/index/expert.png' />
+    <text>问专家</text></navigator>
+
+  <navigator url="/pages/index/MatchAndAnalysis/MatchAndAnalysis" class='nav-item'>
+    <image class="nav-image" src="/images/index/Analysis.png" />
+    <text>匹配分析</text></navigator>
+  
+  <navigator url="/pages/index/shortVideo/shortVideo"class='nav-item'>
+    <image class="nav-image" src="/images/index/videos.png" />
+    <text>视频科普</text></navigator>
  
-<!-- 老年版入口 -->
-<view class="old_en">
-        <navigator class="box" url="/pages/old_index/old_index">
-            <view class="old_enter_txt">老年版入口</view>
-        </navigator>
-</view>
-<!-- 导航1  匹配分析 -->
-<view class="icons">
-<i-row>
-    <i-col span="8" i-class="col-class">  
-    <navigator url="/pages/me/personalInformation/form_one/form_one"class="box">
-            <image class="pic" src="/images/index/Analysis.png"></image>
-            <text class="txt">匹配分析</text>
-        </navigator></i-col>
-    <i-col span="8" i-class="col-class"> 
-    <navigator url="/pages/index/good_likes/good_likes"class="box">
-            <image class="pic" src="/images/index/comments.jpg"></image>
-            <text class="txt">好用程度</text>
-        </navigator></i-col>
-    <i-col span="8" i-class="col-class">
-    <navigator url="/pages/index/shortVideo/shortVideo" class="box">
-            <image class="pic" src="/images/index/videos.png"></image>
-            <text class="txt"> 短视频科普</text>
-        </navigator> </i-col>
-</i-row>
-<i-row>
-    <i-col span="8" i-class="col-class">
-    <navigator url="/pages/community/expert/expert" class="box">
-        <image class="pic" src="/images/index/expert.png" />
-        <text class="txt">问专家</text>
-        </navigator></i-col>
-    <i-col span="8" i-class="col-class">
-    <navigator url="/pages/index/freeSamples/freeSamples" class="box">
-        <image class="pic" src="/images/index/freeSample.png" />
-        <text class="txt">免费小样</text>
-        </navigator></i-col>
-    <i-col span="8" i-class="col-class">
-      <navigator url="/pages/index/community/community" class="box">
-        <image class="pic" src="/images/index/community.png" />
-        <text class="txt">伙伴说</text>
-        </navigator></i-col>
-</i-row>
-</view>
+  <navigator url="/pages/index/cropper/cropper" class='nav-item'>
+    <image class="nav-image" src="/images/index/camera.png" />
+    <text>保健品快搜</text>
+  </navigator>
 </view>
 
-<!-- 拍照搜保健品 -->
+<i-button bind:click="handleClick" type="success" shape="circle" size="large">老年版入口</i-button>
+<view class="hot">----------热门搜索----------</view>
+<view class="card_show">
+  <i-card title="" extra="免疫提升" thumb="https://img13.360buyimg.com/n1/jfs/t1/85684/9/27468/39904/63034419Eedcee5f2/ac3b1ff6716a40f3.jpg">
+    <view slot="content">东阿牌阿胶元浆</view>
+    <view slot="footer">国食健注G20050071</view>
+</i-card>
+<text>\n</text>
+<i-card title="" extra="骨骼养护" thumb="https://img14.360buyimg.com/n1/jfs/t1/217370/35/16772/162729/624d4aa0E94f043b4/5576bf54e552b089.jpg">
+    <view slot="content">钙尔奇R钙维D维K软胶囊</view>
+    <view slot="footer">国食健注G20170478</view>
+</i-card>
+<text>\n</text>
+<i-card title="" extra="维生素" thumb="https://img14.360buyimg.com/n1/jfs/t1/26742/21/9854/147007/5c820314E35a71848/5df8f156cb50ca74.jpg">
+    <view slot="content">善存R维生素C加E软胶囊</view>
+    <view slot="footer">国食健字G20150548</view>
+</i-card>
+<text>\n</text>
+
+</view>
+
+<view class="word" style="--x: 6; --y: -6;">
+		<view style="--index: 0; --alpha-l: 0.125; --alpha-u: 0.25;color: rgba(160, 218, 182, 0.719);">追</view><view style="--index: 1; --alpha-l: 0.125; --alpha-u: 0.25;color: rgba(160, 218, 182, 0.719);">原</view><view style="--index: 2; --alpha-l: 0.125; --alpha-u: 0.25;color: rgba(160, 218, 182, 0.719);">值</view><view style="--index: 3; --alpha-l: 0.125; --alpha-u: 0.25;color: rgba(160, 218, 182, 0.719);">得</view><view style="--index: 4; --alpha-l: 0.125; --alpha-u: 0.25;color: rgba(160, 218, 182, 0.719);">信</view><view style="--index: 5; --alpha-l: 0.125; --alpha-u: 0.25;color: rgba(160, 218, 182, 0.719);">赖</view>
+	</view>
+	<view  class="word" style="--x: 3; --y: -3;">
+		<view style="--index: 0; --alpha-l: 0.25; --alpha-u: 0.5;color: #a0dfa083;">追</view><view style="--index: 1; --alpha-l: 0.25; --alpha-u: 0.5;color: #a0dfa083;">原</view><view style="--index: 2; --alpha-l: 0.25; --alpha-u: 0.5;color: #a0dfa083;">值</view><view style="--index: 3; --alpha-l: 0.25; --alpha-u: 0.5;color: #a0dfa083;">得</view><view style="--index: 4; --alpha-l: 0.25; --alpha-u: 0.5;color: #a0dfa083;">信</view><view style="--index: 5; --alpha-l: 0.25; --alpha-u: 0.5;color: #a0dfa083;">赖</view>
+	</view>
+	<view class="word">
+		<view style="--index: 0; --alpha-l: 0.5; --alpha-u: 1;color: #5CB888;">追</view><view style="--index: 1; --alpha-l: 0.5; --alpha-u: 1;color: #5CB888;">原</view><view style="--index: 2; --alpha-l: 0.5; --alpha-u: 1;color: #5CB888;">值</view><view style="--index: 3; --alpha-l: 0.5; --alpha-u: 1;color: #5CB888;">得</view><view style="--index: 4; --alpha-l: 0.5; --alpha-u: 1;color: #5CB888;">信</view><view style="--index: 5; --alpha-l: 0.5; --alpha-u: 1;color: #5CB888;">赖</view>
+	</view>
 
 
-<!-- 导航2  问专家 .... -->
-<!-- <scroll-view class="major" scroll-x>
-    <view class="majorcon">
-        <navigator class="box" url="/pages/index/askExpert/askExpert">
-            <image class="pic" src="/images/index/askdoctor.png"></image>
-            <view class="txt">问专家</view>
-        </navigator>
 
-        <navigator class="box" url="/pages/index/community/community">
-            <image class="pic" src="/images/index/friend.png"></image>
-            <view class="txt">伙伴说</view>
-        </navigator>
 
-        <navigator class="box" url="/pages/index/freeSamples/freeSamples">
-            <image class="pic" src="/images/index/demo.png"></image>
-            <view class="txt">免费小样</view>
-        </navigator>
-    </view>
-</scroll-view>
 
-文章导航
-<Tabs tabs="{{tabs}}" class="F_title" bindtabsItemChange="handleTabsItemChange">
-    <block wx:if="{{tabs[0].isActive}}">
-        <view class="Top_news">
-            <navigator class="news" url="/pages/index/article1/article1">
-                <!-- 左侧 商品图片栏 -->
-                <!-- <view class="news_img">
-                    <image mode="widthFix"
-                        src="http://mmbiz.qpic.cn/mmbiz_jpg/nFl1qecSKdzOHibzXrFMfYKUEmXD0jvcu7DOYcW3mmfhtraem1xKAVHqO8CgWibzJQEVv35G6U4BiazmpLQ4YvvIw/0?wx_fmt=jpeg">
-                    </image>
-                </view>
-                <!-- 右侧 新闻标题 -->
-                <!-- <view class="news_info_item">
-                    <view class="news_title">这样的保健品他们不敢给自己家人吃，却卖给了你</view>
-                    <view class="news_src">丁香生活研究所</view>
-                    <view class="news_tip">科普</view>
-                </view>
-            </navigator>
-            <navigator class="news" url="/pages/index/article2/article2">
-                <!-- 右侧 商品图片栏 -->
-                <!-- <view class="news_img">
-                    <image mode="widthFix"
-                        src="http://mmbiz.qpic.cn/mmbiz_jpg/nFl1qecSKdx63KEr81VjgBAuW9utJVa2p04O3YqiajBIcHOtmzHDy6nLUdPNbvo5NWgjrOfnCSl7PWCqLNdNEhA/0?wx_fmt=jpeg">
-                    </image>
-                </view>
-                <!-- 左侧 新闻标题 -->
-                <!-- <view class="news_info_item">
-                    <view class="news_title">这 4 种保健品不保健，过年送礼不要选</view>
-                    <view class="news_src">丁香生活研究所</view>
-                    <view class="news_tip">更多</view>
-
-                </view>
-            </navigator>
-        </view> --> 
-
-    <!-- </block>
-    <block wx:if="{{tabs[1].isActive}}">
-        <view class="latest_news">
-            <navigator class="news" url="/pages/index/article2/article2">
-                <!-- 左侧 商品图片栏 -->
-                <!-- <view class="news_img">
-                    <image mode="widthFix"
-                        src="http://mmbiz.qpic.cn/mmbiz_jpg/nFl1qecSKdx63KEr81VjgBAuW9utJVa2p04O3YqiajBIcHOtmzHDy6nLUdPNbvo5NWgjrOfnCSl7PWCqLNdNEhA/0?wx_fmt=jpeg">
-                    </image>
-                </view>
-                <!-- 右侧 新闻标题 -->
-                <!-- <view class="news_info_item">
-                    <view class="news_title">这 4 种保健品不保健，过年送礼不要选</view>
-                    <view class="news_src">丁香生活研究所</view>
-                    <view class="news_tip">更多</view>
-
-                </view> 
-            </navigator> -->
-            <!-- <navigator class="news" url="/pages/index/article1/article1">
-                <!-- 右侧 商品图片栏 -->
-                <!-- <view class="news_img">
-                    <image mode="widthFix"
-                        src="http://mmbiz.qpic.cn/mmbiz_jpg/nFl1qecSKdzOHibzXrFMfYKUEmXD0jvcu7DOYcW3mmfhtraem1xKAVHqO8CgWibzJQEVv35G6U4BiazmpLQ4YvvIw/0?wx_fmt=jpeg">
-                    </image>
-                </view>
-                <!-- 左侧 新闻标题 -->
-                <!-- <view class="news_info_item">
-                    <view class="news_title">这样的保健品他们不敢给自己家人吃，却卖给了你</view>
-                    <view class="news_src">丁香生活研究所</view>
-                    <view class="news_tip">科普</view>
-                </view>
-            </navigator>
-        </view> 
-    </block>
-    <block wx:if="{{tabs[2].isActive}}">2</block>
-    <block wx:if="{{tabs[3].isActive}}">3</block>
-    <block wx:if="{{tabs[4].isActive}}">4</block>
-</Tabs> --> 
-<canvas type="2" id=""/>

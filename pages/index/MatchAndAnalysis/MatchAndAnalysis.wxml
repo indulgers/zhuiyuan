@@ -1,25 +1,51 @@
-<view class='productNav'>
-  <!-- 左侧 -->
-  <view class='left'>
-    <view class="{{active==0?'selected':'normal'}}" id="0" bindtap='switchNav'>为您推荐</view>
-    <view class="{{active==1?'selected':'normal'}}" id="1" bindtap='switchNav'>电脑</view>
-    
+<!--pages/match/match.wxml-->
+<!-- <text>pages/match/match.wxml</text> -->
+
+<view class="total">
+<image style="width: 754rpx; height: 1391rpx; display: inline-block; box-sizing: border-box; left: 0rpx; top: 0rpx" src="/images/index/background.jpg" mode=""/></view>
+<form bindsubmit="formSubmit" bindreset="formReset">
+
+  <view class="kind">
+    <view class="kind_t">年龄</view>
+    <input name="input" placeholder="请输入您的年龄" placeholder-class="placeholderStyle"/>
   </view>
-  <!-- 右侧 -->
-  <view class='right'>
-    <view class='type'>
-      <!-- current:当前所在滑块的 index -->
-      <!-- vertical:滑动方向是否为纵向 -->
-      <swiper current='{{currentTab}}' vertical='{{true}}'>
-        <!-- catchtouchmove 阻止弹窗后滚动穿透 -->
-        <swiper-item id="0" catchtouchmove="false">
-          为您推荐
-        </swiper-item>
-        <swiper-item id="1" catchtouchmove="false">
-          手机
-        </swiper-item>
-       
-      </swiper> 
+
+  <view class="kind">
+    <view class="kind_t">基础疾病</view>
+    <input name="input" placeholder="请输入您的疾病史" placeholder-class="placeholderStyle"/>
+  </view>
+
+  <view class="kind">
+    <view class="kind_t">药物过敏</view>
+    <input name="input" placeholder="请输入您的过敏史" placeholder-class="placeholderStyle"/>
+  </view>
+
+  <view class="kind">
+    <view class="kind_t" style="margin-right: 80px;">保健需求</view>
+    <!-- <input name="input" placeholder="please input here" placeholder-class="placeholderStyle"/> -->
+    <view class="select">
+  <view class="active" bindtap="onTapSelect">{{text}}</view>
+  <view class="options" hidden="{{!showOptions}}">
+    <view class="option" wx:for="{{options}}" wx:key="value" bindtap="onTapOption" data-value="{{item.value}}">
+      <view class="checkbox-icon {{item.checked ? 'checked' : ''}}"></view>
+      <view class="label">{{item.label}}</view>
     </view>
   </view>
 </view>
+  </view>
+
+  <button class="k_button" form-type="submit" bindtap="submit">
+  <image src='/images/index/search.png' class="k_img"></image>
+    一键查询匹配度</button>
+
+</form>
+<!-- load1 -->
+<view class="load1">
+  <view class="rect1"></view>
+  <view class="rect2"></view>
+  <view class="rect3"></view>
+  <view class="rect4"></view>
+  <view class="rect5"></view>
+</view>
+
+

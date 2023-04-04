@@ -3,6 +3,7 @@
     </image-cropper>
 </view>
 <text class="hint">点击中间裁剪框可查看裁剪后的图片</text>
+<text class="hint2">为了更好的效果请拍摄截取名称部分</text>
 <view class='bottom'> 
 <button bindtap='submit'>确定</button>
     <!-- <text style='color:white;margin-right:5rpx;'>锁定裁剪框宽</text>

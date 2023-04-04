@@ -124,7 +124,16 @@ Page({
         success(res) {        
            console.log("获取openid成功:", res.result.openid)
            wx.setStorageSync('OpenId', res.result.openid)
-           
+           wx.cloud.database().collection('user').where({
+            open_id: res.result.openid
+          }).get({
+            success: res => {
+              console.log(res)
+              this.setData({
+                userlists: res.data[0]
+              })
+            }
+          })
            //这里获取成功后可以通过 res.result.openid来获取用户的openid        
          },
         fail(err) {        
@@ -166,10 +175,23 @@ Page({
 },
  //退出登录
  logout(){
+   wx.showModal({
+     title: '您确定要退出吗',
+     content: '',
+     complete: (res) => {
+       if (res.cancel) {
+         console.log("用户取消了退出")
+       }
    
-  this.setData({ 
-    userInfo:''
-})
+       if (res.confirm) {
+         console.log("用户确定退出")
+        this.setData({ 
+          userInfo:''
+      })
+       }
+     }
+   })
+
 // 清空缓存
 wx.setStorageSync('user',null)
  }

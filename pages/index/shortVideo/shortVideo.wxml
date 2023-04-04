@@ -1,45 +1,28 @@
-<!--  
- <view class="header">
+ <!-- pages/index/shortVideo/shortVideo.wxml-->
+<!-- 搜索栏 -->
+<view class="header">
   <view class="searchInput">
-     <text class="iconfont" src="/images/index/search.png" ></text> 
-     <image class="searchIcon" src="/images/index/search.png"></image>
+    <text class="iconfont" src="/images/index/search.png" ></text>
+    <image class="searchIcon" src="/images/index/search.png"></image>
     <input type="text" placeholder="搜索保健品" placeholder-class="placeholder" />
-  </view> 
-   <text class="cancel">取消</text> 
- </view> 
-
-
- <scroll-view class="major" scroll-x>
-  <view class="majorcon">
-    <navigator class="box" url="/pages/index/askExpert/askExpert">
-      <image class="pic" src="/images/index/askdoctor.png"></image>
-    </navigator>
-    <view class="txt_top">
-      <view class="txt">找专家——VIP服务</view>
-      <view class="txt_down">快速找对专家 对症咨询</view>
-    </view>
-    <navigator class="box" url="/pages/me/vip/vip">
-      <image class="pic" src="/images/index/vip-l.png"></image>
-    </navigator>
   </view>
-</scroll-view> 
- <view class="index-link">
-  <view class="item-link">优质短视频推荐</view>
-</view> 
+  <text class="cancel">取消</text>
+</view>
 
 
- <scroll-view scroll-y class="vedio">
+<!-- 短视频列表 -->
+<scroll-view scroll-y class="vedio">
   <view class="vedioItem">
   <view class="first2">
     <view class="first1">
       <image class="pic" src="/images/index/askdoctor.png"></image>
-      <view class="name">张益达</view>
-      <view class="job">深圳优秀律师</view>
+      <view class="name">王安生</view>
+      <view class="job">医师</view>
     </view>
     <view class="attention">+关注</view>
   </view>
-  <view class="time">06:28</view>
-    <view class="title">【央视曝光】花大价钱买保健品 很多都是从领免费鸡蛋开始的</view>
+  <view class="time">10:28</view>
+    <view class="title">别把这4种维生素当保健品吃：会损害你的肝脏健康</view>
     <video class="vedioitem" controls show-mute-btn muted show-fullscreen-btn
       src="http://cdns.cpoe.top/video1.mp4"
       controls style="width: 578rpx; height: 415rpx; display: inline-block; box-sizing: border-box; left: 57rpx; top: 1rpx; position: relative"></video>
@@ -52,5 +35,103 @@
     <view class="amount">0</view>
     </view>
   </view>
-</scroll-view>  -->
-s
+
+  <view class="vedioItem">
+  <view class="first2">
+    <view class="first1">
+      <image class="pic" src="/images/index/askdoctor.png"></image>
+      <view class="name">老爸测评</view>
+      <view class="job">独立评测+科普人</view>
+    </view>
+    <view class="attention">+关注</view>
+  </view>
+  <view class="time">16:37</view>
+    <view class="title">离谱！你以为的“救命良药”竟是“慢性毒药”？【老爸评测】</view>
+    <video class="vedioitem" controls show-mute-btn muted show-fullscreen-btn
+      src="https://mazwai.com/videvo_files/video/free/2014-07/small_watermarked/layback_layback_preview.webm"
+      controls style="width: 578rpx; height: 415rpx; display: inline-block; box-sizing: border-box; left: 57rpx; top: 1rpx; position: relative"></video>
+    <view class="tip">
+    <image mode="aspectFit" class="tipPic" src="/images/shortvideo/good.png" ></image>
+    <view class="amount">0</view>
+    <image mode="aspectFit" class="tipPic" src="/images/shortvideo/message.png" ></image>
+    <view class="amount">0</view>
+    <image mode="aspectFit" class="tipPic" src="/images/shortvideo/share.png" ></image>
+    <view class="amount">0</view>
+    </view>
+  </view>
+
+  <view class="vedioItem">
+  <view class="first2">
+    <view class="first1">
+      <image class="pic" src="/images/index/askdoctor.png"></image>
+      <view class="name">王克娟</view>
+      <view class="job">国家一级营养师</view>
+    </view>
+    <view class="attention">+关注</view>
+  </view>
+  <view class="time">18:52</view>
+    <view class="title">营养师常用的高性价比、高质量，专业级营养品、维生素品牌推荐，OTC里有好货</view>
+    <video class="vedioitem" controls show-mute-btn muted show-fullscreen-btn
+      src="http://vfx.mtime.cn/Video/2019/03/18/mp4/190318231014076505.mp4"
+      controls style="width: 578rpx; height: 415rpx; display: inline-block; box-sizing: border-box; left: 57rpx; top: 1rpx; position: relative"></video>
+    <view class="tip">
+    <image mode="aspectFit" class="tipPic" src="/images/shortvideo/good.png" ></image>
+    <view class="amount">0</view>
+    <image mode="aspectFit" class="tipPic" src="/images/shortvideo/message.png" ></image>
+    <view class="amount">0</view>
+    <image mode="aspectFit" class="tipPic" src="/images/shortvideo/share.png" ></image>
+    <view class="amount">0</view>
+    </view>
+  </view>
+
+  <view class="vedioItem">
+  <view class="first2">
+    <view class="first1">
+      <image class="pic" src="/images/index/askdoctor.png"></image>
+      <view class="name">Energy大坚果</view>
+      <view class="job">营养师</view>
+    </view>
+    <view class="attention">+关注</view>
+  </view>
+  <view class="time">18:52</view>
+    <view class="title">【干货】营养师告诉你这些热门保健品到底有没有用！|哪些是智商税？|葡萄籽|胶原蛋白液|酵素|美白丸|月见草</view>
+    <video class="vedioitem" controls show-mute-btn muted show-fullscreen-btn
+      src="http://vfx.mtime.cn/Video/2019/03/21/mp4/190321153853126488.mp4"
+      controls style="width: 578rpx; height: 415rpx; display: inline-block; box-sizing: border-box; left: 57rpx; top: 1rpx; position: relative"></video>
+    <view class="tip">
+    <image mode="aspectFit" class="tipPic" src="/images/shortvideo/good.png" ></image>
+    <view class="amount">0</view>
+    <image mode="aspectFit" class="tipPic" src="/images/shortvideo/message.png" ></image>
+    <view class="amount">0</view>
+    <image mode="aspectFit" class="tipPic" src="/images/shortvideo/share.png" ></image>
+    <view class="amount">0</view>
+    </view>
+  </view>
+
+  <view class="vedioItem">
+  <view class="first2">
+    <view class="first1">
+      <image class="pic" src="/images/index/askdoctor.png"></image>
+      <view class="name">张益达</view>
+      <view class="job">优秀律师</view>
+    </view>
+    <view class="attention">+关注</view>
+  </view>
+  <view class="time">06:28</view>
+    <view class="title">【央视曝光】花大价钱买保健品 很多都是从领免费鸡蛋开始的</view>
+    <video class="vedioitem" controls show-mute-btn muted show-fullscreen-btn
+      src="http://vfx.mtime.cn/Video/2019/03/19/mp4/190319104618910544.mp4"
+      controls style="width: 578rpx; height: 415rpx; display: inline-block; box-sizing: border-box; left: 57rpx; top: 1rpx; position: relative"></video>
+    <view class="tip">
+    <image mode="aspectFit" class="tipPic" src="/images/shortvideo/good.png" ></image>
+    <view class="amount">0</view>
+    <image mode="aspectFit" class="tipPic" src="/images/shortvideo/message.png" ></image>
+    <view class="amount">0</view>
+    <image mode="aspectFit" class="tipPic" src="/images/shortvideo/share.png" ></image>
+    <view class="amount">0</view>
+    </view>
+  </view>
+ 
+
+</scroll-view>
+

@@ -1,58 +1,50 @@
-/* pages/compare/compare.wxss */
-.table {
-  border: 1px solid darkgray;
- }
- .tr {
-  position: relative;
-  display:flex ;
-  width: 100%;
-  justify-content: center;
-  height: 7.5rem;
-  align-items: center;
- }
- .td {
-  width:40%;
-  padding-left: 5px;
-  padding-right: 5px;
-  justify-content: center;
-  text-align: center;
-  font-size: 13px;
- }
- .bg-w{
-  background: snow;
- }
- .bg-g{
-  background: #f3f3f3;
- }
- .bg-e{
-  background: #ececec;
- }
- .th {
-  position: relative;
-  width: 40%;
-  justify-content: center;
-  background: #A0DFA0;
+
+.title{
+  height: 60px;
+  padding-top: 15px;
+  margin-bottom: 15px;
+  font-size: 29px;
   color: #fff;
-  display:flex;
-  height: 8.5rem;
-  align-items: center;
-  font-size: 16px;
- }
- .t_img{
-   position: absolute;
-   top:20px;
-   left: 22px;
-   width: 3.6rem;
-   height: 4.3rem;
-   align-items: center;
-   clear: left;
- }
- .t_text{
-   font-size: small;
-   padding-top: 78px;
- }
- .t_title{
-   font-weight: bold;
-   font-size: 15px;
- }
+  font-family: cursive;
+  text-align: center;
+  background-color: #5CB888;
+}
+.x_title{
+  font-size: 18px;
+  color: #fff;
+  font-family: cursive;
+  margin-left: 15px;
+}
+
+page {
+  background: linear-gradient(180deg, #5CB888 0%, #fff 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center top;
+  height: 100%;
+}
  
+.snow {
+  width: fit-content;
+  position: absolute;
+  top: -100rpx;
+  width: 30rpx;
+  height: 27rpx;
+  z-index: 11;
+}
+ 
+.snow:nth-child(2n+2) {
+  width: 35rpx;
+  height: 33rpx;
+}
+
+.q_button{
+  width: 37%;
+  height: 46px;
+  margin: 30px auto;
+  background-color: #fff;
+  font-size: 20px;
+  text-align: center;
+  color: #5CB888;
+  border-radius: 30px;
+}

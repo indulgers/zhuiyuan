@@ -30,15 +30,11 @@ App({
   globalData: {
     userInfo: null,
     SearchName:'',
-    areas:[],
+    componentNum:[],
+    componentUnit:[],
     IngredientName:[]
   },
   wxp: wxp
-  // {
-  //   "pagePath": "pages/mall/mall",
-  //   "text": "亲情商城",
-  //   "iconPath": "/icon/shopping.png",
-  //   "selectedIconPath": "/icon/shopping_selected.png"
-  // },
+
 })
    

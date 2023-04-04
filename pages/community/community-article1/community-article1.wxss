@@ -3,7 +3,16 @@
   font-size: 16px;
   text-align: center;
 }
+.title{
+  font-size: 28px;
+  font-weight: bolder;
+
+}
 .time{
   font-size: 14px;
   color:gray;
+}
+.article{
+  padding: 0px;
+  margin: 5px;
 }

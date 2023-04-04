@@ -1,3 +1,5 @@
+
+
 /* pages/index/shortVideo/shortVideo.wxss */
 .header {
   display: flex;
@@ -103,9 +105,10 @@ padding: 10rpx 20rpx;
 .vedio .attention {
   width: 13%;
   height: 5mm;
+  color: #fff;
   font-size: 12px;
   border-radius: 20rpx;
-  background-color: red;
+  background-color: rgba(12, 152, 207, 0.685);
   text-align: center;
 }
 
@@ -163,3 +166,5 @@ padding: 10rpx 20rpx;
   padding-left: 2mm;
   font-size: 12px;
 }
+
+

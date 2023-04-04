@@ -70,6 +70,7 @@
   font-weight: normal;
   font-size: 15px;
   font-family: HarmonyOS Sans SC;
+  line-height: 40px;
 }
 .quli{
   width: 30px;
@@ -77,6 +78,7 @@
   color: #3D3D3D;
   font-size: 20px;
   padding: 5px;
+
 }
 .backpart{
   display: flex;
@@ -85,6 +87,7 @@
   font-weight: normal;
   font-size: 15px;
   font-family: HarmonyOS Sans SC;
+  line-height: 40px;
 }
 .doc{
   color: #3D3D3D;

@@ -10,16 +10,21 @@ function initCharts(canvas,width,height){
   });
   canvas.setChart(chart);
   var option = {
-    tittle:{
-      text:"成分对比",
-      textStyle:{
-        color:'#a0a0a0',
-        fontSize:26
+    title:{
+      text:"成分含量"
+    },
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+        type: 'shadow'
       },
-      left: 'center'
-    }
-    ,
-    tooltip: {},
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '3%',
+      containLabel: true
+    },
     legend:{
       data:['A']
     },
@@ -52,7 +57,7 @@ function initCharts(canvas,width,height){
   };
  option.legend.data=app.globalData.IngredientName
  option.xAxis.data=app.globalData.IngredientName
- option.series[0].data=app.globalData.areas
+ option.series[0].data=app.globalData.componentNum
   chart.setOption(option);
  console.log(chart)
   return chart;
@@ -72,7 +77,8 @@ Page({
     components:'',
     tolist:'',
     Ingredient:'',
-    IngredientName:[]
+    IngredientName:[],
+    IngredientUnit:[]
   },
 
   /**
@@ -80,11 +86,12 @@ Page({
    */
   onLoad(res) {
    app.globalData.IngredientName=[]
-   app.globalData.areas=[]
+   app.globalData.componentNum=[]
+   app.globalData.componentUnit=[]
     var data=JSON.parse(res.data) 
     this.setData({
       list:data,
-      olistt:data.medicineId,
+      tolist:data.medicineId,
       Ingredient:data.medicineEffectiveIngredient
     })
     console.log(data)
@@ -100,14 +107,17 @@ Page({
    console.log(datam)
     this.setData({
       Ingredient:datamm,
+      IngredientUnit:datam,
       IngredientName:dataz
     })
     console.log(this.data.Ingredient)
     for(var name in this.data.Ingredient){
-    app.globalData.areas.push(this.data.Ingredient[name])
-    app.globalData.IngredientName.push(this.data.IngredientName[name])}
+    app.globalData.componentNum.push(this.data.Ingredient[name])
+    app.globalData.IngredientName.push(this.data.IngredientName[name])
+    app.globalData.componentUnit.push(this.data.IngredientUnit[name])
+  }
     console.log(app.globalData.IngredientName)
-    console.log(app.globalData.areas)
+    console.log(app.globalData.componentNum)
   },
   
   toCompare(){

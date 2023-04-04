@@ -1,4 +1,4 @@
-<!-- <view class="mall_header">
+ <view class="mall_header">
     <view class="searchInput">
          <text class="iconfont" src="/images/index/search.png" ></text> 
          <image class="searchIcon" src="/images/index/search.png"></image>
@@ -42,4 +42,4 @@
 
  
 
- -->
+

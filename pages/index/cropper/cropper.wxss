@@ -18,7 +18,15 @@
     color: white;
     z-index: 10;
 }
-
+.hint2{
+  position: absolute;
+  top: 50rpx;
+  width: 100%;
+  font-size: 33rpx;
+  text-align: center;
+  color: white;
+  z-index: 10;
+}
 page {
     background: white;
 }

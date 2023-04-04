@@ -1,4 +1,4 @@
-<view wx:for="{{list}}" wx:key="index">
+<view wx:for="{{list}}" wx:key="index" >
   <view class="title">
     {{item.title}}
   </view>
@@ -10,7 +10,6 @@
 <view class="comments">
   <view class="comment_area">
   <view class="comment_text">评论</view>
-  <view class="comment_num">{{num}}</view>
+  <view class="comment_num">{{item.num}}</view>
   </view>
-  
 </view>

@@ -1,66 +1,135 @@
 <view class="total">
 
-    <view class="textarea">
-    <view class="headline">
-    <image class="mediImage" src="/images/index/medicineImage.png" />
-    <view class="name">
-      {{list.medicineName}}
-    </view> 
-    
-    </view>
-    <view class="compare" bindtap="toCompare">+对比</view>
-    <view class="partial">
-    <view class="text">
-      注意事项
-    </view>
-    <view class="textdetail">
-      {{list.medicineAttention}}
-    </view>
-      
-    </view>
-    <view class="partial">
-    <view class="text">
-      适用人群
-    </view>
-    <view class="textdetail">
-       {{list.medicineSuitPerson}}
-    </view>
-    </view>
-    <navigator class="partial"  url="/pages/index/result/result_detail/componentUsage/Usage?medicineId={{components}}&medicineName={{list.medicineName}}">
-    <view class="text">
-      主要原料 <view class="more">(点击查看原料功效)</view>
-    </view>
-   
-    <view class="textdetail" >
-        {{list.medicineRawMaterial}}
-    </view>
-    </navigator>
-    <view class="partial">
-      <view class="text">
-        不适宜人群
-      </view>
-      <view class="textdetail">
-        {{list.medicineUnsuitPerson}}
-      </view>
-    </view>
-    <view class="partial">
-      <view class="text">
-        储存方式
-      </view>
-      <view class="textdetail">
-        {{list.medicineStorage}}
-      </view>
-    </view>
-    <view class="partial">
-      <view class="text">
-        用法用量
-      </view>
-      <view class="textdetail">
-        {{list.medicineUsageDosage}}
-      </view>
-    </view>
-      </view>
-      <view class="ec-container">
-     <ec-canvas canvas-id="echart-pie" ec="{{ec}}"  style="width: 100%;height: 300px;"></ec-canvas>
+<view class="textarea">
+<view class="headline">
+<image class="mediImage" src="/images/index/medicineImage.png" />
+<view class="name">
+  {{list.medicineName}}
+</view> 
+
 </view>
+<view class="compare" bindtap="toCompare">+对比</view>
+
+
+<!-- <view class="partial">
+<view class="text">
+  注意事项
+</view>
+<view class="textdetail">
+  {{list.medicineAttention}}
+</view> -->
+<view class="item-box">
+<view class="items">
+<view class="item">
+  <view class="inner txt">
+  <span class="item-data">注意事项</span>
+  <span class="item-datacenter"> {{list.medicineAttention}}</span>
+  </view>
+</view>
+</view>
+</view>
+  
+<!-- </view>
+<view class="partial">
+<view class="text">
+  适用人群
+</view>
+<view class="textdetail">
+   {{list.medicineSuitPerson}}
+</view>
+</view> -->
+<view class="item-box">
+<view class="items">
+<view class="item">
+  <view class="inner txt">
+  <span class="item-data"> 适用人群</span>
+  <span class="item-datacenter"> {{list.medicineSuitPerson}}</span>
+  </view>
+</view>
+</view>
+</view>
+
+<!-- <navigator class="partial"  url="/pages/index/result/result_detail/componentUsage/Usage?medicineId={{components}}&medicineName={{list.medicineName}}">
+<view class="text">
+  主要原料 <view class="more">(点击查看原料功效)</view>
+</view>
+
+<view class="textdetail" >
+    {{list.medicineRawMaterial}}
+</view>
+</navigator> -->
+<navigator class="item-box"  url="/pages/index/result/result_detail/componentUsage/Usage?medicineId={{components}}&medicineName={{list.medicineName}}">
+  <view class="items">
+<view class="item">
+  <view class="inner txt">
+<view class="item-data">
+<view class="main_component">
+    <span>主要原料 </span>   
+    <span>(点击查看原料功效)</span>
     </view>
+</view>
+
+<span class="item-datacenter" >
+    {{list.medicineRawMaterial}}
+</span>
+</view>
+</view>
+</view>
+</navigator>
+
+<view class="item-box">
+<view class="items">
+<view class="item">
+  <view class="inner txt">
+  <span class="item-data"> 不适宜人群</span>
+  <span class="item-datacenter"> {{list.medicineSuitPerson}}</span>
+  </view>
+</view>
+</view>
+</view>
+
+
+<!-- <view class="partial">
+  <view class="text">
+    储存方式
+  </view>
+  <view class="textdetail">
+    {{list.medicineStorage}}
+  </view>
+</view> -->
+<view class="item-box">
+<view class="items">
+<view class="item">
+  <view class="inner txt">
+  <span class="item-data"> 储存方式</span>
+  <span class="item-datacenter"> {{list.medicineStorage}}</span>
+  </view>
+</view>
+</view>
+</view>
+
+<!-- <view class="partial">
+  <view class="text">
+    用法用量
+  </view>
+  <view class="textdetail">
+    {{list.medicineUsageDosage}}
+  </view>
+</view> -->
+<view class="item-box">
+<view class="items">
+<view class="item">
+  <view class="inner txt">
+  <span class="item-data"> 用法用量</span>
+  <span class="item-datacenter">  {{list.medicineUsageDosage}}</span>
+  </view>
+</view>
+</view>
+</view>
+
+  </view>
+
+  <view class="ec-container">
+ <ec-canvas canvas-id="echart-pie" ec="{{ec}}"  style="width: 100%;height: 300px;"></ec-canvas>
+</view>
+</view>

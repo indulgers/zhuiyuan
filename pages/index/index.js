@@ -1,4 +1,5 @@
 import api from '../../utils/api/api'
+var app=getApp()
 Page({
 
   /**
@@ -6,7 +7,8 @@ Page({
    */
   data: {
     tempFilePaths: null,
-    
+    current: 0,
+    current_scroll: 'tab1',
     Image: null,
     isChose: false,
     files: null,
@@ -41,7 +43,18 @@ Page({
   ]
   },
   
-    
+  pagechange: function (e) {
+    // 通过touch判断，改变tab的下标值
+    if ("touch" === e.detail.source) {
+      let currentPageIndex = this.data.current;
+      currentPageIndex = (currentPageIndex + 1) % 2;
+      // 拿到当前索引并动态改变
+      this.setData({
+        current: currentPageIndex,
+      })
+    }
+  },
+
 
   toSearch() {
     wx.navigateTo({
@@ -70,7 +83,18 @@ Page({
 
   },
 
- 
+  handleChange ({ detail }) {
+    this.setData({
+        current: detail.key
+    });
+   
+},
+handleClick(){
+ wx.navigateTo({
+   url: '/pages/old_index/old_index',
+ })
+},
+
   searchPic: function () {
    wx.navigateTo({
      url: './cropper/cropper',
@@ -118,41 +142,143 @@ Page({
     })
 
   },
-  
-    fuck:function(){
-      wx.uploadFile({
-        url: 'http://zhuiyuan.origami.wang:8081/ocr/selectComponentsByMedicineRegisterNoWithOcr/',
-         filePath:'/images/index/askdoctor.png',
-         name: 'file',
-         header:{
-     'content-type':'Application/json'
-   },
-         formData: {
-        'user': 'test'
-   },
-   
-success: function (res) {
-  
-  console.log(res.data + "结果")
-  
-}
-})
-    //    wx.request({
-    //      url: 'http://43.139.5.93:8081/es/fuzzyQueryByMedicineName/总统',
-    //     method:'POST',
-    //      header: {
-    //      'Content-Type': 'application/json'
-    //  },
-    //     success:function(res){
-    //      console.log(res.data)
-    //        wx.navigateTo({
-    //         url: '/pages/index/matchAndAnalysis/result/result.wxml',
-            
-    //         success: (result) => {},
-    //         fail: (res) => {},
-    //       complete: (res) => {},
-    //        })
-    //   }
-    // })
+  getmedicineName(e) {
+    // console.log("获取value值",e.detail)   // {value: "ff", cursor: 2}
+    this.setData({
+      medicineName: e.detail.value
+    })
+    this.setData({
+      searchresult: true,
+    })
+  },
+   bindconfirm:function(e){
+     
+    app.globalData.SearchName=e.detail.value
+    console.log(app.globalData.SearchName)
+     var that=this;
+    console.log(e.detail.value)
+    var flag=new RegExp ("[`~!@#$^&*()=|{}':;',\\[\\].<>《》/?~！@#¥……&*（）——|{}【】‘；：’“”。，、？]")
+    if(flag.test(e.detail.value)){
+     wx.showModal({
+       title: '您输入的内容中含有非法字符',
+       content: '请您重新输入',
+       complete: (res) => {
+         if (res.cancel) {
+          console.log('用户点击了取消')
+         }
+     
+         if (res.confirm) {
+          console.log('用户点击了确定')
+         }
+       }
+     })
+     
     }
+    else{
+      
+      console.log(app.globalData.SearchName)
+      // if(this.data.current=="0")
+      if(1)
+      {
+      wx.request({
+        url: 'https://zhuiyuan.origami.wang/medicine/fuzzySelectMedicineByMedicineName/'+e.detail.value+'?pageNum&pageSize=5',
+        method:'GET',
+         header: {
+        'Content-Type': 'application/json'
+      }, 
+        dataType: 'json',
+        responseType: 'text',
+        success:function(res){
+          console.log(res.data)
+          that.setData({
+            list:res.data
+          })
+          
+         
+          let tolist = JSON.stringify(res.data)
+          console.log(tolist)
+          wx.navigateTo({
+            url: '/pages/index/result/result?tolist='+tolist,
+            
+            success: (result) => {
+              
+            },
+            fail: (res) => {},
+            complete: (res) => {},
+          })
+          
+      }
+      })}
+      else if(this.data.current=="1"){
+        wx.request({
+          url: 'https://zhuiyuan.origami.wang/medicine/selectMedicinesByComponentName/'+e.detail.value+'?pageNum&pageSize=5',
+          method:'POST',
+           header: {
+          'Content-Type': 'application/json'
+        }, 
+          dataType: 'json',
+          responseType: 'text',
+          success:function(res){
+            console.log(res.data)
+            that.setData({
+              list:res.data
+            })
+            
+           
+            let tolist = JSON.stringify(res.data)
+            console.log(tolist)
+            wx.navigateTo({
+              url: '/pages/index/result/result?tolist='+tolist,
+              
+              success: (result) => {
+                
+              },
+              fail: (res) => {},
+              complete: (res) => {},
+            })
+            
+        }
+        })
+      }
+      else{
+        wx.request({
+          url: 'https://zhuiyuan.origami.wang/medicine/selectMedicinesByComponentName/'+e.detail.value+'?pageNum&pageSize=5',
+          method:'POST',
+           header: {
+          'Content-Type': 'application/json'
+        }, 
+          dataType: 'json',
+          responseType: 'text',
+          success:function(res){
+            console.log(res.data)
+            that.setData({
+              list:res.data
+            })
+            
+           
+            let tolist = JSON.stringify(res.data)
+            console.log(tolist)
+            wx.navigateTo({
+              url: '/pages/index/result/result?tolist='+tolist,
+              
+              success: (result) => {
+                
+              },
+              fail: (res) => {},
+              complete: (res) => {},
+            })
+            
+        }
+        })
+      }
+    }
+   this.setData({
+     medicineName:''
+   })
+   },
+   clean(){
+    this.setData({
+      medicineName:''
+    })
+   }
 })

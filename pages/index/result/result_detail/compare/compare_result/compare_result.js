@@ -1,4 +1,4 @@
-// pages/TCM/TCM.ts
+// pages/index/result/result_detail/compare/compare_result/compare_result.js
 Page({
 
   /**
@@ -6,15 +6,12 @@ Page({
    */
   data: {
 
-    value1: '',
-    value2:''
-
-},
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {
+  onLoad(options) {
 
   },
 
@@ -29,13 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    // if (typeof this.getTabBar === 'function' &&
-    //   this.getTabBar()) {
-    //   this.getTabBar().setData({
-    //     //唯一标识（其它设置不同的整数）  
-    //     selected: 0
-    //   })
-    // }
+
   },
 
   /**
@@ -71,8 +62,5 @@ Page({
    */
   onShareAppMessage() {
 
-  },
-  handleclick(){
-     console.log(value1+value2);
   }
 })
