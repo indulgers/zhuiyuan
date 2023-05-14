@@ -9,13 +9,21 @@
   text-align: center;
   background-color: #5CB888;
 }
-.x_title{
-  font-size: 18px;
-  color: #fff;
-  font-family: cursive;
-  margin-left: 15px;
+.input{
+  display: flex;
+  flex-direction: row;
+  margin: 15px;
 }
-
+.bin {
+  width: 28px;
+  height: 25px;
+  /*margin-left: 130px;*/
+  margin-left:35px ;
+  align-self: flex-end;
+}
+.compitem{
+  margin: 10px 5px;
+}
 page {
   background: linear-gradient(180deg, #5CB888 0%, #fff 100%);
   background-attachment: fixed;

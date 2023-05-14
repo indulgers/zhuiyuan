@@ -65,12 +65,12 @@ Page({
                     // }
                     // })
                   wx.uploadFile({
-                     url: 'http://zhuiyuan.origami.wang:8081/ocr/selectComponentsByMedicineRegisterNoWithOcr/?imageFile='+wx.getStorageSync('imageFile'),
+                     url: 'https://zhuiyuan.origami.wang/ocr/selectMedicineByRegisterNoWithOcr',
                       filePath:that.data.src,
                        name: 'imageFile',
                        method:'POST',
                        header:{
-                 'content-type':'multipart/form-data',
+                   'content-type':'multipart/form-data',
                    'Accept': 'application/json', 
 
                  },
@@ -80,23 +80,35 @@ Page({
                
            
               success:function(res){
-                console.log(res.data)
                 that.setData({
                   list:res.data
                 })
-              
-             let tolist=res.data
-                // let tolist = JSON.stringify(res.data)
-             
+              console.log(res.data)
+                if(res.statusCode===200){ 
+                let tolist = res.data
                 wx.navigateTo({
-                  url: '/pages/index/image-result/image-result?tolist='+tolist,
+                  url: '/pages/index/result/result_detail/result_detail?tolist='+tolist,
                 
                   success: (result) => {
                     
                   },
                   fail: (res) => {},
                   complete: (res) => {},
-                })
+                })}
+                else{
+                  wx.navigateTo({
+                    url: '/pages/index/image-result/image-result',
+                  
+                    success: (result) => {
+                      
+                    },
+                    fail: (res) => {
+          
+                    },
+                    complete: (res) => {},
+                  })
+                }
+                
               
       },fail: (res) => {
         console.log(res.data)
@@ -111,7 +123,9 @@ Page({
           success: (result) => {
             
           },
-          fail: (res) => {},
+          fail: (res) => {
+
+          },
           complete: (res) => {},
         })
       },
@@ -159,7 +173,7 @@ Page({
                     
                      var tempFilePaths = res.tempFiles[0].tempFilePath;
                      wx.uploadFile({
-                      url: 'http://zhuiyuan.origami.wang:8081/ocr/selectComponentsByMedicineRegisterNoWithOcr/?imageFile='+wx.getStorageSync('imageFile'),
+                      url: 'https://zhuiyuan.origami.wang/ocr/selectMedicineByRegisterNoWithOcr',
                        filePath:that.data.src,
                         name: 'imageFile',
                         method:'POST',
@@ -183,7 +197,7 @@ Page({
                  let tolist = JSON.stringify(res.data)
               
                  wx.navigateTo({
-                   url: '/pages/index/image-result/image-result?tolist='+tolist,
+                   url: '/pages/index/result_result/result_result?tolist='+tolist,
                  
                    success: (result) => {
                      
@@ -297,17 +311,21 @@ Page({
      
     
        let tolist = JSON.stringify(res.data)
-    
+       if(res.statusCode===200){
        wx.navigateTo({
-         url: '/pages/index/image-result/image-result?tolist='+tolist,
+         url: '/pages/index/result_detail/result_detail?tolist='+tolist,
        
          success: (result) => {
            
          },
          fail: (res) => {},
          complete: (res) => {},
+       })}
+     else{
+       wx.navigateTo({
+         url: '/pages/index/image-result/image-result',
        })
-     
+     }
 }
 })
            

@@ -241,38 +241,8 @@ bindinput:function(e){
       })
     }
   }
-//   wx.request({
-//     url: 'http://43.139.5.93:8081/medicine/selectMedicinesByComponentName/'+e.detail.value+'?pageNum&pageSize',
-//     method:'POST',
-//      header: {
-//     'Content-Type': 'application/json'
-//  }, 
-//     dataType: 'json',
-//     responseType: 'text',
-//     success:function(res){
-//       console.log(res.data)
-//       that.setData({
-//         list1:res.data
-//       })
-      
-     
-//       let tolist = JSON.stringify(res.data)
-//       console.log(tolist)
-//       wx.navigateTo({
-//         url: '/pages/index/result/result?tolist='+tolist,
-        
-//         success: (result) => {
-          
-//         },
-//         fail: (res) => {},
-//         complete: (res) => {},
-//       })
-      
-//   }
-// })
 
 
- 
  },
   /**
    * 生命周期函数--监听页面初次渲染完成

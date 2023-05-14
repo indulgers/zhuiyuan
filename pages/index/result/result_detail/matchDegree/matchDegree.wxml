@@ -1,0 +1,69 @@
+<view class="all">
+<view class="item" >
+<image src="/images/index/medicineImage.png" style="height: 60px;width: 60px;"/>
+<text>{{list.medicineName}}</text>
+</view>
+<form bindsubmit="submitForm">
+  <!-- <view class="item">
+  <text>年龄</text>
+  <input type="text" placeholder="请输入您的年龄"/>
+  </view> -->
+  <view class="kind">
+    <view class="kind_t">年龄</view>
+    <input name="input" placeholder="请输入您的年龄" placeholder-class="placeholderStyle"/>
+  </view>
+
+  <!-- <view class="item">
+  <text>特殊身份</text>
+  <input type="text" placeholder="请输入您的身份，如少年，乳母等" name="status"/>
+  </view> -->
+  <view class="kind">
+    <view class="kind_t">特殊身份</view>
+    <input name="input" placeholder="请输入您的身份，如少年，乳母"    name="status" placeholder-class="placeholderStyle"/>
+  </view>
+
+  <!-- <view class="item">
+  <text>基础疾病</text>
+  <input type="text" placeholder="请输入您的疾病"/>
+  </view> -->
+  <view class="kind">
+    <view class="kind_t">基础疾病</view>
+    <input name="input" placeholder="请输入您的基础疾病" placeholder-class="placeholderStyle"/>
+  </view>
+
+  <!-- <view class="item">
+  <text>药物过敏</text>
+  <input type="text" placeholder="请输入您的过敏药物"/>
+  </view> -->
+  <view class="kind">
+    <view class="kind_t">过敏药物</view>
+    <input name="input" placeholder="请输入您的过敏原" placeholder-class="placeholderStyle" name="raw"/>
+  </view>
+
+  <!-- <view class="item">
+  <text>保健需求</text>
+  <input type="text" placeholder="请输入您的保健需求" name="demand"/>
+  </view> -->
+  <view class="kind">
+    <view class="kind_t">保健需求</view>
+    <input name="input" placeholder="请输入您的保健需求" name="demand" placeholder-class="placeholderStyle"/>
+  </view>
+
+  <!-- <view class="item">
+  <text>品牌选择</text>
+  <input type="text" placeholder="请选择您的保健品牌" name="brand"/>
+  </view> -->
+  <!-- <view class="kind">
+    <view class="kind_t">保健品牌</view>
+    <input name="input" placeholder="请输入您的保健品牌" placeholder-class="placeholderStyle"/>
+  </view> -->
+
+  <!-- <button form-type="submit" style="background-color: rgb(92, 184, 136);color: #ffffff;">
+  <image src="/images/expert/搜索.png" style="height: 25px;width: 25px;"/>
+  匹配度查询</button> -->
+  <button class="k_button" form-type="submit" >
+  <image src='/images/expert/搜索.png' class="k_img"></image>
+    一键查询匹配度</button>
+
+</form>
+</view>

@@ -1,0 +1,4 @@
+<view class="border">
+<text>此产品与您的匹配度为:</text>
+<view class="match">{{match}}%</view>
+</view>

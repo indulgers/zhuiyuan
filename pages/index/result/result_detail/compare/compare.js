@@ -1,78 +1,4 @@
-// pages/index/community/community.js
-// Page({
 
-//   /**
-//    * 页面的初始数据
-//    */
-//   data: {
-     
-//   },
-
-//   /**
-//    * 生命周期函数--监听页面加载
-//    */
-//   onLoad: function (options) {
-
-//   },
-
-  
- 
-
-//   /**
-//    * 生命周期函数--监听页面初次渲染完成
-//    */
-//   onReady: function () {
-
-//   },
-
-//   /**
-//    * 生命周期函数--监听页面显示
-//    */
-//   onShow: function () {
-
-//   },
-
-//   /**
-//    * 生命周期函数--监听页面隐藏
-//    */
-//   onHide: function () {
-
-//   },
-
-//   /**
-//    * 生命周期函数--监听页面卸载
-//    */
-//   onUnload: function () {
-
-//   },
-
-//   /**
-//    * 页面相关事件处理函数--监听用户下拉动作
-//    */
-//   onPullDownRefresh: function () {
-
-//   },
-
-//   /**
-//    * 页面上拉触底事件的处理函数
-//    */
-//   onReachBottom: function () {
-
-//   },
-
-//   /**
-//    * 用户点击右上角分享
-//    */
-//   onShareAppMessage: function () {
-
-//   },
-//   tapName: function(event) {
-//     console.log(event)
-//   }
-
-// })
-
-// pages/snows/snows.js
 var i = 0;
 Page({
  
@@ -83,8 +9,20 @@ Page({
     snows: [],
     animation: [],
     dateTime: "",
+    list1:{},
+    list2:{},
+    value2:'',
+    isDropdownVisible: false
   },
  
+
+  onLoad(res){
+    var data=JSON.parse(res.data) 
+    this.setData({
+      list1:data
+    })
+    console.log(this.data.list1.medicineName)
+    },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -115,6 +53,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
+    
     clearTimeout(this.data.dateTime)
     this.setData({
       snows: [],
@@ -145,9 +84,143 @@ Page({
       dateTime,
     })
   },
-
-  click(){
+  onBlur(e){
+   
+    let that=this
+    that.setData({
+      isDropdownVisible:true
+    })
+      console.log(e.detail.value)
+      wx.request({
+        url: 'https://zhuiyuan.origami.wang/medicine/fuzzySelectMedicineByMedicineName/'+e.detail.value,
+        method:'GET',
+         header: {
+        'Content-Type': 'application/json'
+      }, 
+        dataType: 'json',
+        responseType: 'text',
+        success:function(res){
+          console.log(res.data)
+          that.setData({
+            list2:res.data
+          })
+          let list2 = JSON.stringify(res.data)
+          console.log(list2)
+          
+          
+      }
+      })
+  },
+  compareDetail(e){
+      var data1=JSON.stringify(this.data.list1)
+      var data2=JSON.stringify(e.currentTarget.dataset.data) 
+       console.log(data2)
+       console.log(e.currentTarget.dataset.data)
+    this.setData({
+      value2:e.currentTarget.dataset.data.medicineName,
+      isDropdownVisible:false
+   })
+   
+    wx.navigateTo({
+      url: '/pages/index/result/result_detail/compare/compare_result/compare_result?data1='+data1+'&data2='+data2,
+    })
     
-  }
+   
+  },
+  click(){
+    var that=this
+    wx.request({
+      url: 'https://zhuiyuan.origami.wang/medicine/fuzzySelectMedicineByMedicineName/'+that.data.value2,
+      method:'GET',
+       header: {
+      'Content-Type': 'application/json'
+    }, 
+      dataType: 'json',
+      responseType: 'text',
+      success:function(res){
+        console.log(res.data)
+        that.setData({
+          list2:res.data
+        })
+        let list2 = JSON.stringify(res.data)
+        console.log(list2) 
+    
+      wx.navigateTo({
+        url: '/pages/index/result/result_detail/compare/compare_result/compare_result?data1='+that.data.list1+'&data2='+that.data.list2,
+    })
+   
+    }
+    })
+  
+  },
+  clean() {
+    this.setData({
+     value2: ''
+    })
+  },
+  bindconfirm:function(e){
+     
+    app.globalData.SearchName=e.detail.value
+    console.log(app.globalData.SearchName)
+     var that=this;
+    console.log(e.detail.value)
+    var flag=new RegExp ("[`~!@#$^&*()=|{}':;',\\[\\].<>《》/?~！@#¥……&*（）——|{}【】‘；：’“”。，、？]")
+    if(flag.test(e.detail.value)){
+     wx.showModal({
+       title: '您输入的内容中含有非法字符',
+       content: '请您重新输入',
+       complete: (res) => {
+         if (res.cancel) {
+          console.log('用户点击了取消')
+         }
+     
+         if (res.confirm) {
+          console.log('用户点击了确定')
+         }
+       }
+     })
+     
+    }
+    else{
+      
+      console.log(app.globalData.SearchName)
+      // if(this.data.current=="0")
+      
+      wx.request({
+        url: 'https://zhuiyuan.origami.wang/medicine/fuzzySelectMedicineByMedicineName/'+e.detail.value+'?pageNum&pageSize=5',
+        method:'GET',
+         header: {
+        'Content-Type': 'application/json'
+      }, 
+        dataType: 'json',
+        responseType: 'text',
+        success:function(res){
+          console.log(res.data)
+          that.setData({
+            list:res.data
+          })
+          
+         
+          let tolist = JSON.stringify(res.data)
+          console.log(tolist)
+          wx.navigateTo({
+            url: '/pages/index/result/result_detail/compare/compare_result/compare_result.wxml?tolist='+tolist,
+            
+            success: (result) => {
+              
+            },
+            fail: (res) => {},
+            complete: (res) => {},
+          })
+          
+      }
+      })
+     
+    
+    }
+   this.setData({
+     medicineName:''
+   })
+   },
  
 })

@@ -1,5 +1,5 @@
- <!-- pages/index/shortVideo/shortVideo.wxml-->
-<!-- 搜索栏 -->
+短视频页面
+<!-- 搜索栏
 <view class="header">
   <view class="searchInput">
     <text class="iconfont" src="/images/index/search.png" ></text>
@@ -10,7 +10,7 @@
 </view>
 
 
-<!-- 短视频列表 -->
+
 <scroll-view scroll-y class="vedio">
   <view class="vedioItem">
   <view class="first2">
@@ -134,4 +134,4 @@
  
 
 </scroll-view>
-
+ -->

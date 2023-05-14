@@ -1,6 +1,6 @@
 // pages/index/result_detail/result_detail.js
 var app=getApp()
-import * as echarts from '../../../../ec-canvas/echarts'
+import * as echarts from '../../../../ec-canvas/echarts.min'
 var chart=null;
 function initCharts(canvas,width,height){
    chart =echarts.init(canvas,null,{
@@ -88,21 +88,35 @@ Page({
    app.globalData.IngredientName=[]
    app.globalData.componentNum=[]
    app.globalData.componentUnit=[]
-    var data=JSON.parse(res.data) 
+   if(res.data!=null){
+    var data=JSON.parse(res.data)
     this.setData({
       list:data,
       tolist:data.medicineId,
       Ingredient:data.medicineEffectiveIngredient
+    }) }
+    if(res.tolist!=null){
+    var data=JSON.parse(res.tolist) 
+    console.log(data.data)
+    var tolist=data.data
+    this.setData({
+      list:tolist,
+      tolist:tolist.medicineId,
+      Ingredient:tolist.medicineEffectiveIngredient
     })
-    console.log(data)
-    console.log(data.medicineName)
-    
+  }
     this.setData({
       components:data.medicineId
     })
    var datamm=this.data.Ingredient.match(/(\d+\.\d)/g);
    var datam=this.data.Ingredient.match(/[0-9\.\s]+(?:mg|kg|M|g|µg)/g).slice(1);
-   var dataz=this.data.Ingredient.match(/[\u4e00-\u9fa5]+/g).slice(2);
+   let dataz=this.data.Ingredient.match(/[\u4e00-\u9fa5]+/g);
+   for (let i = 0; i < dataz.length; i++) {
+    if (dataz[i]==="含") {
+      dataz=this.data.Ingredient.match(/[\u4e00-\u9fa5]+/g).slice(3)
+    }
+      dataz=this.data.Ingredient.match(/[\u4e00-\u9fa5]+/g).slice(1)
+  }
    console.log(dataz)
    console.log(datam)
     this.setData({
@@ -121,8 +135,15 @@ Page({
   },
   
   toCompare(){
+    var data=JSON.stringify(this.data.list)
     wx.navigateTo({
-      url: '/pages/index/result/result_detail/compare/compare',
+      url: '/pages/index/result/result_detail/compare/compare?data='+data,
+    })
+  },
+  toMatch(){
+    var data=JSON.stringify(this.data.list)
+    wx.navigateTo({
+      url: '/pages/index/result/result_detail/matchDegree/matchDegree?data='+data,
     })
   },
   toComponent:function(e){

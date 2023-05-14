@@ -37,7 +37,7 @@ Page({
 
   onLoad: function (options) {
    
-    let db=wx.cloud.database().collection('article').get().then(res=>{
+    let db=wx.cloud.database().collection('Article').get().then(res=>{
       console.log('请求到的数据',res)
       this.setData({
         list:res.data
@@ -47,7 +47,7 @@ Page({
       console.log('信息请求失败',res);
     })
   
-    let db1=wx.cloud.database().collection('article').orderBy("heat",'desc').get().then(res=>{
+    let db1=wx.cloud.database().collection('Article').orderBy("heat",'desc').get().then(res=>{
       console.log('请求到的数据',res)
       this.setData({
         list1:res.data
@@ -56,7 +56,7 @@ Page({
     .catch(err=>{
       console.log('信息请求失败',res);
     })
-    let db2=wx.cloud.database().collection('article').orderBy("time",'desc').get().then(res=>{
+    let db2=wx.cloud.database().collection('Article').orderBy("time",'desc').get().then(res=>{
       console.log('请求到的数据',res)
       this.setData({
         list2:res.data

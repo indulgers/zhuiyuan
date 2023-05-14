@@ -5,14 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      list1:{},
+      list2:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
-
+  onLoad(res) {
+    console.log(res)
+    var data1=JSON.parse(res.data1) 
+    var data2=JSON.parse(res.data2)
+    this.setData({
+      list1:data1,
+      list2:data2
+    })
+      console.log(data1,data2)
   },
 
   /**

@@ -1,0 +1,54 @@
+form{
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  font-size: 20px;
+}
+.item{
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid #cecedb;
+  margin: 15px 5px;
+  padding-left:17px ;
+}
+text{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.kind{
+  position: relative;
+  margin: 12px auto;
+  padding-top:5px ;
+  top:0px;
+  width: 87%;
+  height: 35px;
+  border-bottom: 1px solid rgb(223, 223, 223);
+}
+.kind_t{
+  float: left;
+  font-weight: bold;
+  /* inline-size: 90px; */
+}
+.kind input{
+  float: right;
+  color: rgb(122, 122, 122);
+}
+.k_button{
+  position: relative;
+  margin: 30px auto;
+  width: 60%;
+  background-color: #5CB888;
+  color: white;
+}
+.k_img{
+  position: relative;
+  float: inline-start;
+  margin-top: 13.5px;
+  margin-right: 1px;
+  width: 16px;
+  height: 17px;
+}
+.placeholderStyle{
+  color: rgb(185, 185, 185);
+}

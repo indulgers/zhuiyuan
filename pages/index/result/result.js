@@ -10,7 +10,7 @@ Page({
     list1:{},
     Id:'',
     pageNum:1,
-    pageSize:5,
+    pageSize:6,
     Name:''
   },
 
@@ -20,7 +20,7 @@ Page({
   onLoad(res) {
     var tolist=JSON.parse(res.tolist)
     this.setData({
-      list:tolist,
+      list:tolist
     })
     console.log(tolist);
   },

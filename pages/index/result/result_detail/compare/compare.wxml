@@ -3,12 +3,24 @@
 <scroll-view scroll-y="true">
   <!-- 页面内容 -->
   <i-panel title="">
-<view class="x_title">第一款保健品名称</view>
-    <i-input value="{{ value1 }}"  right title="1" mode="wrapped" maxlength="100" placeholder="请输入第一款保健品名称" />
-<view class="x_title">第二款保健品名称</view>
-    <i-input value="{{ value2 }}"  right  title="2" mode="wrapped" maxlength="100" placeholder="请输入第二款保健品名称" />
-    <navigator url="/pages/index/result/result_detail/compare/compare_result/compare_result">
-    <button bindtap="click" class="q_button" >开始对比</button></navigator>
+<!-- <view class="">第一款保健品名称</view>
+<view class="input">
+    <text style="color: #a4a4a4;margin: 0 10px;">1</text>
+    <input  right title="1" mode="wrapped"  placeholder="{{list1.medicineName}}"   disabled/></view> -->
+<!-- <view>请输入保健品名称</view> -->
+    <view class="input">
+    <text style="color: #a4a4a4;margin: 0 26px;">2</text>
+    <input value="{{ value2 }}"  right  title="2" mode="wrapped"  placeholder="请输入需对比保健品名称" bindinput="onBlur" style="width: 250px;"/>
+    <image src="/images/index/bin.png" class="bin" bindtap="clean"/>
+    </view>
+    <scroll-view wx:if="{{ isDropdownVisible===true}}" style="display: flex;justify-content: center;align-items: center;">
+     <view class="table" wx:for="{{list2}}" wx:key="index" >
+<view  wx:for="{{item}}" wx:key="index" wx:for-item ="data" data-data="{{data}}" bindtap="compareDetail">
+<view class="compitem" >{{data.medicineName}}</view>
+      </view>
+      </view>
+    </scroll-view>
+    <button bindtap="compareDetail" class="q_button" >开始对比</button>
 </i-panel>
 </scroll-view>
 <view>

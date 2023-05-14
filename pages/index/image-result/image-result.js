@@ -12,15 +12,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(res) {
-    console.log(res.tolist[0])
+   
     
-      let tolist1=JSON.parse(res.tolist)
-      console.log(tolist1.data)
-      this.setData({
-        list:tolist1
-      })
-      console.log(res.tolist)
-      console.log(tolist1)
+    
     
      
     

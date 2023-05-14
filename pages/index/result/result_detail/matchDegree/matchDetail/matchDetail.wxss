@@ -1,0 +1,18 @@
+.border{
+  height: 200px;
+  margin: 10px auto;
+  border: 2px solid #2fbb75;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+text{
+  color: #534f4f5d;
+  font-size: 32px;
+}
+.match{
+  color: #2fbb75;
+  font-weight: bolder;
+  font-size: 35px;
+}

@@ -1,56 +1,48 @@
 <view class="head">
-<view class="zhuiyuan">追原</view>
-<view class="intro">智能保健品助手</view>
+  <view class="zhuiyuan">追原</view>
+  <view class="intro">智能保健品助手</view>
 </view>
 <view class="tab">
 <i-tabs current="{{ current }}" color="#5CB888"   bindchange="handleChange">
     <view class="tab_item"><i-tab key="0" title="保健品名称"></i-tab></view>
     <view class="tab_item"><i-tab key="1" title="中药成分"></i-tab></view>
-      <view class="tab_item"><i-tab key="2" title="保健品功效"></i-tab></view>
+    <view class="tab_item"><i-tab key="2" title="保健品功效"></i-tab></view>
 </i-tabs></view>
 <swiper bindchange="pagechange" current="{{current}}" >
-  <swiper-item style="width: 750rpx; height: 97rpx; display: block; box-sizing: border-box; left: 0rpx; top: 0rpx">
-    <view  class="searchInput" key='0'  style="width: 693rpx; height: 68rpx; display: flex; box-sizing: border-box">
+  <swiper-item >
+    <view  class="searchInput" key='0'  >
       <image class="searchIcon" src="/images/index/search.png"></image>
-      <input style="width: 289rpx; height: 72rpx; display: block; box-sizing: border-box" type="text" value="{{medicineName}}" bindconfirm="bindconfirm" placeholder="根据保健品名称搜索" placeholder-class="placeholder" bindinput="getmedicineName" />
+      <input  class="inputField" type="text" value="{{medicineName}}" bindconfirm="bindconfirm" placeholder="根据保健品名称搜索" placeholder-class="placeholder" bindinput="getmedicineName" />
       <image src="/images/index/bin.png" class="bin" bindtap="clean"/>
     </view>
   </swiper-item>
   <swiper-item>
-    <view  class="searchInput" key='1'>
+    <view  class="searchInput" key='1'  >
       <image class="searchIcon" src="/images/index/search.png"></image>
-      <input type="text" value="{{medicineName}}" bindconfirm="bindconfirm" placeholder="根据保健品成分搜索" placeholder-class="placeholder" bindinput="getmedicineName" />
-      
+      <input  class="inputField" type="text" value="{{medicineName}}" bindconfirm="bindconfirm" placeholder="根据保健品成分搜索" placeholder-class="placeholder" bindinput="getmedicineName" />
+      <image src="/images/index/bin.png" class="bin" bindtap="clean"/>
     </view>
   </swiper-item>
   <swiper-item>
-    <view  class="searchInput" key='2'>
+    <view  class="searchInput" key='2'  >
       <image class="searchIcon" src="/images/index/search.png"></image>
-      <input type="text" value="{{medicineName}}" bindconfirm="bindconfirm" placeholder="根据保健品功效搜索" placeholder-class="placeholder" bindinput="getmedicineName" />
-      
+      <input  class="inputField" type="text" value="{{medicineName}}" bindconfirm="bindconfirm" placeholder="根据保健品功效搜索" placeholder-class="placeholder" bindinput="getmedicineName" />
+      <image src="/images/index/bin.png" class="bin" bindtap="clean"/>
     </view>
   </swiper-item>
+  
 </swiper >
 
-
-
-
-
 <view class='navs'>
-  
-  
   <navigator url="/pages/community/expert/expert" class='nav-item'>
     <image class="nav-image" src='/images/index/expert.png' />
     <text>问专家</text></navigator>
-
   <navigator url="/pages/index/MatchAndAnalysis/MatchAndAnalysis" class='nav-item'>
     <image class="nav-image" src="/images/index/Analysis.png" />
     <text>匹配分析</text></navigator>
-  
   <navigator url="/pages/index/shortVideo/shortVideo"class='nav-item'>
     <image class="nav-image" src="/images/index/videos.png" />
     <text>视频科普</text></navigator>
- 
   <navigator url="/pages/index/cropper/cropper" class='nav-item'>
     <image class="nav-image" src="/images/index/camera.png" />
     <text>保健品快搜</text>
@@ -77,7 +69,6 @@
 <text>\n</text>
 
 </view>
-
 <view class="word" style="--x: 6; --y: -6;">
 		<view style="--index: 0; --alpha-l: 0.125; --alpha-u: 0.25;color: rgba(160, 218, 182, 0.719);">追</view><view style="--index: 1; --alpha-l: 0.125; --alpha-u: 0.25;color: rgba(160, 218, 182, 0.719);">原</view><view style="--index: 2; --alpha-l: 0.125; --alpha-u: 0.25;color: rgba(160, 218, 182, 0.719);">值</view><view style="--index: 3; --alpha-l: 0.125; --alpha-u: 0.25;color: rgba(160, 218, 182, 0.719);">得</view><view style="--index: 4; --alpha-l: 0.125; --alpha-u: 0.25;color: rgba(160, 218, 182, 0.719);">信</view><view style="--index: 5; --alpha-l: 0.125; --alpha-u: 0.25;color: rgba(160, 218, 182, 0.719);">赖</view>
 	</view>
@@ -87,8 +78,3 @@
 	<view class="word">
 		<view style="--index: 0; --alpha-l: 0.5; --alpha-u: 1;color: #5CB888;">追</view><view style="--index: 1; --alpha-l: 0.5; --alpha-u: 1;color: #5CB888;">原</view><view style="--index: 2; --alpha-l: 0.5; --alpha-u: 1;color: #5CB888;">值</view><view style="--index: 3; --alpha-l: 0.5; --alpha-u: 1;color: #5CB888;">得</view><view style="--index: 4; --alpha-l: 0.5; --alpha-u: 1;color: #5CB888;">信</view><view style="--index: 5; --alpha-l: 0.5; --alpha-u: 1;color: #5CB888;">赖</view>
 	</view>
-
-
-
-
-

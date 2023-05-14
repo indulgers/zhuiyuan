@@ -1,0 +1,114 @@
+
+<!-- 背景图 -->
+<view class="bg-box" style="margin-top: -70px;">
+	<!-- 未登录 -->
+	 <view wx:if="{{!UserLogin}}" class="head-box" bindtap="NavigateToLogin">
+		<view class="userAvatar-box">
+			<open-data type="userAvatarUrl"></open-data>
+		</view>
+		<view class="userlogin">
+			<view>登录/注册 (点击登录)</view>
+			<view class="font-size-12" style="color:grey;">需要先完成注册登录才能使用哦！</view>
+		</view>
+	</view>
+
+	
+	 <view wx:else style="margin-top: -70px;">
+		<view class="head-box"> 
+		 <view class="userAvatar-box"> 
+		
+			<open-data type="userAvatarUrl"></open-data>
+
+		 </view> 
+		 <view class="userlogin">
+			<view class="font-size-18">{{userInfo.nickName}}</view>
+			<view class="info">
+				<view class="info-white">
+					<image src="{{userInfo.gender == 1 ? '../../image/common/male.png' : '../../image/common/female.png'}}" style="width:12px;height:12px" alt=""></image>
+				</view>
+				<view class="info-white" style="font-size:12px;color:#ffffff">
+					{{userInfo.province}} {{userInfo.city}}
+				</view>
+			</view>
+
+		</view>
+		</view>
+
+		<view class="info-bottom">
+			<view class="tip">{{userInfo.tips}}</view>
+			<view>
+				<view class="care-item" style="margin:0">
+					<view class="care-num">{{myfans.follows}}</view>
+					<view>关注</view>
+				</view>
+				<view class="care-item">
+					<view class="care-num">{{myfans.fans}}</view>
+					<view>粉丝</view>
+				</view>
+				<view class="care-item">
+					<view class="care-num">{{myfans.likes}}</view>
+					<view>获赞</view>
+				</view> 
+				<navigator url="../publishBlog/publishBlog">
+				<view style="float: right;padding: 4px;border: 1px solid #f7f7f7;border-radius: 10px;height: 20px;">
+					<image src="../../image/common/setting.png"style="width: 20px;height: 20px;" alt=""></image>
+				</view>  
+				
+				<view class="float-right loadblog" style="margin:0 0 25px 15px;">上传 + </view>
+				</navigator>
+	
+				<view style="clear:both"></view>
+			</view>
+	 </view>
+	</view>
+
+</view> 
+
+
+<view wx:if="{{UserLogin}}">
+<!-- 搜索后 tabs切换 -->
+<view class="grid tabs" >
+  <i-tabs current="{{ currentTab }}" color="#5CB888"   bindchange="handleChange">
+    <view class="tab_item" data-current="0" style="margin: 0 0 15px 15px"><i-tab key="0" title="文章"></i-tab></view>
+    <view class="tab_item" data-current="1"style="margin: 0 0 15px 15px"><i-tab key="1" title="关注"></i-tab></view>
+    <view class="tab_item" data-current="2"style="margin: 0 0 15px 15px"><i-tab key="2" title="粉丝"></i-tab></view>
+</i-tabs>
+</view>
+
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{swiperheight}}px" bindchange="bindChange">
+    <swiper-item>
+       <!-- 文章推荐列表 -->
+       <articlelist id='waterFallView'></articlelist>
+    </swiper-item>
+    <swiper-item>
+			     <!-- 404图片 -->
+					 <image style="width:100%" wx:if="{{!centent_Show}}" mode="scaleToFill" src="../../image/common/nodata.png"></image>
+			<view id='userlist' class="flex-layout avatarinfo" wx:for="{{followList}}" wx:key="index">
+            <view class="flex-layout"  bindtap="gootheruser" data-followerid="{{item.followarr[0]._openid}}"  style="width: 100%;">
+              <image class="avatarimg" mode="scaleToFill" src="{{item.followarr[0].avatarUrl}}"></image>
+							<text class="nickName font-size-12">{{item.followarr[0].nickName}}</text>
+							<image src="{{item.followarr[0].gender == 1 ? '../../image/common/male.png' : '../../image/common/female.png'}}" style="width:12px;height:12px" alt=""></image>
+							<text class="nickName font-size-12">{{item.followarr[0].city}}</text>
+							<text class="likesum font-size-12">{{item.likessumarr.length}}获赞</text>
+									<view class="focus" style="color:rgba(0, 0, 0, 0.5);border: 1px solid rgba(0, 0, 0, 0.5);">已关注</view>
+            </view>
+      </view>
+    </swiper-item>
+		<swiper-item>
+			     <!-- 404图片 -->
+					 <image style="width:100%" wx:if="{{!fanslist_Show}}" mode="scaleToFill" src="../../image/common/nodata.png"></image>
+			<view id='fanslist' class="flex-layout avatarinfo" wx:for="{{fansList}}" wx:key="index">
+            <view class="flex-layout"  bindtap="gootheruser" data-followerid="{{item.myfanarr[0]._openid}}"  style="width: 100%;">
+              <image class="avatarimg" mode="scaleToFill" src="{{item.myfanarr[0].avatarUrl}}"></image>
+							<text class="nickName font-size-12">{{item.myfanarr[0].nickName}}</text>
+							<image src="{{item.myfanarr[0].gender == 1 ? '../../image/common/male.png' : '../../image/common/female.png'}}" style="width:12px;height:12px" alt=""></image>
+							<text class="nickName font-size-12">{{item.myfanarr[0].city}}</text>
+							<text class="likesum font-size-12">{{item.likessumarr.length}}获赞</text>
+								 <view class="focus" style="color:rgba(0, 0, 0, 0.5);border: 1px solid rgba(0, 0, 0, 0.5);">已关注</view> 
+            </view>
+      </view>
+    </swiper-item>
+</swiper>
+
+</view>

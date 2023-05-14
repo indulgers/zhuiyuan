@@ -1,50 +1,95 @@
-<!--pages/index/result/result_detail/compare/compare_result/compare_result.wxml-->
+<!-- 
+<view class="table">
+<view class="medi">
+  <view class="mediName">
+    <text>保健品名称</text>
+  <i-cell  style="font-weight: bolder;padding-left: 5px;">{{list1.medicineName}}</i-cell>
+  <i-cell title="" style="font-weight: bolder;">{{list2.medicineName}}</i-cell>
+  </view>
+  <view class="property1">
+  <text>保健功能</text>
+  <i-cell>{{list1.medicineHealthFunction}}</i-cell>
+  <i-cell  >{{list2.medicineHealthFunction}}</i-cell>
+  </view>
+  <view class="property2">
+  <text>用法用量</text>
+  <i-cell  >{{list1.medicineUsageDosage}}</i-cell>
+  <i-cell  >{{list2.medicineUsageDosage}}</i-cell>
+  </view>
+  <view class="property3">
+  <text>功效成分</text>
+  <i-cell title="" >{{list1.medicineEffectiveIngredient}}</i-cell>
+  <i-cell title="" >{{list2.medicineEffectiveIngredient}}</i-cell>
+  </view>
+  <view class="property1">
+  <text>主要原料</text>
+  <i-cell title="" >{{list1.medicineRawMaterial}}</i-cell>
+   <i-cell title="" >{{list2.medicineRawMaterial}}</i-cell>
+  </view>
+  <view class="property2">
+  <text>适宜人群</text>
+  <i-cell title="" >{{list1.medicineSuitPerson}}</i-cell>
+  <i-cell title="" >{{list2.medicineSuitPerson}}</i-cell>
+  </view>
+  <view class="property3">
+  <text>不适宜人群</text>
+  <i-cell title="" >{{list1.medicineUnsuitPerson}}</i-cell>
+  <i-cell title="" >{{list2.medicineUnsuitPerson}}</i-cell>
+  </view>
+  <view class="property1">
+  <text>注意事项</text>
+  <i-cell title="" >{{list1.medicineAttention}}</i-cell>
+  <i-cell title="" >{{list2.medicineAttention}}</i-cell></view>
+</view>
+
+</view> -->
+
 <!--pages/compare/compare.wxml-->
 <view class="tr bg-w">
  <view class="th"></view>
  <view class="th">
      <!-- <image src="/images/东阿阿胶.png" class="t_img"></image> -->
-     <text class="t_text">同仁堂牌利维欣胶囊</text>
+     <text class="t_text">{{list1.medicineName}}</text>
  </view>
 
  <view class="th ">
     <!-- <image src="/images/东阿阿胶.png" class="t_img"></image> -->
-    <text class="t_text">总统牌果味维C含片</text>
+    <text class="t_text"> {{list2.medicineName}}</text>
 </view>
 </view>
 
 <view class="tr bg-w">
   	<view class="td t_title">保健功能</view>
-  	<view class="td">改善化学性肝损伤</view>
-  	<view class="td">补充维生素C</view>
+  	<view class="td">{{list1.medicineHealthFunction}}</view>
+  	<view class="td">{{list1.medicineHealthFunction}}</view>
 </view>
 
 <view class="tr bg-e" >
    	<view class="td t_title">用法用量</view>
-   	<view class="td">每日2次，每次2粒，温开水送服</view>
-   	<view class="td">每日1次，每日1次，含服</view>
+   	<view class="td">{{list1.medicineUsageDosage}}</view>
+   	<view class="td">{{list2.medicineUsageDosage}}</view>
 </view>
 
 <view class="tr bg-g">
   	<view class="td t_title">主要原料</view>
-  	<view class="td">葛根提取物、栀子提取物、枳椇子提取物</view>
-  	<view class="td">维生素C、甜菊糖苷、木糖醇</view>
+  	<view class="td">{{list1.medicineRawMaterial}}</view>
+  	<view class="td">{{list2.medicineRawMaterial}}</view>
 </view>
 
 <view class="tr bg-w">
   	<view class="td t_title">适宜人群</view>
-  	<view class="td">有化学性肝损伤危险者</view>
-  	<view class="td">需要补充维生素C的人</view>
+  	<view class="td">{{list1.medicineSuitPerson}}</view>
+  	<view class="td">{{list2.medicineSuitPerson}}</view>
 </view>
 
 <view class="tr bg-e">
   	<view class="td t_title">不适宜人群</view>
-  	<view class="td">少年儿童、孕妇、乳母</view>
-  	<view class="td">无</view>
+  	<view class="td">{{list1.medicineUnsuitPerson}}</view>
+  	<view class="td">{{list2.medicineUnsuitPerson}}</view>
 </view>
 
 <view class="tr bg-g">
   	<view class="td t_title">注意事项</view>
-  	<view class="td">本品不能代替药物；适宜人群外的人群不推荐食用本产品</view>
-  	<view class="td">本品不能代替药物；适宜人群外的人群不推荐食用本产品</view>
+  	<view class="td">{{list2.medicineAttention}}</view>
+  	<view class="td">{{list2.medicineAttention}}</view>
 </view>

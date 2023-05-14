@@ -1,19 +1,15 @@
 
-  <view class="header">
+  <view class="header" style="background-color: #d6d3d3;">
     <view  class="searchInput">
       <image class="searchIcon" src="/images/index/search.png"></image>
       <input type="text" value="{{medicineName}}" bindconfirm="bindconfirm" placeholder="搜索保健品" placeholder-class="placeholder" bindinput="getmedicineName"/>
-      
     </view>
-   
   </view>
-    
-
-<view class="table" wx:for="{{list}}" wx:key="index" >
+<view class="table" wx:for="{{list}}" wx:key="index"       style="background-color: #d6d3d3;">
 
   <view  wx:for="{{item}}" wx:key="index" wx:for-item ="data" data-data="{{data}}" bindtap="toDetail">
   <view wx:if="{{data.medicineName!=null}}">
-  <view class="preview">
+  <!-- <view class="preview">
     <view >
     <text decode='{{true}}'>
 {{data.medicineName}}&nbsp;&nbsp;
@@ -25,10 +21,17 @@
     <text decode='{{true}}'>
 {{data.medicineRegisterNo}}&nbsp;&nbsp;</text>
     </view>
-  </view>
+  </view> -->
+  <view decode='{{true}}' style="margin-bottom: 5px;">
+      <i-card title="" extra="{{data.medicineHealthFunctionType}}"  >
+    <view slot="content" style="font-size: 18px;font-weight: bold;">{{data.medicineName}}</view>
+    <view slot="footer">{{data.medicineRegisterNo}}</view>
+</i-card>
+    </view>
   </view></view>
 </view>
-<i-page current="{{ pageNum }}" total="10" bind:change="handleChange">
+<view  style="background-color: #d6d3d3;">
+<i-page current="{{ pageNum }}" total="10" bind:change="handleChange" >
     <view slot="prev" >
         <i-icon type="return"></i-icon>
         上一页
@@ -37,4 +40,4 @@
         下一页
         <i-icon type="enter"  ></i-icon>
     </view>
-</i-page>
+</i-page></view>

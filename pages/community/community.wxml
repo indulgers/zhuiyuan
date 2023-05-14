@@ -1,6 +1,6 @@
 <view class="content">
   <view class="textcontent">
-  防诈社区
+  科普专栏
   </view>
   <button type="primary" open-type="contact" class="button">         </button>
   <!-- <navigator url="/pages/community/one2one/one2one">

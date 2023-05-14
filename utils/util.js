@@ -6,64 +6,14 @@ const formatTime = date => {
   const minute = date.getMinutes()
   const second = date.getSeconds()
 
-  return `${[year, month, day].map(formatNumber).join('/')} ${[hour, minute, second].map(formatNumber).join(':')}`
+  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
 
 const formatNumber = n => {
   n = n.toString()
-  return n[1] ? n : `0${n}`
+  return n[1] ? n : '0' + n
 }
 
 module.exports = {
-  formatTime
-}
-//微信同声传译
-
-var plugin = requirePlugin("WechatSI")
-
-var innerAudioContext = wx.createInnerAudioContext();
-
-innerAudioContext.onError((res) => {
-  // 播放音频失败的回调
-
-})
-
-function playTTS(text) {
-  //need to add WXAPP plug-in unit: WechatSI
-
-  plugin.textToSpeech({
-    lang: "zh_CN",
-
-    tts: true,
-
-    content: text,
-
-    success: function (res) {
-      log("succ tts", res.filename)
-
-      innerAudioContext.src = res.filename;
-
-      innerAudioContext.play()
-
-    },
-
-    fail: function (res) {
-      log("fail tts", res)
-
-    }
-
-  })
-
-}
-
-function stopTTS() {
-  innerAudioContext.stop();
-
-}
-
-module.exports = {
-  playTTS: playTTS,
-
-  stopTTS: stopTTS,
-
+  formatTime: formatTime
 }

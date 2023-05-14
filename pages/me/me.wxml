@@ -1,10 +1,10 @@
-
 <view class='head head-height'>
+
   <!-- hasUserInfo为false表示没有获取到用户信息，就显示获取头像昵称的按钮 -->
-  <button wx:if="{{!hasUserInfo}}" bindtap="getUserProfile" >点击微信授权</button>
+  <button wx:if="{{!hasUserInfo}}" bindtap="getUserProfile" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">点击微信授权</button>
         <block wx:else>
             <view class="user-info-img">
-                <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+            <view  class="userinfo-avatar"> <open-data type="userAvatarUrl"></open-data></view>
             </view>
             <view class="user-name">
                 Hey，{{userInfo.nickName}}！

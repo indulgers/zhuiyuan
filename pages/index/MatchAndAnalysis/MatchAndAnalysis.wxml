@@ -7,30 +7,34 @@
 
   <view class="kind">
     <view class="kind_t">年龄</view>
-    <input name="input" placeholder="请输入您的年龄" placeholder-class="placeholderStyle"/>
+    <input style="width: 393rpx; height: 46rpx; display: block; box-sizing: border-box" name="input" placeholder="请输入您的年龄" placeholder-class="placeholderStyle"/>
   </view>
 
   <view class="kind">
     <view class="kind_t">基础疾病</view>
-    <input name="input" placeholder="请输入您的疾病史" placeholder-class="placeholderStyle"/>
+    <input style="width: 398rpx; height: 46rpx; display: block; box-sizing: border-box" name="input" placeholder="请输入您的疾病史" placeholder-class="placeholderStyle"/>
   </view>
 
   <view class="kind">
     <view class="kind_t">药物过敏</view>
-    <input name="input" placeholder="请输入您的过敏史" placeholder-class="placeholderStyle"/>
+    <input style="width: 400rpx; height: 46rpx; display: block; box-sizing: border-box" name="input" placeholder="请输入您的过敏史" placeholder-class="placeholderStyle"/>
   </view>
 
   <view class="kind">
     <view class="kind_t" style="margin-right: 80px;">保健需求</view>
     <!-- <input name="input" placeholder="please input here" placeholder-class="placeholderStyle"/> -->
     <view class="select">
-  <view class="active" bindtap="onTapSelect">{{text}}</view>
-  <view class="options" hidden="{{!showOptions}}">
+  <view class="active" bindtap="onTapSelect" style="width: 595rpx; height: 53rpx; display: block; box-sizing: border-box">{{text}}</view>
+      <view class="options" hidden="{{!showOptions}}"> 
+      <scroll-view style="width: fit-content;height: 350px;">
+      <image src="https://s1.chu0.com/src/img/png/23/23ae7e20804e42a2be0995cc102956b8.png?imageMogr2/auto-orient/thumbnail/!240x240r/gravity/Center/crop/240x240/quality/85/&e=1735488000&token=1srnZGLKZ0Aqlz6dk7yF4SkiYf4eP-YrEOdM1sob:AmNr72cSiOA36GTKlJw1FfYkxqQ=" style="width: 25px;height: 25px;float: right;" bindtap="onTapSelect"/>
     <view class="option" wx:for="{{options}}" wx:key="value" bindtap="onTapOption" data-value="{{item.value}}">
       <view class="checkbox-icon {{item.checked ? 'checked' : ''}}"></view>
       <view class="label">{{item.label}}</view>
-    </view>
+    </view> </scroll-view>
   </view>
+ 
+
 </view>
   </view>
 
